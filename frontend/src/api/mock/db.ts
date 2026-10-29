@@ -125,7 +125,8 @@ export function persist(): void {
 
 export function startRegenerate(rec: MockRecord): void {
   const p = rec.project
-  if (!['ready', 'done', 'error'].includes(p.status) || !p.script) {
+  // 첫 대본 실패(LLM_FAILED) 뒤의 "다시 시도"도 재생성이다. 추출된 블록만 있으면 된다
+  if (!['ready', 'done', 'error'].includes(p.status) || p.source.blocks.length === 0) {
     throw new ApiError(409, 'INVALID_STATE', '지금은 대본을 다시 만들 수 없습니다.')
   }
   p.status = 'scripting'

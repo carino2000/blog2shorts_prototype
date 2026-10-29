@@ -22,7 +22,7 @@
   - 할 일: 6-1 전부(탭, URL 검증, 글자 수, `PhoneFrame` 예시, health 실패 안내), `naverUrl.ts` + 테스트(허용 4종·거부 3종)
   - 완료: 테스트 통과, 375·1280px 스크린샷 확인, mock에서 제출 → `/projects/:id` 이동
 
-- [ ] **F4. 처리 중 화면**
+- [x] **F4. 처리 중 화면**
   - 필요: F3
   - 할 일: `ProjectPage` 상태 분기, 1.5초 폴링·중지, 블록 들어오면 제목·썸네일, 오류별 버튼, 404 만료 안내
   - 완료: mock에서 정상(→ 대본 화면 자동 이동)·`fail` URL·`fail` 본문 세 경로 확인
@@ -66,3 +66,4 @@
 | 2026-10-29 | F2 | tsc·lint 0건·test 19 passed(mock 상태 전이·PATCH 규칙·렌더·재시도·검증). types.ts↔6-1 기계 대조: 필드 전부 일치, 차이는 `Subtitle` 인터페이스 분리와 ErrorCode 줄바꿈뿐. Node 24 `fs.rmSync`가 한글 경로에서 죽어 `vite build`가 dist 있을 때 실패 → `emptyOutDir:false` + 비동기 rm `prebuild`로 해결, 연속 2회 빌드 통과 | ffmpeg 없음 → `public/mock/sample.mp4` 미생성(결과 화면은 포스터로 대체). 6장 ErrorCode에 404·409용 코드가 없어 프론트는 HTTP 상태로 판단 |
 | 2026-10-29 | F3 | vitest 29 passed(naverUrl 허용 4·거부 3+경계). 브라우저: 1280 라이트·375 다크, naver.me/블로그 홈 즉시 안내·버튼 비활성, 올바른 URL+Enter → `/projects/mock-…` 이동, 본문 5자 비활성·219자 활성, 가로 스크롤 없음, 버튼 최소 44px, 콘솔 오류 없음 | health 실패 안내는 mock에서 재현 불가 → F9에서 확인 |
 | 2026-10-29 | 계약 반영 | ErrorCode 3종(NOT_FOUND·INVALID_REQUEST·INVALID_STATE) types·client·mock 반영, 업로드 assetId 형식 가정 제거. tsc·lint 0건, vitest 39 passed, ErrorCode 12종 6-1과 diff 없음 | 없음 |
+| 2026-10-29 | F4 | vitest 49 passed(projectView 상태→화면 10건). 브라우저 mock: 정상(추출 중 → 썸네일 3장 → 대본 단계 → 5.6초에 /script 자동 이동), `fail` URL → 추출 실패+「본문 직접 입력으로 다시 시작」(/?tab=text), `fail` 본문 → LLM_FAILED+「다시 시도」 → 재생성 → /script, 없는 ID → 만료 안내. 1280 라이트·375 다크, 가로 스크롤 없음 | mock 재생성 조건을 "대본 있음"→"블록 있음"으로 완화(첫 대본 실패 후 다시 시도용). 실제 백엔드 /regenerate도 이 경우를 받아야 함 → F9에서 확인 |
