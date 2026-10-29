@@ -152,8 +152,14 @@ interface Scene {
 type ErrorCode =
   | "NOT_NAVER_URL" | "POST_NOT_FOUND" | "EXTRACT_FAILED"
   | "TEXT_TOO_SHORT" | "LLM_FAILED" | "TTS_FAILED"
-  | "RENDER_FAILED" | "MISSING_IMAGE" | "UPLOAD_INVALID";
+  | "RENDER_FAILED" | "MISSING_IMAGE" | "UPLOAD_INVALID"
+  // ✅ 추가(10/29, 백엔드 B2에서 사람 승인): 공통 오류 형식에 쓸 범용 코드
+  | "NOT_FOUND"        // 404: 없는 프로젝트·이미지·경로. 프론트는 "작업 만료" 안내
+  | "INVALID_REQUEST"  // 422(405 포함): 요청 형식 오류
+  | "INVALID_STATE";   // 409: 지금 상태에서 할 수 없는 요청(예: rendering 중 PATCH)
 ```
+
+- `assetId`는 프로젝트를 넘어 전역에서 유일하다(`GET /api/assets/{assetId}`에 프로젝트 ID가 없으므로). 위 `"a1"`은 예시일 뿐, 실제 값은 백엔드가 정한 임의 문자열이다. 프론트는 형식을 가정하지 않는다.
 
 ### 6-2. 엔드포인트
 
