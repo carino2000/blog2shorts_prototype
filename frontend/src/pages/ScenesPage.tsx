@@ -1,16 +1,20 @@
-import { Clapperboard, ImagePlus } from 'lucide-react'
+import { ChevronDown, Clapperboard, ImagePlus } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { assetUrl, isApiError } from '../api'
 import { useRender } from '../api/queries/useRender'
 import { useUpdateScenes } from '../api/queries/useUpdateScenes'
 import type { Project } from '../api/types'
+import { AssetPicker } from '../components/AssetPicker'
 import { DurationMeter } from '../components/DurationMeter'
 import { ErrorBanner } from '../components/ErrorBanner'
+import { MediaGrid } from '../components/MediaGrid'
 import { ProjectShell } from '../components/ProjectShell'
 import { SaveStatus } from '../components/SaveStatus'
 import { SceneCard } from '../components/SceneCard'
+import { ScenePreview } from '../components/ScenePreview'
 import { totalSec } from '../lib/duration'
+import { WIDE_QUERY, useMediaQuery } from '../lib/useMediaQuery'
 import { btnPrimary } from '../lib/ui'
 
 export function ScenesPage() {
@@ -28,6 +32,8 @@ function ScenesEditor({ project }: { project: Project }) {
   const render = useRender(project.id)
   const [selectedId, setSelectedId] = useState(project.scenes[0]?.id ?? '')
   const [renderError, setRenderError] = useState<string | null>(null)
+  const [pickerOpen, setPickerOpen] = useState(false)
+  const isWide = useMediaQuery(WIDE_QUERY)
 
   const scenes = updates.applyDrafts(project.scenes)
   const assetById = new Map(project.assets.map((a) => [a.id, a]))
@@ -40,6 +46,28 @@ function ScenesEditor({ project }: { project: Project }) {
   const everRendered = project.scenes.some((s) => s.durationSec !== null)
   const voiceRedo = new Set(everRendered ? scenes.filter((s) => s.durationSec === null).map((s) => s.id) : [])
   const missingCount = scenes.filter((s) => !s.assetId).length
+  const selected = scenes.find((s) => s.id === selectedId) ?? scenes[0]
+  const selectIndex = (i: number) => {
+    const next = scenes[Math.max(0, Math.min(scenes.length - 1, i))]
+    if (next) setSelectedId(next.id)
+  }
+  const pickAsset = (assetId: string) => {
+    if (selected) updates.change(selected.id, { assetId }, { immediate: true })
+  }
+  const preview = (className?: string) =>
+    selected && (
+      <ScenePreview
+        scene={selected}
+        total={scenes.length}
+        imageSrc={srcOf(selected.assetId)}
+        onPrev={() => selectIndex(selected.order - 2)}
+        onNext={() => selectIndex(selected.order)}
+        className={className}
+      />
+    )
+  const mediaGrid = (
+    <MediaGrid projectId={project.id} assets={project.assets} scenes={scenes} selectedScene={selected} onPick={pickAsset} />
+  )
   const allActual = scenes.every((s) => s.durationSec !== null)
 
   async function startRender() {
@@ -72,7 +100,21 @@ function ScenesEditor({ project }: { project: Project }) {
       {updates.error && <ErrorBanner title="저장하지 못했습니다" message={updates.error.message} />}
       {renderError && <ErrorBanner message={renderError} />}
 
-      <div className="grid items-start gap-6 xl:grid-cols-[400px_minmax(0,1fr)_320px]">
+      {/* 767px 이하: 미리보기는 위쪽 접이식(기본 접힘, 선택 장면 썸네일만) */}
+      {selected && (
+        <details className="group rounded-card border border-line bg-surface md:hidden">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 px-3 py-2">
+            <span className="aspect-[9/16] w-7 shrink-0 overflow-hidden rounded bg-bg">
+              {srcOf(selected.assetId) && <img src={srcOf(selected.assetId) ?? ''} alt="" className="size-full object-cover" />}
+            </span>
+            <span className="flex-1 text-sm font-medium">미리보기 · 장면 #{selected.order}</span>
+            <ChevronDown aria-hidden="true" className="size-4 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="mx-auto w-full max-w-[260px] px-3 pb-4">{preview()}</div>
+        </details>
+      )}
+
+      <div className="grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_minmax(240px,320px)] xl:grid-cols-[400px_minmax(0,1fr)_320px]">
         <section aria-labelledby="scene-list-title" className="flex flex-col gap-3">
           <h2 id="scene-list-title" className="sr-only">
             장면 목록
@@ -92,13 +134,42 @@ function ScenesEditor({ project }: { project: Project }) {
                   onSelect={() => setSelectedId(scene.id)}
                   onText={(text) => updates.change(scene.id, { text })}
                   onMotion={(motion) => updates.change(scene.id, { motion }, { immediate: true })}
-                  onPickImage={() => undefined}
+                  onPickImage={() => {
+                    if (!isWide) setPickerOpen(true)
+                  }}
                 />
               </li>
             ))}
           </ol>
         </section>
+
+        <section aria-label="미리보기" className="sticky top-4 hidden md:block">
+          {/* 높이 기준 맞춤: 화면 높이 안에 휴대폰 프레임이 다 들어오게 */}
+          <div className="mx-auto w-full max-w-[min(100%,calc((100dvh-320px)*9/16))]">{preview()}</div>
+        </section>
+
+        <aside aria-labelledby="media-title" className="sticky top-4 hidden flex-col gap-3 rounded-card border border-line bg-surface p-4 xl:flex">
+          <h2 id="media-title" className="m-0 text-base font-semibold">
+            이미지
+          </h2>
+          {mediaGrid}
+        </aside>
       </div>
+
+      {!isWide && (
+        <AssetPicker open={pickerOpen} title={selected ? `장면 #${selected.order} 이미지` : '이미지'} onClose={() => setPickerOpen(false)}>
+          <MediaGrid
+            projectId={project.id}
+            assets={project.assets}
+            scenes={scenes}
+            selectedScene={selected}
+            onPick={(assetId) => {
+              pickAsset(assetId)
+              setPickerOpen(false)
+            }}
+          />
+        </AssetPicker>
+      )}
 
       <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-line bg-bg/95 px-4 py-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
         <p className="m-0 text-sm text-muted" aria-live="polite">

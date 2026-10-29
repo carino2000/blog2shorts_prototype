@@ -1,3 +1,5 @@
+import type { Scene } from '../api/types'
+
 // 렌더 기준값. 백엔드 CLAUDE.md 5장 ⑥(자막)·⑦(렌더)과 같은 값이어야 미리보기가 결과물과 같다.
 // 미리보기는 이 값을 프레임 크기에 대한 비율로 쓴다(1080×1920 기준 px).
 
@@ -34,4 +36,9 @@ export function previewSubtitle(text: string): string {
   const firstClause = trimmed.split(/(?<=[.?!,])\s*/)[0] ?? trimmed
   const chars = [...firstClause]
   return chars.length > SUBTITLE_CHUNK_CHARS ? `${chars.slice(0, SUBTITLE_CHUNK_CHARS).join('')}…` : firstClause
+}
+
+/** 미리보기 자막: 렌더 전엔 문구 앞부분, 렌더 후엔 첫 자막 덩어리(6-4) */
+export function sceneSubtitle(scene: Pick<Scene, 'text' | 'subtitles'>): string {
+  return scene.subtitles[0]?.text ?? previewSubtitle(scene.text)
 }
