@@ -1,0 +1,42 @@
+# 비밀값
+.env
+.env.*
+!.env.example
+
+# 파이썬
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 노드
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# 백엔드 실행 중 생성 파일(이미지·음성·자막·영상)
+backend/data/*
+!backend/data/.gitkeep
+
+# 생성된 미디어는 어디서든 커밋하지 않음 (프론트 mock 샘플만 예외)
+*.mp4
+*.mp3
+*.wav
+!frontend/public/mock/*.mp4
+
+# 로그
+logs/
+*.log
+
+# 에디터·OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code 개인 설정 (공유 설정 .claude/settings.json, launch.json은 커밋)
+.claude/settings.local.json
+**/.claude/settings.local.json

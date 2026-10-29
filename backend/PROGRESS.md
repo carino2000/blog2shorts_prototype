@@ -1,0 +1,75 @@
+# 백엔드 진행표
+
+> 백엔드 세션이 "작업 시작해"를 받으면 이 파일을 읽고 첫 `[~]` 또는 `[ ]` 단계 하나를 한다(`CLAUDE.md` 0장).
+> 표시: `[ ]` 안 함 · `[~]` 진행 중 · `[x]` 완료 · `[!]` 막힘(이유를 작업 기록에)
+> 단계 내용의 상세는 `CLAUDE.md` 5·8장. 이 파일은 **상태·필요 조건·완료 조건**만 적는다.
+
+## 사람이 미리 해 둘 일
+
+| # | 할 일 | 명령·방법 | 필요한 단계 |
+|---|---|---|---|
+| H1 | 가상환경 만들 Python 3.13 | 이미 설치됨(`py -3.13`) | B1 |
+| H2 | FFmpeg 설치 | `winget install --id Gyan.FFmpeg` → 앱·터미널 재시작 → `ffmpeg -version` | B3 |
+| H3 | 자막 폰트 | Google Fonts에서 Noto Sans KR 내려받아 `static/NotoSansKR-Bold.ttf`를 `backend/fonts/`에 복사 | B3 |
+| H4 | 네이버 글 5건 | 성격이 다른 실제 글 URL 5개(사진 많은 글, 사진 없는 글, 구 에디터 글 포함 권장)를 `samples/extract/urls.txt`에 한 줄씩 | B4 |
+| H5 | LLM 키 | `.env.example`을 `.env`로 복사, `LLM_API_KEY`·`LLM_MODEL` 입력 | B5 |
+| H6 | TTS 키 | Google Cloud 서비스 계정 JSON을 한 줄 문자열로 `TTS_CREDENTIALS_JSON`에, `TTS_VOICE` 입력 | B8 |
+
+## 단계
+
+- [ ] **B1. 뼈대·health**
+  - 필요: H1
+  - 할 일: `.venv` 생성, `requirements*.txt`, `main.py`·`config.py`, `GET /api/health`, CORS, `.env.example`(4장 변수 이름만), `README.md`, pytest 설정(`external` 마커 등록, 기본 실행에서 제외), `tests/test_health.py`
+  - 완료: `pytest` 통과, 서버 실행 후 `curl localhost:8000/api/health` → `{"ok":true}`, `/docs` 열림
+
+- [ ] **B2. 모델·저장소·가짜 파이프라인**
+  - 필요: B1
+  - 할 일: `models.py`(통합기획서 6-1 그대로, camelCase), `errors.py`(공통 오류 형식), `store.py`, `POST /api/projects`·`GET /api/projects/{id}`를 sleep + 샘플 데이터로 `extracting → scripting → ready` 전이. `GET /api/assets/{id}`는 샘플 이미지 서빙
+  - 완료: pytest로 전이·404·오류 형식 확인, `/openapi.json`의 `Project` 필드명이 6-1과 일치(목록 비교 결과를 보고에 첨부)
+  - 이 단계가 끝나면 프론트가 `VITE_USE_MOCK=false`로 붙어 볼 수 있다
+
+- [ ] **B3. 렌더 PoC** (`scripts/poc_render.py`)
+  - 필요: B1, H2, H3
+  - 할 일: 이미지 3장(가로·세로·정사각, `tests/fixtures/images`에 코드로 생성) + 음성 3개(FFmpeg `sine`/무음으로 생성, TTS 안 씀) + 한글 자막 → 1080×1920 MP4. 모션 5종 확인
+  - 완료: `ffprobe`로 해상도·fps·길이 확인, 한글 자막이 깨지지 않음(프레임 하나를 png로 뽑아 눈으로 확인), 장면당 렌더 시간을 `samples/render_poc/RESULT.md`와 `CLAUDE.md` 5장 ⑦에 기록
+
+- [ ] **B4. 네이버 구조 추출** (`pipeline/naver.py`, `scripts/try_extract.py`)
+  - 필요: B2, H4
+  - 할 일: URL 파싱(허용 4종·거부 3종), 글 HTML 요청, 블록 추출, 이미지 다운로드 규칙. 5건 결과 JSON을 `samples/extract/`에 저장, HTML은 `tests/fixtures/naver_html/`에 저장해 오프라인 테스트
+  - 완료: 단위 테스트 통과, 5건 중 몇 건이 맞게 추출됐는지·틀린 건 무엇인지 표로 보고. 🟡 항목(모바일 주소 vs PostView, 셀렉터, Referer)의 결론을 `CLAUDE.md`에 반영
+
+- [ ] **B5. 관계·대본** (`relate.py`, `script.py`, `providers/llm_*`)
+  - 필요: B4, H5
+  - 할 일: ② 연결, ③ 프롬프트·JSON 출력·검증기·1회 재요청, 토큰 사용량 로그
+  - 완료: 검증기 단위 테스트(정상 1·위반 5) 통과, 실제 LLM 호출은 `samples/extract`의 5건에 대해서만(`-m external`), 결과를 `samples/script/`에 저장하고 원문에 없는 숫자 여부를 보고
+
+- [ ] **B6. 매칭·실제 파이프라인 연결** (`match.py`, `pipeline` ①~④)
+  - 필요: B5
+  - 할 일: 가짜 파이프라인을 실제로 교체, 본문 입력(`type: "text"`) 경로, `needsUpload`
+  - 완료: 매칭 단위 테스트(이미지 0·1·장면보다 적음), 실제 URL 1건으로 `ready`까지 도달
+
+- [ ] **B7. 편집 API** (`PATCH /scenes`, `POST /assets`, `/regenerate`)
+  - 필요: B6
+  - 할 일: `CLAUDE.md` 5장 "장면 수정 규칙", 업로드 검사(jpg/png/webp, 10MB, Pillow로 열림)
+  - 완료: 규칙별 pytest, 잘못된 파일 → `UPLOAD_INVALID`
+
+- [ ] **B8. TTS·자막** (`tts.py`, `subtitle.py`, `providers/tts_*`)
+  - 필요: B7, H6
+  - 할 일: 장면별 TTS + hash 캐시, ffprobe 길이, 자막 분할·ASS 생성
+  - 완료: 자막 분할 단위 테스트(시간 합 = 음성 길이), 같은 문구 2회 실행 시 두 번째는 TTS 호출 0회(로그로 확인). 실제 TTS 실측 속도로 "1초 ≈ 7자" 기준값 갱신 제안
+
+- [ ] **B9. 렌더·영상 API** (`render.py`, `/render`, `/render?from=`, `/video`)
+  - 필요: B3, B8
+  - 할 일: PoC를 파이프라인으로 옮김, 진행률, 동시 1건, 실패 단계 재시도, `?download=1`
+  - 완료: 실제 URL 1건으로 생성 → 렌더 → MP4 1080×1920·30~60초(`ffprobe`), `from=subtitle` 재시도 시 TTS 재호출 없음
+
+- [ ] **B10. 정리**
+  - 필요: B9
+  - 할 일: 24시간 지난 폴더 삭제, 오류 코드별 한국어 메시지 점검, pytest 정리, README 갱신
+  - 완료: 루트 `CLAUDE.md` 2장 시나리오 중 백엔드 몫(1~3, 5~9)을 `/docs`·curl로 통과
+
+## 작업 기록
+
+| 날짜 | 단계 | 확인 결과 | 남은 문제·사람이 할 일 |
+|---|---|---|---|
+| 2026-10-29 | 준비 | 빈 파일 뼈대 생성(코드 없음) | H1~H6 |
