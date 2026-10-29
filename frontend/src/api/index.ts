@@ -38,7 +38,8 @@ const mockApi: Api = {
   videoUrl: mockRender.videoUrl,
 }
 
-export const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
+// 화면은 mock 여부를 모른다(frontend/CLAUDE.md 7장). 그래서 이 값은 밖으로 내보내지 않는다
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
 
 export const api: Api = USE_MOCK ? mockApi : realApi
 

@@ -1,6 +1,5 @@
 import { Film } from 'lucide-react'
 import { Link } from 'react-router'
-import { USE_MOCK } from '../api'
 import { Stepper, type StepKey } from './Stepper'
 
 export function AppHeader({
@@ -20,9 +19,6 @@ export function AppHeader({
         <Link to="/" className="flex min-h-11 items-center gap-2 font-bold text-ink no-underline">
           <Film aria-hidden="true" className="size-5 text-accent" />
           <span>blog2shorts</span>
-          {USE_MOCK && (
-            <span className="rounded-full border border-line px-2 py-0.5 text-[11px] font-medium text-muted">mock</span>
-          )}
         </Link>
         <Stepper current={step} projectId={projectId} busy={busy} reached={reached} />
       </div>

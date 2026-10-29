@@ -1,7 +1,7 @@
 import { Download, Pencil, RotateCcw } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router'
-import { USE_MOCK, assetUrl, isApiError, videoUrl } from '../api'
+import { assetUrl, isApiError, videoUrl } from '../api'
 import { useRender } from '../api/queries/useRender'
 import type { Project, RenderStage } from '../api/types'
 import { ErrorBanner } from '../components/ErrorBanner'
@@ -127,9 +127,7 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
 
         {videoFailed && (
           <p role="status" className="m-0 rounded-control border border-hook/40 bg-hook/8 p-3 text-sm">
-            {USE_MOCK
-              ? 'mock 모드라 샘플 영상 파일(public/mock/sample.mp4)이 없어 첫 장면 이미지로 대신 보여 줍니다.'
-              : '영상을 불러오지 못했습니다. 새로고침해 보거나 장면 편집에서 다시 만들어 주세요.'}
+            영상을 불러오지 못했습니다. 새로고침해 보거나 장면 편집에서 다시 만들어 주세요.
           </p>
         )}
 
