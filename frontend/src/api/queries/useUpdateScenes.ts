@@ -89,12 +89,14 @@ export function useUpdateScenes(projectId: string) {
     [flush],
   )
 
-  /** 서버 장면 위에 아직 저장 안 된 변경을 겹친 값 */
+  /** 서버 장면 위에 아직 저장 안 된 변경을 겹친 값. 문구가 바뀐 장면은 저장 후 서버처럼 길이·자막을 비운다(6-2) */
   const applyDrafts = useCallback(
     (scenes: Scene[]): Scene[] =>
       scenes.map((s) => {
         const d = drafts[s.id]
-        return d ? { ...s, ...d } : s
+        if (!d) return s
+        const textChanged = d.text !== undefined && d.text !== s.text
+        return { ...s, ...d, ...(textChanged ? { durationSec: null, subtitles: [] } : {}) }
       }),
     [drafts],
   )
