@@ -7,7 +7,7 @@
 
 ## 단계
 
-- [ ] **F1. TS 전환·스타일 기반**
+- [x] **F1. TS 전환·스타일 기반**
   - 필요: Node 24·npm 11(설치 확인됨)
   - 할 일: 기존 JS 템플릿을 TS로(`tsconfig*.json`, `.tsx`, `vite.config.ts`, strict), 데모 파일 삭제, Tailwind v4 + `@theme` 토큰(라이트·다크), Pretendard, React Router 뼈대(5개 경로), 빈 `InputPage`, Vite 프록시 `/api → localhost:8000`, `.env.example`(`VITE_API_BASE_URL=`, `VITE_USE_MOCK=true`), README 실행 방법, `npm test` 스크립트(Vitest)
   - 완료: `npm run build`·`npm run lint`·`npm test` 통과, 브라우저에서 빈 입력 화면이 라이트·다크 둘 다 토큰 색으로 보임
@@ -62,3 +62,4 @@
 | 날짜 | 단계 | 확인 결과 | 남은 문제·사람이 할 일 |
 |---|---|---|---|
 | 2026-10-29 | 준비 | Vite JS 템플릿 상태, CLAUDE.md·진행표 작성 | 없음 |
+| 2026-10-29 | F1 | build·lint(0건)·test(1 passed) 통과. 1280px 라이트·375px 다크에서 bg·surface·ink·line 계산값이 토큰과 일치, Pretendard 로드, 가로 스크롤 없음, 5개 경로 렌더. `/api` 프록시가 8000으로 넘기는 것 확인(백엔드 미실행이라 502) | TypeScript 7.0.2·React Router 8.5.1·Vitest 5가 설치됨(최신). 이후 단계에서 API 차이가 보이면 기록 |

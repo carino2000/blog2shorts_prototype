@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+/* 디자인 토큰 (frontend/CLAUDE.md 5장). 값은 여기서만 정한다 */
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #16181d;
+  --muted: #6a7080;
+  --line: #e1e4ea;
+  --accent: #2f5bff;
+  --hook: #e8890c;
+  --body: #5b6475;
+  --cta: #15995a;
+  --danger: #d23a2e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #111317;
+    --surface: #1a1d23;
+    --ink: #eceef2;
+    --muted: #9198a6;
+    --line: #2c3039;
+    --accent: #6e8cff;
+    --hook: #f2a541;
+    --body: #9aa3b5;
+    --cta: #3cc786;
+    --danger: #f07267;
+  }
+}
+
+/* bg-bg, bg-surface, text-ink, text-muted, border-line, bg-accent, text-hook ... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-hook: var(--hook);
+  --color-body: var(--body);
+  --color-cta: var(--cta);
+  --color-danger: var(--danger);
+}
+
+@theme {
+  --font-sans:
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo',
+    'Malgun Gothic', sans-serif;
+  /* 카드 12px, 버튼·입력 8px (rounded-card, rounded-control) */
+  --radius-card: 12px;
+  --radius-control: 8px;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
