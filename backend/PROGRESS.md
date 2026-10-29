@@ -17,7 +17,7 @@
 
 ## 단계
 
-- [ ] **B1. 뼈대·health**
+- [x] **B1. 뼈대·health**
   - 필요: H1
   - 할 일: `.venv` 생성, `requirements*.txt`, `main.py`·`config.py`, `GET /api/health`, CORS, `.env.example`(4장 변수 이름만), `README.md`, pytest 설정(`external` 마커 등록, 기본 실행에서 제외), `tests/test_health.py`
   - 완료: `pytest` 통과, 서버 실행 후 `curl localhost:8000/api/health` → `{"ok":true}`, `/docs` 열림
@@ -73,3 +73,4 @@
 | 날짜 | 단계 | 확인 결과 | 남은 문제·사람이 할 일 |
 |---|---|---|---|
 | 2026-10-29 | 준비 | 빈 파일 뼈대 생성(코드 없음) | H1~H6 |
+| 2026-10-29 | B1 | pytest 3 passed. uvicorn 실행 후 `/api/health` → `{"ok":true}`, `/docs` 200. 시작 시 ffmpeg·ffprobe·폰트 없음 경고 출력 확인 | H2(FFmpeg)·H3(폰트) 없음 → B3 전에 필요. pytest-asyncio loop scope 경고·starlette httpx2 경고는 미처리 |
