@@ -1,0 +1,458 @@
+{
+  "url": "https://blog.naver.com/copper567/224415987199",
+  "ok": true,
+  "seconds": 0.34,
+  "title": "유통관리사3급합격률 이렇게 하면 실패없이 금방 올라가요!",
+  "counts": {
+    "heading": 8,
+    "paragraph": 38,
+    "image": 8
+  },
+  "textChars": 1871,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a8",
+      "origin": "blog",
+      "url": "/api/assets/a8",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "유통관리사3급합격률 이렇게 하면 실패없이 금방 올라가요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "요즘 유통 관련 자격증을 알아보시는 분들 많으시죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "그중에서도 유통관리사 3급을 준비하시는 분들이 많이 계시더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "아무래도 입문 등급이라서 진입장벽이 낮아 많이들 응시하시는 것 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "오늘은 시험 구성과 일정, 유통관리사3급 합격률까지 합격자들의 후기와 함께 모두 총정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "1. 유통관리사는 어떤 자격증인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "heading",
+      "text": "유통관리사는요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "대한상공회의소가 주관·시행하는 국가공인 자격증으로,",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "판매·유통 현장 전문인력을 양성하기 위해 만들어졌어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "✅응시 자격 ▶1급 : 7 년 이상 경력 요건 필요 ▶2급·3급: 응시자격 제한 없음",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "✅ 이런 분들이 주로 응시해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "▶유통, 물류 분야 입문자 및 전공자 유통업계에 대한 기초 지식을 쌓기 위해 응시 ▶소매업 및 매장 종사자 백화점, 마트 등 소매 현장에서 점장, 매니저 등으로 성장하기 위해 응시 ▶비전공자 및 입문 단계 스펙업 희망자 관련 분야 기본 역량을 빠르게 다지고, 자격증 취득을 목표로 응시",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "➕추가로 채용 시 CU·농협 계열·코레일 등에서 우대한다는 이야기도 있더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "heading",
+      "text": "2. 유통관리사 3급 시험 구성과 일정",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "✅유통관리사 3급 시험 구성",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "시험 구성은 위와 같습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "✅유통관리사3급 합격률 유통관리사3급합격률은 평균적으로 40%대 후반~60%대 입니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "<최근 5년 간 합격률 추이> 2025년: 47.4%(응시 4,634명 합격 2,195명) 2024년: 64.0%(응시 4,678명/합격 2,996명) 2023년: 48.9%(응시 5,049명/합격 2,470명) 2022년: 56.5%(응시 5,200명/합격 2,940명) 2021년: 63.9%(응시 5,709명/합격 3,650명)",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "heading",
+      "text": "❓올해 남은 일정은 어떻게 될까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "오늘(9/18) 기준으로 아래와 같이 남아있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "제2회는 발표만 남았고, 3회가 남아있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "heading",
+      "text": "3. 합격자들은 어떻게 공부했을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "합격자분들의 후기들을 보고 유용한 팁들을 한 번 가져와봤어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "1️⃣ 기출문제는 최소 3년치, 가능하면 5개년까지 반복해서 풀어보기",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "2️⃣ 오답노트를 만들어서 시험 직전까지 반복 복습",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "3️⃣ 개념 정리는 강의와 요약집 2회독으로 충분",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "수험생 커뮤니티에서도 \"3급은 기출 위주로 하면 된다\"는 이야기가 많더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "위와 같은 팁들을 활용하면 유통관리사3급합격률, 쉽게 올릴 수 있지 않을까 싶습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "heading",
+      "text": "4. 유통관리사3급합격률, 자격동스쿨 강의로 올려보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "좀 더 높은 효율로 학습하고 싶으시다면, 문제풀이까지 같이 해주는 강의의 도움을 받는 것도 좋은 방법입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "이 강의 한 번 참고해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "자격동스쿨의 [2026 유통관리사3급 한 번에 패스]가 정말 괜찮게 구성되어 있으니까 한 번 확인해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "paragraph",
+      "text": "✅수강기간: 180일 ✅수강료: 150,000원 (정가 250,000원, 40% 즉시할인) ✅교재: 0원(포함)",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "paragraph",
+      "text": "제가 이 강의를 추천드리는 이유는 아래 3가지 때문이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "paragraph",
+      "text": "첫째! 합격에 필요한 핵심만 뽑은 커리큘럼",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "paragraph",
+      "text": "핵심이론 →단원별 문제풀이→ 기출해설 순서로 수업이 진행됩니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "\"45문항 위해 500페이지 다 야 할까요?\"라는 질문에 \"중요한 부분만 공부해도 충분히 합격 가능하다\"고 이야기 하는 것도 같은 맥락으로 이야기한 것 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "paragraph",
+      "text": "둘째! 변달수 교수님의 보적인 강의력",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "paragraph",
+      "text": "초보도 쉽게 이해할 수 있는 개념 설명과 기출유형·출제경향을 심층 분석한 예상문제까지 꼼꼼하게 준비돼 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "image",
+      "text": null,
+      "assetId": "a8",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "셋째! 변경된 출제기준을 반영해 핵심내용을 압축 정리한 교재가 포함돼 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "유통관리사3급합격률을 높이는 데 이런 군더더기 없는 강의로 준비하면 훨씬 더 시간 효율적으로 대비하실 수 있을 것 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "paragraph",
+      "text": "지금까지 유통관리사3급합격률과 시험 구성, 일정, 공부팁까지 정리해봤는데 어떠셨나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "꾸준히 준비만 하시면 충분히 쉽게 도전할 만한 자격증이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "paragraph",
+      "text": "제3회 시험까지 시간이 남아있으니 오늘부터 차근차근 준비해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

@@ -37,7 +37,7 @@
 | 웹 | ✅ FastAPI + Uvicorn | `/docs`에서 자동 문서로 확인 |
 | 모델 | Pydantic v2 | `alias_generator=to_camel`, `populate_by_name=True` |
 | HTTP | httpx | 크롤링·외부 API |
-| HTML 파싱 | BeautifulSoup4 + lxml | 🟡 헤드리스 브라우저는 쓰지 않음(정적 HTML로 충분한지 작업4에서 확인) |
+| HTML 파싱 | BeautifulSoup4 + lxml | ✅ 헤드리스 브라우저는 쓰지 않음(B4에서 정적 HTML로 충분함을 확인, 5장 ①) |
 | 영상 | ✅ FFmpeg·ffprobe CLI를 `subprocess`로 | MoviePy 쓰지 않음 🟡 |
 | 작업 실행 | 🟡 FastAPI `BackgroundTasks` + 메모리 저장소 | 렌더는 `asyncio.Semaphore(1)`로 동시 1건 |
 | 테스트 | pytest | |
@@ -149,11 +149,11 @@ data/                   # DATA_DIR. 실행 중 생성. 커밋 금지(.gitkeep만
 
 ### ① 구조 추출 `pipeline/naver.py` — status `extracting`
 1. URL에서 `blogId`, `logNo` 추출. 허용 형태는 `../frontend/CLAUDE.md` 6-1과 동일. 실패 → `NOT_NAVER_URL`.
-2. 데스크톱 주소는 본문이 iframe이므로 실제 글 HTML을 직접 요청한다. 후보: `https://m.blog.naver.com/{blogId}/{logNo}` 또는 `https://blog.naver.com/PostView.naver?blogId={blogId}&logNo={logNo}` 🟡 (어느 쪽이 안정적인지 작업4에서 확인)
-3. 본문 컨테이너를 찾는다. 스마트에디터 ONE은 `.se-main-container` 안의 `.se-component`(텍스트 `.se-text`, 소제목 `.se-sectionTitle`, 이미지 `.se-image`·`.se-imageStrip`), 구 에디터는 `#postViewArea`로 알려져 있다 🟡(추정, 실제 글로 확인)
-4. 문서 순서대로 `Block[]` 생성: heading / paragraph(빈 줄 제거, 연속 문단 병합은 하지 않음) / image(캡션은 `text`).
-5. 이미지 URL은 `data-lazy-src` 우선, 없으면 `src`. 썸네일 파라미터(`?type=w80_blur` 등)는 큰 크기로 바꾼다 🟡. 서버가 내려받아 `DATA_DIR/{projectId}/assets/`에 저장하고 `Asset`을 만든다. 요청 시 `Referer: https://blog.naver.com/` 헤더가 필요할 수 있다 🟡.
-6. 이미지 다운로드 규칙: 최대 20장, 장당 10MB, 가로·세로 200px 미만(아이콘·스티커) 제외, Pillow로 열어 크기 기록.
+2. 데스크톱 주소는 본문이 iframe이므로 실제 글 HTML을 직접 요청한다. ✅ 확인(10/29, B4): **모바일 `https://m.blog.naver.com/{blogId}/{logNo}`를 먼저** 요청하고(정적 HTML에 본문 있음, 105KB), 본문이 없거나 오류면 `PostView.naver?blogId=&logNo=`(248KB)로 한 번 더. 헤드리스 브라우저는 필요 없다. 없는 글은 HTTP 404(본문은 `errorType=noPost`로 보내는 스크립트), 없는 블로그는 200 + 본문 없는 빈 화면이다.
+3. 본문 컨테이너를 찾는다. ✅ 확인(스마트에디터 ONE, 19건): `.se-main-container` 안의 `.se-component`. 종류는 class `se-{종류}`로 구분한다 — `text`→paragraph, `sectionTitle`→heading, `quotation`→40자 이하면 heading·넘으면 paragraph 🟡(이 블로그는 인용구를 소제목으로 씀), `table`→행을 " / "로 이은 paragraph, `image`·`imageStrip`·`imageGroup`·`imageSlide`→image, `sticker`·`video`·`horizontalLine` 등은 버림. 제목은 컨테이너 **밖** `.se-documentTitle .se-title-text`에 있고(`.se-documentTitle` 전체엔 카테고리·작성자·날짜가 섞임) heading `b1`으로 넣는다. 구 에디터 `#postViewArea` 처리는 만들었지만 🟡 실제 구 에디터 글로 확인하지 못했다.
+4. 문서 순서대로 `Block[]` 생성: heading / paragraph / image(캡션은 `text`). 한 `.se-text` 안의 `.se-text-paragraph` 줄은 빈 줄(공백·`​`)을 경계로 문단을 나누고, 한 문단 안의 줄바꿈은 공백으로 잇는다(블로그 줄바꿈은 문장 중간에 들어감). 받지 못한 이미지는 블록에서도 뺀다.
+5. 이미지 URL은 `data-lazy-src` 우선, 없으면 `src`(`src`는 `?type=w80_blur` 흐린 썸네일). ✅ 확인: `type`을 `w966`으로 바꾸면 가장 큰 표준 크기(966px 폭)를 받고, Referer 없이도 200이다(헤더는 넣어 둠). `*.pstatic.net` 이미지 서버만 받는다(글에 외부 추적 이미지가 섞여 있었음). 서버가 내려받아 `DATA_DIR/{projectId}/assets/`에 저장하고 `Asset`을 만든다.
+6. 이미지 다운로드 규칙: 최대 20장, 장당 10MB, 가로·세로 200px 미만(아이콘·스티커) 제외, Pillow로 열어 크기 기록. jpg·png·webp는 그대로, 그 외(gif)는 첫 프레임을 png로 저장.
 7. 글이 없거나 비공개 → `POST_NOT_FOUND`, 파싱 결과 문단 0개 → `EXTRACT_FAILED`.
 8. 본문 입력(`type: "text"`)이면 빈 줄 기준으로 paragraph 블록만 만들고 이미지 0장 → `needsUpload=true`. 200자 미만 → `TEXT_TOO_SHORT`.
 

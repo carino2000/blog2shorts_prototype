@@ -1,0 +1,465 @@
+{
+  "url": "https://blog.naver.com/copper567/224397112967",
+  "ok": true,
+  "seconds": 0.41,
+  "title": "전기기능사합격률 3개년 합격률, 단기에 합격하는 체계적인 공부방법 공유",
+  "counts": {
+    "heading": 7,
+    "paragraph": 40,
+    "image": 8
+  },
+  "textChars": 1786,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 644
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 530
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a8",
+      "origin": "blog",
+      "url": "/api/assets/a8",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "전기기능사합격률 3개년 합격률, 단기에 합격하는 체계적인 공부방법 공유",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "요즘 전기기능사 준비하시는 분들 많이 늘어난 거 아시나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "paragraph",
+      "text": "2023년 6만 명이었던 필기 응시자가 2025년에는 6만 7천명대까지 늘어났는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "제 주변에서도 준비하시는 분들이 1-2명 밖에 안계셨는데, 지금은 몇 분 되시는 것 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "오늘은 전기기능사를 준비하시는 분들, 이제 막 준비하려고 계획중이신 분들을 위해서",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "최근 3개년 전기기능사합격률과 남은 시험일정, 공부팁까지 한번에 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "1. 전기기능사는 어떤 시험인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "heading",
+      "text": "전기기능사",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "✅응시자격 나이나 학력, 경력 상관없이 누구나 도전할 수 있어요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "✅시험 방식",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "필기는 CBT 방식 60문항이고 실기는 필답형 없이 작업형 단일로만 진행돼요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "이렇게 보면 실기 시험시간이 꽤 길다는 게 느껴지시나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "이 부분이 아무래도 합격률에 영향을 주는 것 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "heading",
+      "text": "2. 남은 시험일정과 전기기능사합격률은요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "✅ 먼저 2026년 하반기 남은 일정부터 정리해드릴게요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "필기는 이미 접수가 끝나서, 시험을 남겨두고 있고 실기는 아직 여유가 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "이제 막 준비를 시작하신 분들이라면, 내년 1회에 응시하는 것을 목표로 잡으시는 게 현실적입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "이제 진짜 궁금하실 합격률 데이터를 볼게요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "최근 3개년 전기기능사합격률을 보면 필기는 완만하게 오르고 실기는 소폭 내려가는 흐름이에요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "💡그런데 눈에 띄는 건 실기 합격률이 필기보다 2배 이상 높다는 점이에요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "필기만 제대로 준비하면 실기는 상대적으로 수월하게 통과하는 분들이 많다는 뜻이겠죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "heading",
+      "text": "3. 전기기능사합격률 높이는 공부팁은요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "❓어떻게 공부해야 효율적으로 준비할 수 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "1️⃣ 필기는 문제은행 방식이라 기출문제 반복이 가장 중요합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "계산문제는 답이 아니라 공식 자체를 외워야 숫자가 바뀌어도 대응할 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "2️⃣ 실기는 눈으로만 보지 말고 직접 도면을 그려보며 연습하세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "작업순서는 아래의 5단계 순서로 진행해요! 회로도 표기 ▶결선도 확인 ▶기구 배치 ▶배선 ▶배관 설치 ➕ 시퀀스 회로 작업은 2시간 안에 끝내는 걸 목표로 잡는 게 좋아요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "3️⃣ 결선을 마친 뒤에는 최소 3회 이상 검증하세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "4️⃣ 와이어 스트리퍼, 테스터기 같은 준비물은 미리 챙겨두세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "heading",
+      "text": "4. 전기기능사 강의는 어디서 들을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "혼자서 준비하시기가 막막하신 분들은 필기와 실기 모두 체계적인 강의로 준비하시는 것도 전기기능사합격률을 높이는 좋은 방법이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "제가 추천드릴 강의는 자격동스쿨의 [전기기능사 필기 + 실기] 패키지입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "paragraph",
+      "text": "✅가격 : 261,000원(정가 290,000원) ✅교재비 : 29,000원 ✅수강기간 : 90일",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "paragraph",
+      "text": "제가 이 강의를 추천드리는 이유는 아래 3가지 때문이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "paragraph",
+      "text": "1️⃣ 전기와 관련된 필수 개념부터 체계적으로 짚어주고, 시험에 빈출 포인트 중심의 정리로 이해와 암기를 도와줘요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "2️⃣ 출제 경향을 고려한 학습 전략으로 단기 합격을 목표하시는 분들에게도 잘 맞아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "paragraph",
+      "text": "3️⃣ 공구 규격 같은 실무 이론까지 함께 다뤄서 현장 감각도 키울 수 있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "image",
+      "text": null,
+      "assetId": "a8",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "paragraph",
+      "text": "실제 수강하신 분들의 후기도 당연히 꼼꼼히 체크해봤는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "paragraph",
+      "text": "\"세세한 부분까지 놓치지 않고 친절하게 설명해주셔서 감사하다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "\"어떻게 자격증 공부를 해야 할지 막막헀는데, 덕분에 많은 도움이 되었습니다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "등의 좋은 후기들이 쌓여 있어서 신뢰가 가더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "paragraph",
+      "text": "강의가 어떻게 진행되는지 참고해보고 싶으신 분들은 맛보기 강의를 첨부했으니 확인해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "오늘은 전기기능사합격률과 시험일정, 공부팁까지 정리해봤습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "paragraph",
+      "text": "위에서 말했듯이 실기 합격률이 훨씬 높으니, 필기만 제대로 잡으면 수월하게 합격하실 수 있을 거에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b55",
+      "type": "paragraph",
+      "text": "전기기능사는 취업 활용도도 넓은 자격증이니까 포기하지말고! 꾸준히 준비해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

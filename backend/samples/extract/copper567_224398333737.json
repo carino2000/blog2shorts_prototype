@@ -1,0 +1,493 @@
+{
+  "url": "https://blog.naver.com/copper567/224398333737",
+  "ok": true,
+  "seconds": 0.33,
+  "title": "식물보호산업기사교재는 이렇게 고르세요 필기실기 일정과 공부 팁",
+  "counts": {
+    "heading": 7,
+    "paragraph": 42,
+    "image": 9
+  },
+  "textChars": 1965,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 709
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 571,
+      "height": 227
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 372,
+      "height": 230
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 422,
+      "height": 587
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a8",
+      "origin": "blog",
+      "url": "/api/assets/a8",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a9",
+      "origin": "blog",
+      "url": "/api/assets/a9",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "식물보호산업기사교재는 이렇게 고르세요 필기실기 일정과 공부 팁",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "식물보호산업기사 준비하시는 분들!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "paragraph",
+      "text": "어떤 식물보호산업기사교재로 공부해야 할지 고민이시죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "병해충 방제, 농약 관련 지식을 검증하는 국가기술자격이다 보니까 과목도 많고 준비할 게 많아서",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "교재 선택이 더 고민되실텐데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "paragraph",
+      "text": "오늘은 기본적인 식물보호산업기사에 대한 기본적인 정보부터 왜 교재 선택이 중요한지, 어떤 교재가 좋은지 차근차근 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "heading",
+      "text": "1. 식물보호산업기사는 어떤 자격증인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "heading",
+      "text": "식물보호산업기사",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "✅관련 부처: 농촌진흥청 ✅시행: 한국산업인력공단(큐넷)",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "❓시험은 어떻게 구성되어 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "✅필기 괌고(총 4과목) 식물병리학/농림해충학/재배원론/농약학",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "실기는 예전엔 작업형이 있었지만 2023년부터는 필답형 100%로 바뀌었다는 점! 꼭 기억해두세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "heading",
+      "text": "2. 2026년 남은 시험일정",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "오늘 기준(9월 2일)으로 1·2회차는 이미 끝났고, 3회차 필기도 마무리되어서 실기시험 일정만 남아 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "🚨실기시험 응시 예정이신 분은 까먹지 않게 캘린더에 적어두세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "만약 이제 막 준비를 시작하셨거나, 취득하시기로 결정하신 분들은 내년 1회에 취득하는 것을 목표로 하시는 게 현실적인 목표예요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "heading",
+      "text": "3. 식물보호산업기사교재 선택이 중요한 이유",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "❓왜 교재 선택부터 신경 써야 할까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "필기 4과목이 각각 독립된 전공 영역이라 한 권으로 이론과 기출을 같이 잡아주는 식물보호산업기사교재를 고르는 게 효율적인 학습이 가능하고, 시간도 절약할 수 있기 때문인데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "또 실기가 2023년부터 필답형으로 바뀌었기 때문에!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "알고 있는 이론적 지식을 서술하는 연습이 중요해졌어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "‼️그래서 이런 점들이 잘 반영된 식물보호산업기사교재로 공부하시는 게 중요합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "✅합격자 후기로 본 공부 팁",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "1️⃣기출문제를 여러 차례 회독하는 것이 중요 어떤 자격증 시험이던지 기출문제를 반복해서 풀어보는 것은 정말 중요해서 어딜가나 언급되는 방법인데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "반복풀이로 문제 유형들을 익숙하게 만들고 취약한 부분에 대해서 오답노트를 작성해서 보완하는 게 정석이라면 정석이죠!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "2️⃣실기는 재배학원론 비중이 높다고 하니, 필기 단계부터 탄탄히 공부하기",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "말씀드렸다시피, 실기 시험이 작업형에서 필답형으로 바뀌었기 때문에, 본인이 알고 있는 개념과 이론을 응용해서 서술하는 연습이 필요해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "heading",
+      "text": "4. 어떤 강의를 들으면 좋을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "혼자서 책만으로 공부하시는 것보다 인강을 활용해서 체계적으로 공부하시는 게 훨씬 효율적이실텐데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "식물보호산업기사 인강은 이 강의를 참고해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "paragraph",
+      "text": "바로 자격동스쿨의 [식물보호산업기사 필기+실기 패키지]입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "✅수강기간: 180일 ✅수강료: 500,000원 → 480,000원 ✅교재: 81,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "paragraph",
+      "text": "교재는 [명품] 식물보호기사· 산업기사 필기와 과년도 필기와 실기 교재를 사용하고 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "paragraph",
+      "text": "이 강의의 강사님께서 만드신 교재라서 강의와 연계성이 높아 더 효율적으로 학습하실 수 있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "제가 이 강의를 추천드리는 이유는 아래 3가지 때문이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "paragraph",
+      "text": "첫째! 핵심 내용을 강조해줘서 자격증 취득에 실질적으로 도움이 됩니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "paragraph",
+      "text": "둘째! 체계적이고 꼼꼼한 학습 방식으로 진행됩니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "paragraph",
+      "text": "셋째! 이해하기 쉬운 설명으로 어려운 개념도 편하게 따라갈 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "image",
+      "text": null,
+      "assetId": "a8",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "paragraph",
+      "text": "다른 수강생분들이 왜 이 강의를 선택했는지도 나와 있어서 확인해봤는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "\"학원은 한번 들으면 다시 들을수 없지만 인강은 다시 들을수 있고 반복학습이 가능하기 때문이다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "\"선생님의 샘플강의를 듣고 결정하였어요. 내용전개가 체계적이고 설명이 군더더기없이 깔끔합니다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "paragraph",
+      "text": "등의 이유로 선택하셨더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "image",
+      "text": null,
+      "assetId": "a9",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "paragraph",
+      "text": "이번 식물보호산업기사교재와 강의는 이런 분들께 추천드려요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b55",
+      "type": "paragraph",
+      "text": "1️⃣ 식물보호 자격증을 준비하시는 분들 / 2️⃣ 기본기를 탄탄히 다지면서 마스터하고 싶으신 분들 / 3️⃣ 이론적인 내용과 실무 능력을 함께 습득하고 싶으신 분들",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b56",
+      "type": "paragraph",
+      "text": "지금까지 시험에 대한 기본정보, 식물보호산업기사교재 선택의 중요성 강의까지 정리해봤어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b57",
+      "type": "paragraph",
+      "text": "준비할 게 많아 보여도 하나씩 차근차근 따라가시면 충분히 해내실 수 있으니, 취득을 결정하셨다면 꾸준히 준비하시길 바라요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b58",
+      "type": "paragraph",
+      "text": "식물보호산업기사 취득까지 화이팅!!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

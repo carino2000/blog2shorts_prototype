@@ -1,0 +1,493 @@
+{
+  "url": "https://blog.naver.com/copper567/224391745734",
+  "ok": true,
+  "seconds": 0.41,
+  "title": "소방설비산업기사합격률 이렇게 해야 올라갑니다 합격자 시험 구성과 일정, 공부 방법",
+  "counts": {
+    "heading": 7,
+    "paragraph": 44,
+    "image": 8
+  },
+  "textChars": 1983,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 3,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 698
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 544
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 544
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 644
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a8",
+      "origin": "blog",
+      "url": "/api/assets/a8",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "소방설비산업기사합격률 이렇게 해야 올라갑니다 합격자 시험 구성과 일정, 공부 방법",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "소방 관련 자격증, 그중에서도 소방설비산업기사 준비하시는 분들을 주변에서 종종 보는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "그런 분들을 보면 어떻게 시작해야 할지 모르셔서 선뜻 바로 시작하지 못하고 계신 분들 꽤 있더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "소방설비산업기사합격률을 살펴보면 산업기사 등급의 시험이라 꽤 까다롭기도 하고",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "거기에다 공부 방법을 모르니까 시작하기 부담스러워 하시더라고요...",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "paragraph",
+      "text": "그래서 오늘은 이 시험은 어떤 시험이고, 시험 구성과 일정은 어떻게 되는지,",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "최근 소방설비산업기사합격률 추이와 공부법까지 한 번에 정리해드리려고 해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "heading",
+      "text": "1. 소방설비산업기사는 어떤 자격증인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "heading",
+      "text": "소방설비산업기사",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "주관 기관은 한국산업인력공단, 접수와 발표는 모두 큐넷(Q-Net)에서 진행돼요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "✅응시자격 관련 기능사 취득 후 실무경력 1년 이상 관련학과 2년제 이상 졸업(예정)자 실무경력 2년 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "위의 조건 중에 하나를 충족하면 응시하실 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "💡내가 응시자격에 부합하는지 모르시겠다면, Q-net에서 자가진단을 해보시면 답이 나옵니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "❓시험은 어떻게 구성되어 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "시험은 위와 같이 구성되어 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "✅필기 합격기준 과목 당 40점 이상 + 평균 60점 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "✅실기 합격기준 100점 만점에 60점 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "heading",
+      "text": "2. 2026년 시험 일정은 어떻게 되나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "이번엔 올해 취득을 목표로 하는 분들을 위해서 남은 시험 일정을 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "🚨결론부터 말씀드리자면 지금 시작하셨다면 올해는 취득하지 못해요🥲",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "올해에 남은 일정만 정리해봤는데, 2회는 합격자 발표만 남았고, 3회는 이미 필기가 진행되었어요ㅠㅠ",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "기사·산업기사는 연 3회 시행되니까 올해에는 이제 남은 일정이 없습니다...",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "✅ 이제 시작하겠다고 마음 먹은 분들은 내년에 시행되는 시험을 목표로 하셔야 현실적인 학습 계획을 세우실 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "heading",
+      "text": "3. 소방설비산업기사합격률과 공부법은 어떻게 되나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "이제 가장 궁금해하시는 소방설비산업기사합격률을 살펴볼게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "역대 누적으로는 필기 약 37.6%, 실기 약 34.7% 수준의 소방설비산업기사합격률을 보이고 있어요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "최근 3년 간 위에 보시는 것처럼 40% 대의 합격률이 나오기도 했지만!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "난이도는 '중상'정도로 보아야 하는 시험이니까 제대로 준비하셔야 합격할 수 있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "❓그럼 어떻게 공부하는 게 효율적일까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "합격 후기에서 공통적으로 언급되는 팁들을 정리해봤어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "paragraph",
+      "text": "1️⃣ 기출문제 다회독 7개년~16개년 기출을 반복해서 푸는 방식이 가장 많이 언급됐어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "2️⃣ 소방전기일반은 계산 비중이 있어서 강의로 원리부터 이해하는 걸 추천하더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "paragraph",
+      "text": "3️⃣ 필기를 준비할 때부터 실기 (특히 구조 및 원리)를 함께 염두에 두고 학습하면 효율이 좋다고 하네요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "paragraph",
+      "text": "❓준비 기간은 보통 어느 정도인가요? 필기 3~4주, 실기 2달 정도를 잡는 경우가 많았어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "heading",
+      "text": "4. 시작하기 어렵다면? 강의로 공부하세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "paragraph",
+      "text": "혼자 준비하기 막막하시다면 강의를 적극 활용하는 걸 추천드립니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "paragraph",
+      "text": "혼자서 끙끙 앓기보다 체계적인 강의로 시작하면 시간을 효율적으로 쓸 수 있으니까요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "paragraph",
+      "text": "오늘은 자격동스쿨의 소방설비 (산업)기사 전기분야 필기 패키지를 소개해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "paragraph",
+      "text": "특히 필기 시험 과목중에 '전기분야'에 도움이 되는 강의입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "paragraph",
+      "text": "✅수강기간: 90일 ✅가격: 200,000원 (정가 250,000원) ✅구성: 강의 3개 + 교재 3개",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "paragraph",
+      "text": "💡이런 분들에게 특히 추천드려요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "제가 이 강의를 추천드리는 이유는 아래 3가지 때문이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "paragraph",
+      "text": "첫째! 필기 핵심 3과목을 커리큘럼과 교재로 체계적으로 정리해줘요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "paragraph",
+      "text": "둘째! 학습난이도 중급으로 기본기를 다지면서 이론과 실무 감각을 함께 익힐 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "셋째! 이해하기 쉬운 설명으로 흥미를 가지고 학습에 임할 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "image",
+      "text": null,
+      "assetId": "a8",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b55",
+      "type": "paragraph",
+      "text": "✅ 실제 수강후기에서도 강의방식부터 강사, 교재까지 전 항목이 높은 평점을 받고 있었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b56",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b57",
+      "type": "paragraph",
+      "text": "지금까지 소방설비산업기사란 무엇인지부터 시험 구성, 소방설비산업기사합격률, 공부법과 추천 강의까지 정리해드렸는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b58",
+      "type": "paragraph",
+      "text": "특히 공부법 중에는 기출문제 반복 풀이가 정말 중요하니까! 꼭 꾸준히 풀어보시길 바라요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b59",
+      "type": "paragraph",
+      "text": "준비하시는 모든 분들 좋은 결과 있으시길 응원하겠습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

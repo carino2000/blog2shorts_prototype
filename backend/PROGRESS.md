@@ -33,7 +33,7 @@
   - 할 일: 이미지 3장(가로·세로·정사각, `tests/fixtures/images`에 코드로 생성) + 음성 3개(FFmpeg `sine`/무음으로 생성, TTS 안 씀) + 한글 자막 → 1080×1920 MP4. 모션 5종 확인
   - 완료: `ffprobe`로 해상도·fps·길이 확인, 한글 자막이 깨지지 않음(프레임 하나를 png로 뽑아 눈으로 확인), 장면당 렌더 시간을 `samples/render_poc/RESULT.md`와 `CLAUDE.md` 5장 ⑦에 기록
 
-- [ ] **B4. 네이버 구조 추출** (`pipeline/naver.py`, `scripts/try_extract.py`)
+- [x] **B4. 네이버 구조 추출** (`pipeline/naver.py`, `scripts/try_extract.py`)
   - 필요: B2, H4
   - 할 일: URL 파싱(허용 4종·거부 3종), 글 HTML 요청, 블록 추출, 이미지 다운로드 규칙. 5건 결과 JSON을 `samples/extract/`에 저장, HTML은 `tests/fixtures/naver_html/`에 저장해 오프라인 테스트
   - 완료: 단위 테스트 통과, 5건 중 몇 건이 맞게 추출됐는지·틀린 건 무엇인지 표로 보고. 🟡 항목(모바일 주소 vs PostView, 셀렉터, Referer)의 결론을 `CLAUDE.md`에 반영
@@ -75,3 +75,4 @@
 | 2026-10-29 | 준비 | 빈 파일 뼈대 생성(코드 없음) | H1~H6 |
 | 2026-10-29 | B1 | pytest 3 passed. uvicorn 실행 후 `/api/health` → `{"ok":true}`, `/docs` 200. 시작 시 ffmpeg·ffprobe·폰트 없음 경고 출력 확인 | H2(FFmpeg)·H3(폰트) 없음 → B3 전에 필요. pytest-asyncio loop scope 경고·starlette httpx2 경고는 미처리 |
 | 2026-10-29 | B2 | pytest 16 passed(전이·404·422·없는 경로 오류 형식, openapi 필드 11개 스키마가 6-1과 일치, 샘플 대본 규칙). 실서버 폴링으로 extracting→scripting→ready, 이미지 200 확인 | ErrorCode에 NOT_FOUND·INVALID_REQUEST·INVALID_STATE 추가(사람 승인 10/29) → 통합기획서 6-1·프론트 types.ts 반영 필요(백엔드 세션 밖). asset ID는 `/api/assets/{assetId}`에 프로젝트 ID가 없어 전역 유일값(`a`+hex10) 사용 |
+| 2026-10-29 | B4 | pytest 35 passed·1 skipped(external, `-m external`로 따로 1 passed). 실제 글 19건(copper567, 사람이 준 20건 중 중복 1건 제외) 모두 추출 성공: 제목·문단·소제목·이미지 원문 순서 일치, 이미지 6~9장/글(966px), 외부 추적 이미지·200px 미만 제외. 🟡 결론을 CLAUDE.md ①에 반영 | 19건 모두 같은 블로그·스마트에디터 ONE·이미지 있는 글 → 구 에디터·사진 없는 글·다른 작성자 글은 확인 못 함. 테스트용 HTML은 2건만 저장 |

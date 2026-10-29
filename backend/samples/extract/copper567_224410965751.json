@@ -1,0 +1,479 @@
+{
+  "url": "https://blog.naver.com/copper567/224410965751",
+  "ok": true,
+  "seconds": 0.38,
+  "title": "엔클렉스교재 이걸 따져봐야 해요! 엔클렉스 단기 합격 공부를 위한 교재",
+  "counts": {
+    "heading": 6,
+    "paragraph": 43,
+    "image": 8
+  },
+  "textChars": 2095,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 4,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a8",
+      "origin": "blog",
+      "url": "/api/assets/a8",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "엔클렉스교재 이걸 따져봐야 해요! 엔클렉스 단기 합격 공부를 위한 교재",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "간호사 자격증 가지고 계신 분들 중에 미국 간호사 시험을 준비하시려고 엔클렉스교재 알아보고 계신 분들 있으시죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "엔클렉스(NCLEX-RN)는 좋은 교재를 선택하는 것이 굉장히 중요한데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "오늘은 교재를 잘 선택해야 하는 이유에 대해 알아보고!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "어떤 교재들이 있는지, 또 어떤 강의가 좋은지까지 한 번 추천드려 볼게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "1. 엔클렉스교재는 어떤 종류가 있고 후기는 어떨까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "교재가 많아서 어떤 교재를 봐야 할지 많이 고민되실텐데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "대표적인 책들 위주로 소개해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "✅Saunders(사운더스) 정통 이론서로 알려진 원서 종합 리뷰서",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "\"범위가 너무 넓어서 이론은 못 읽고 문제만 풀었다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "\"필요할 때 약물 찾아보는 사전처럼 썼다\" 등과 같은  후기가 있었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "✅333 위아너스 NCLEX-RN 한국어로 압축 정리해 핵심 이론과 단원별 기출을 담은,",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "바쁜 준비생들 사이에서 추천되는 요약형 교재예요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "➕UWorld 온라인 자료 UWorld는 실전 시험과 유사한 난이도의 엔클렉스 대비 문제 은행 사이트입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "책과 병행하는 보조 자료로 쓰이고, 상세한 해설을 제공하는 자료로 준비하시는 분들이 많이 활용하시는 자료예요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "교재별 특징을 표로 정리해볼게요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "heading",
+      "text": "2. 교재를 잘 선택해야 하는 이유는 뭘까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "❓교재 선택은 왜 중요할까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "실제 후기 속 시행착오를 보니까 이유를 명확하게 알 수 있었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "1️⃣ 범위가 너무 넓은 원서로 시작했다가 이론은 못 읽고 문제만 풀었지만, 실전 대응에는 큰 도움이 안 됐다는 후기가 있었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "2️⃣ 영어 해석에서 오답이 늘었다는 후기가 많아, 원서로 시작할지 한글 요약본으로 시작할지 미리 정하는 게 중요해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "3️⃣ 공부법을 계속 바꾸다 보니 시간 낭비로 이어졌다는 후기도 있었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "4️⃣ 1차 때 순서 없이 공부하다 불합격했지만, 개념정리 후 문제풀이로 넘어가는 순서로 바꾸고 2차에서 합격했다는 후기도 있었어요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "✅그래서 나에게 맞는 교재를 신중히 고르고, 전 범위의 이론과 개념을 먼저 훑은 뒤 문제풀이로 넘어가는 것이 중요해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "교재를 고르실 때는 최신판인지, NGN 신유형을 다루는 교재인지도 꼭 확인해보시길 바라요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "heading",
+      "text": "3. 엔클렉스교재 추천, 어떤 교재가 좋을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "위와 같은 시행착오 후기들을 종합했을 때, 딱 한 권을 꼽는다면 저는 \"333 위아너스 NCLEX-RN 엔클렉스\" 를 추천드려요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "✅이 엔클렉스교재는 미국 정통 교재인 Saunders 내용을 기반으로, 핵심 이론과 단원별 기출을 압축해서 정리한 교재입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "\"하루 3시간, 3개월 동안 3교대하면서 무조건 합격\" 이라는 컨셉으로 만들어진 이 교재는",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "영어 원서를 처음부터 끝까지 붙잡고 있기엔 시간이 부족하신 분들에게 추천드리는 압축 정리된 요약형 교재라고 할 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "heading",
+      "text": "4. 엔클렉스교재와 연계된 강의로 완벽 대비하세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "이 엔클렉스 교재와 함께 연계된 강의로 대비하면 좀 더 체계적이고 꼼꼼하게 준비하실 수 있는데요! 이 교재와 연계된 강의는요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "바로 자격동스쿨의 \"333 NCLEX-RN\" 강의입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "paragraph",
+      "text": "✅수강기간: 90일 ✅수강료: 330,000원 (교재 별도 32,000원)",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "paragraph",
+      "text": "제가 이 강의를 추천하는 이유는 아래와 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "1️⃣ 시험을 정확히 파악한 출제 중심 이론 2️⃣ 복잡한 이론들을 한 번에 정리하는 커리큘럼 3️⃣ 실정 중심 문제풀이로 합격을 위한 강의",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "paragraph",
+      "text": "강사님들은 USC대학병원 심장내과 및 NP 출신 강사님들로 구성되어 있어서",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "paragraph",
+      "text": "현장 경험을 바탕으로, 시험에 나오는 내용 위주로 정리돼 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "paragraph",
+      "text": "NGN 신유형(Bow-tie, Trend 등)도 커리큘럼에 포함되어 있으니까, 그 부분도 걱정 안하셔도 되겠더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "image",
+      "text": null,
+      "assetId": "a8",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "강의 후기들도 살펴 봤습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "\"호흡기 청진, 주요질환별 증상, 치료까지... 필요한 핵심만 얻어가는 느낌이에요.\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "paragraph",
+      "text": "\"낯선 어휘도 일부러 보기에 넣어주셔서 용어공부에도 좋았어요.\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "paragraph",
+      "text": "이런 좋은 후기들이 있어서 믿고 추천드려봅니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "실제로 강의가 어떻게 진행되는지 궁금하신 분들은 맛보기 영상도 참고해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b55",
+      "type": "paragraph",
+      "text": "지금까지 엔클렉스교재 종류와 후기, 교재를 잘 선택해야 하는 이유부터 추천 교재와 강의까지 정리해봤습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b56",
+      "type": "paragraph",
+      "text": "나에게 맞는 책부터 차근차근 골라보시고! 학습 계획을 세워서 공부하셨으면 좋겠어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b57",
+      "type": "paragraph",
+      "text": "꾸준히 준비하시면 금방 합격하시리라 생각합니다!! 그럼 화이팅입니다!!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

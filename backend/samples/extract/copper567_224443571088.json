@@ -1,0 +1,311 @@
+{
+  "url": "https://blog.naver.com/copper567/224443571088",
+  "ok": true,
+  "seconds": 0.27,
+  "title": "인디자인독학 실무자들은 이렇게 공부해요",
+  "counts": {
+    "heading": 3,
+    "paragraph": 24,
+    "image": 7
+  },
+  "textChars": 1482,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 1,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 724
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "인디자인독학 실무자들은 이렇게 공부해요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "책이나 잡지, 브로슈어 등을 제작하는 편집디자인 분야에 관심이 있다면 어도비 인디자인을 들어보셨을 텐데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "인디자인은 다양한 인쇄물과 디지털 문서의 레이아웃을 구성할 때 활용되는 편집디자인 프로그램입니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "하지만 처음 프로그램을 접하는 분이라면 어떤 기능부터 배워야 하는지, 혼자서도 익힐 수 있는지 고민될 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "인디자인독학을 시작한다면 모든 기능을 한꺼번에 배우기보다는 기본 도구부터 차근차근 익히는 것이 좋은데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "오늘은 인디자인독학을 준비하는 분들을 위해 초보자도 따라 할 수 있는 효율적인 공부방법을 알아보도록 할게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "１. 기본 도구와 레이아웃부터 익혀보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "인디자인을 처음 공부한다면 먼저 작업 화면과 주요 도구의 기본적인 사용법을 익히는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "텍스트 프레임과 이미지 배치, 페이지 설정과 여백 조절 등 편집디자인에 필요한 기능부터 살펴보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "특히 인디자인은 여러 페이지를 일관된 디자인으로 구성하는 데 유용한 기능을 제공하는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "문단 스타일과 문자 스타일을 활용하면 반복되는 텍스트 서식을 효율적으로 관리하는 방법도 익힐 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "인디자인독학을 진행할 때는 기능 설명만 읽고 넘어가기보다 직접 간단한 페이지를 만들어보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "heading",
+      "text": "２. 실제 편집물을 제작하며 연습해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "기본적인 도구 사용법을 익혔다면 이제 직접 결과물을 만들어보는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "처음에는 한 페이지짜리 안내문이나 간단한 브로슈어를 제작해보고 점차 여러 페이지로 구성된 소책자 작업에 도전해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "인디자인독학에서는 텍스트와 이미지의 배치뿐만 아니라 가독성과 여백, 전체적인 디자인 균형을 살펴보는 것도 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "또한 인쇄용 PDF로 내보내는 방법과 문서 설정을 함께 익혀두면 실제 편집 작업에도 도움이 될 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "혼자 기능을 익히기 어렵다면 온라인 강의를 활용하는 방법도 있는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "제가 소개해드릴 곳은 바로 아이티동스쿨입니다! 아이티동스쿨에서는 디자인 프로그램부터 다양한 IT 실무 분야까지 온라인 강의를 통해 학습할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "그래서 오늘 소개해드릴 강의는 인디자인 마스터 클래스입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "S-OIL 에쓰오일 생산직 적성검사 강좌 구성: 13강 강사: 류준상, 한태성 수강기간: 20일 수강료: 65,000원 교재: 24,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "인디자인의 기본 기능을 익히고 편집디자인 실력을 키우고 싶다면 강의와 실습을 병행하며 공부해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "이 강의로 무엇을 배울 수 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "텍스트 입력과 편집, 스타일 적용 방법 등을 배우고, 다양한 텍스트 기능을 활용하여 문서의 퀄리티를 높이는 방법을 학습합니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "표를 생성하고 편집하는 방법을 익히며, 표 패널의 기능을 활용하여 데이터와 정보를 효과적으로 배치하는 기술을 배웁니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "페이지 레이아웃과 마스터 페이지를 활용하여 복잡한 문서 구조를 효율적으로 관리하는 방법을 배웁니다 실습 예제를 통해 다양한 문서 디자인을 경험합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "네 오늘은 인디자인독학을 위한 기본 기능과 편집디자인 공부방법을 알아봤는데요. 아이티동스쿨의 인디자인 마스터 클래스와 함께 차근차근 실력을 쌓아가시길 바랍니다. 감사합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

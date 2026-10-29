@@ -1,0 +1,451 @@
+{
+  "url": "https://blog.naver.com/copper567/224438783179",
+  "ok": true,
+  "seconds": 0.33,
+  "title": "워드프로세서합격률 높이는 공부방법 | 시험 일정 및 합격률, 강의까지 모두 추천",
+  "counts": {
+    "heading": 9,
+    "paragraph": 38,
+    "image": 7
+  },
+  "textChars": 1934,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 527
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 694
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "워드프로세서합격률 높이는 공부방법 | 시험 일정 및 합격률, 강의까지 모두 추천",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "워드프로세서 자격증 준비하면서 워드프로세서합격률이 어느 정도인지 궁금하셨던 분들 계시죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "paragraph",
+      "text": "그래서 오늘은 워드프로세서합격률을 포함해서 시험 기본 정보부터 일정, 공부법, 강의까지 한 번에 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "heading",
+      "text": "1. 워드프로세서, 어떤 시험인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "heading",
+      "text": "워드프로세서",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "워드프로세서는 컴퓨터 기초 사용법과 효율적인 문서작성 능력을 평가하는 대한상공회의소 주관 국가기술자격 시험이죠!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "paragraph",
+      "text": "📢응시자격도 없어서 취업 전, OA 활용 능력을 증명하기 위해 많이들 응시하시죠!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "✅현재 워드프로세서는 1급·2급 구분 없이 단일등급(구 1급) 하나로만 운영되고 있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "heading",
+      "text": "2. 시험 구성과 일정은 어떻게 되나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "시험 구성을 한눈에 보기 편하시도록 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "✅합격기준 필기→ 과목당 40점, 평균 60점 이상 실기→ 80점 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "✅수험료 필기 19,000원 / 실기 22,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "heading",
+      "text": "시험 일정은 어떻게 될까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "워드프로세서는 매달 정해진 날짜가 아니라 상시시험으로 운영됩니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "단! 아래 내용은 기억해주세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "▶ 매일 접수 가능 ▶ 개설일 ~ 시험일 4일 전까지 접수 가능 ▶ 필기 합격 발표 : 시험 다음날 오전 10시 ▶ 실기 응시 기간 : 필기 합격 후 2년 이내",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "heading",
+      "text": "3. 워드프로세서합격률과 합격률 높이는 공부법은?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "이제 가장 궁금하실 워드프로세서합격률에 대해서 이야기를 해보겠습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "국가기술자격 통계연보를 인용한 자료를 보면! 최근 몇 년간 필기 합격률은 대체로 50~60%대 수준이었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "반면 실기 합격률은 매년 36~44% 사이로, 필기와 비교하면 낮은 수준이라서 실기 준비에 더 신경 써야 할 것 같네요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "정리하자면! ✅필기 합격률 : 50~60% ✅실기 합격률 : 36 ~ 44%",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "heading",
+      "text": "❓그러면 어떻게 공부해야 합격률을 높일 수 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "실제 합격 후기들을 확인해보고 공통적으로 언급되는 방법들을 정리해봤어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "1️⃣ 필기는 문제은행식이라서 기출문제 반복 풀이가 가장 중요해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "2️⃣ 실기는 교재에 없는 신유형 문제가 출제되기 때문에 최신 기출+강의로 보완하세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "강의를 따라 공부하고 반복연습 한 결과, 1시간 40분 걸리던 속도를 20분까지 단축시켰다는 후기도 있더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "3️⃣ 실기 단축키는 전부 외우지 말고 자주 쓰는 것만 선별 암기하면 충분합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "✅또 하나, 많은 분들이 '차트'를 어려워하지만 실제로는 '스타일' 항목에서 감점되는 경우가 더 많다는 후기도 있었으니 스타일 지정도 꼼꼼히 챙기시길 바라요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "heading",
+      "text": "4. 아이티동스쿨 강의, 왜 추천하나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "후기에서도 언급되었듯, 워드프로세서합격률을 높이려면 강의의 도움을 받는 것이 좋은데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "어떤 강의를 골라야 할지 고민하시는 분들을 위해서 괜찮은 강의를 하나 찾아와봤어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "바로 아이티동스쿨의 [워드프로세서 합격 패키지]입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "paragraph",
+      "text": "✅수강기간: 180일 ✅가격: 99,000원 ✅교재: 0원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "제가 이 강의를 추천드리는 이유는 아래 3가지 때문이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "paragraph",
+      "text": "첫째! 필기 시험에 필요한 기본 지식부터 학습할 수 있고, 다양한 문제풀이로 실전 감각까지 길러줍니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "paragraph",
+      "text": "둘째! 실기 고급 편집 기능을 마스터하고, 실제 시험과 유사한 환경에서 실습할 수 있어 실전에 맞춘 준비를 할 수 있도록 도와줍니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "셋째! 실전 모의고사와 시험 전략·팁으로 합격 가능성을 높여줍니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "paragraph",
+      "text": "실제 수강생들의 후기도 꼼꼼하게 살펴봤는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "paragraph",
+      "text": "\"강사님께서 알차게 수업해주셔서 정말 만족스럽습니다!\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "paragraph",
+      "text": "\"핵심을 집어주시니까 어느 부분을 더 중점적으로 공부해야 하는지 알 것 같아요!\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "이런 만족스러운 후기들이 많아서 믿고 추천드려도 되겠더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "아이티동스쿨에서 무료로 제공하는 맛보기 강의도 일부분 가져와봤으니까! 한 번 참고해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "paragraph",
+      "text": "오늘 워드프로세서합격률을 높이는 법과 관련해서 시험 정보부터 일정, 합격률, 공부법, 강의까지 모두 살펴봤는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "상시시험이라 접수가 자유로운 만큼, 미루지 말고 지금부터 바로 준비 시작해보시면 좋을 것 같아요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "paragraph",
+      "text": "추천드린 강의도 꼭 한 번 확인해보시고! 후다닥! 합격하시길 바랄게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

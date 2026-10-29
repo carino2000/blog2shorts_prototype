@@ -1,0 +1,304 @@
+{
+  "url": "https://blog.naver.com/copper567/224453934072",
+  "ok": true,
+  "seconds": 0.45,
+  "title": "자동차정비기능사합격률｜필기시험 난이도와 합격 공부방법",
+  "counts": {
+    "heading": 3,
+    "paragraph": 23,
+    "image": 7
+  },
+  "textChars": 1535,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 1,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 724
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "자동차정비기능사합격률｜필기시험 난이도와 합격 공부방법",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "자동차 정비 분야에 관심이 있거나 관련 자격증 취득을 준비하고 있다면 자동차정비기능사 시험을 알아보셨을 텐데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "처음 시험을 준비하는 분이라면 자동차정비기능사합격률은 어느 정도인지, 필기시험은 어렵지 않은지 궁금할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "자동차정비기능사는 자동차의 구조와 정비에 필요한 기초 지식을 평가하는 국가기술자격인데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "합격률은 시험 연도와 응시자에 따라 달라지므로 최신 통계와 함께 시험의 특징을 확인하는 것이 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "오늘은 자동차정비기능사합격률을 알아보는 분들을 위해 필기시험 난이도와 공부방법을 살펴보도록 할게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "１. 필기시험은 기본 개념부터 이해해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "자동차정비기능사 필기를 준비한다면 먼저 자동차의 구조와 주요 장치의 작동 원리를 이해하는 것이 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "엔진과 동력전달장치, 제동장치 등 자동차를 구성하는 주요 시스템을 하나씩 살펴보면서 공부해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "처음에는 생소한 부품과 전문 용어가 많아 어렵게 느껴질 수 있지만 그림과 구조도를 함께 확인하면 개념을 이해하는 데 도움이 됩니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "자동차정비기능사합격률에만 집중하기보다는 자신이 어려워하는 영역을 파악하고 기본이론을 반복해서 복습하는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "heading",
+      "text": "２. 기출문제로 실전 감각을 키워보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "기본이론을 어느 정도 익혔다면 기출문제를 활용해 출제 유형과 자주 등장하는 개념을 확인해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "문제를 풀 때는 정답만 외우기보다 왜 해당 답이 정답인지 이해하고 관련 이론을 함께 정리하는 것이 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "특히 계산이나 장치의 작동 원리처럼 이해가 필요한 문제는 반복해서 연습해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "자동차정비기능사합격률을 확인하면서 시험 난이도를 파악하는 것도 좋지만 실제 문제풀이를 통해 자신의 실력을 점검하는 과정이 더욱 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "혼자 필기시험을 준비하기 어렵다면 온라인 강의를 활용하는 방법도 있는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "제가 소개해드릴 곳은 바로 자격동스쿨입니다! 자격동스쿨에서는 다양한 국가기술자격과 전문자격 시험 대비 강의를 온라인으로 학습할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "그래서 오늘 소개해드릴 강의는 New 자동차정비기능사 1차 필기반입니다! 자동차정비기능사 필기시험을 준비한다면 강의로 기본이론을 정리하고 문제풀이를 병행하며 부족한 부분을 보완해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "New 자동차정비기능사 1차 필기반 강좌 구성: 73강 강사: 임세순 수강기간: 90일 수강료: 160,000원 교재: 25,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "이 강의로 무엇을 배울 수 있을까??",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "자동차 구조, 엔진 시스템, 전기 및 전자 장치 등 필수적인 자동차 정비 이론을 체계적으로 정리하여, 필기 시험에 필요한 기초와 응용지식을 모두 익힐 수 있습니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "기출 문제와 예상 문제를 통해 실전 감각을 익히고, 높은 성적으로 합격할 수 있도록 도와드립니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "자동차 정비에 대한 기초 지식이 부족한 수강생도 쉽게 이해할 수 있도록 단계별로 설명하며 핵심 내용을 집중적으로 다룹니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "네 오늘은 자동차정비기능사합격률과 필기시험 공부방법을 알아봤는데요. 자격동스쿨 강의와 함께 차근차근 준비하면서 자신에게 부족한 부분을 보완해보세요. 모두 좋은 결과 얻으시길 바랍니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "마지막으로 맛보기 영상 남겨 두었으니 관심 있으신 분들은 확인 후 수강 결정하시면 될 것 같아요 감사합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

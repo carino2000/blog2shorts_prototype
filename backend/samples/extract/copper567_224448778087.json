@@ -1,0 +1,311 @@
+{
+  "url": "https://blog.naver.com/copper567/224448778087",
+  "ok": true,
+  "seconds": 0.29,
+  "title": "부산교육공무직교재｜소양평가 독학 준비와 문제풀이 공부방법",
+  "counts": {
+    "heading": 3,
+    "paragraph": 24,
+    "image": 7
+  },
+  "textChars": 1518,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 1,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 724
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "부산교육공무직교재｜소양평가 독학 준비와 문제풀이 공부방법",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "부산광역시교육청 교육공무직원 채용을 준비하고 있다면 필기시험 대비를 위해 어떤 교재를 선택해야 할지 고민될 텐데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "특히 소양평가를 처음 접하는 분이라면 어떤 내용을 공부해야 하는지, 독학으로도 준비할 수 있을지 궁금할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "부산광역시교육청 교육공무직원 채용을 준비하고 있다면 필기시험 대비를 위해 어떤 교재를 선택해야 할지 고민될 텐데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "특히 소양평가를 처음 접하는 분이라면 어떤 내용을 공부해야 하는지, 독학으로도 준비할 수 있을지 궁금할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "heading",
+      "text": "１. 교재 선택 전 평가 영역을 확인해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "paragraph",
+      "text": "부산 교육공무직원 채용은 모집 직종과 공고에 따라 평가 내용이 달라질 수 있기 때문에 공식 채용 공고를 먼저 확인해야 합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "시험 범위를 파악했다면 부산교육공무직교재에 필요한 영역이 충분히 포함되어 있는지 살펴보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "처음에는 문제풀이보다 기본적인 유형과 풀이 원리를 익히는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "특히 계산이나 자료 분석처럼 풀이 과정이 중요한 문제는 직접 해결하는 연습을 해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "이해하기 어려운 내용은 따로 정리하고 반복해서 복습하는 습관을 만드는 것이 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "heading",
+      "text": "２. 문제풀이와 시간 관리 연습을 병행해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "기본적인 문제 유형에 익숙해졌다면 기출문제와 유형별 연습문제를 활용해 실전 감각을 키워보는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "부산교육공무직교재를 활용할 때는 정답을 맞혔는지만 확인하기보다 풀이 과정과 소요 시간도 점검해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "틀린 문제는 해설을 참고해 실수한 원인을 찾아보고 비슷한 유형을 다시 풀어보는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "시험이 가까워졌다면 제한시간을 정해 문제를 풀면서 자신에게 적합한 시간 배분 방법도 익혀보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "혼자 학습 계획을 세우기 어렵다면 온라인 강의를 활용하는 방법도 있는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "제가 소개해드릴 곳은 바로 취업동스쿨입니다! 취업동스쿨에서는 교육공무직원 소양평가와 NCS 등 다양한 채용시험 대비 강의를 온라인으로 학습할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "그래서 오늘 소개해드릴 강의는 부산 교육공무직원 소양평가 합격 풀패키지입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "부산 교육공무직원 소양평가 합격 풀패키지 (필수이론 + 기출문제풀이) 가격: 158,000원 -> 128,000원 교재: 56,000원 수강기간: 60일",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "교재로 기본 개념을 정리하면서 온라인 강의를 통해 문제풀이 방법을 익히면 부족한 부분을 보완하는 데 도움이 됩니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "이 패키지로 무엇을 배울 수 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "교육공무직원 소양평가에서 출제될 수 있는 다양한 유형의 문제를 대응할 수 있도록 철저히 준비합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "실전에서 필요한 전략적 접근법을 학습하고, 효과적인 문제 해결 능력을 키울 수 있도록 훈련합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "경험 많은 강사진이 직접 지도하여, 어려운 개념을 명확하게 이해할 수 있도록 돕습니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "네 오늘은 부산교육공무직교재 선택과 소양평가 공부방법에 대해 알아봤는데요. 처음에는 어렵게 느껴질 수 있지만 기본이론부터 문제풀이까지 차근차근 준비한다면 시험에 대한 자신감을 키울 수 있을 거예요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "취업동스쿨 강의와 함께 꾸준히 학습하면서 부족한 부분을 보완하고 실전 감각도 길러보세요. 모두 좋은 결과 얻으시길 바라며, 다음에도 유익한 정보로 찾아오겠습니다. 감사합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "url": "https://blog.naver.com/copper567/224441216947",
+  "ok": true,
+  "seconds": 0.28,
+  "title": "지역농협6급교재｜NCS 독학 가능할까? 합격 준비 전 알아둘 공부방법",
+  "counts": {
+    "heading": 3,
+    "paragraph": 26,
+    "image": 7
+  },
+  "textChars": 1647,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 1,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 724
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "지역농협6급교재｜NCS 독학 가능할까? 합격 준비 전 알아둘 공부방법",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "지역농협 6급 채용을 준비하고 있다면 필기시험 대비를 위해 어떤 교재를 선택해야 할지 고민하는 분들이 많을 텐데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "특히 NCS 시험을 처음 접하는 분이라면 어떤 유형의 문제가 출제되는지, 어느 정도의 학습기간이 필요한지 막막하게 느껴질 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "지역농협 채용은 모집 시기와 지역에 따라 전형 내용이 달라질 수 있기 때문에 먼저 지원하려는 채용 공고를 확인해야 하는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "지역농협6급교재를 선택할 때도 자신이 응시할 시험의 평가 영역과 문제 유형을 고려하는 것이 중요합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "오늘은 지역농협6급교재를 활용해 NCS 필기시험을 어떻게 준비하면 좋을지 공부방법과 함께 알아보도록 할게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "1. 교재를 선택하기 전 문제 유형부터 확인해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "지역농협 6급 필기시험을 준비한다면 무작정 문제를 많이 풀기보다는 먼저 평가 영역과 유형별 특징을 파악하는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "지역농협6급교재를 살펴보면서 어떤 유형의 문제가 수록되어 있는지 확인하고 자신이 어려워하는 영역을 찾아보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "처음에는 정답을 빠르게 찾는 것보다 문제에서 요구하는 조건을 이해하고 풀이 과정을 익히는 데 집중하는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "특히 계산이나 자료 해석이 필요한 문제는 풀이 과정을 직접 정리하면서 반복해서 연습하는 방법도 도움이 됩니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "틀린 문제는 해설만 읽고 넘어가기보다 어떤 부분에서 실수했는지 확인하면서 부족한 내용을 보완해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "heading",
+      "text": "2. 실전처럼 시간을 정해 문제를 풀어보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "기본적인 문제 유형에 익숙해졌다면 이제 제한시간을 고려한 연습도 필요한데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "지역농협6급교재의 문제를 풀 때 시간을 정해두고 풀이 속도를 확인하면서 실제 시험에 대비해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "어려운 문제 하나에 시간을 오래 사용하면 다른 문제를 풀 기회가 줄어들 수 있으므로 자신에게 맞는 풀이 순서를 정하는 것도 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "연습이 끝난 뒤에는 틀린 문제뿐만 아니라 시간이 오래 걸렸던 문제도 다시 확인하면서 정확도와 문제 해결 속도를 함께 점검해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "혼자 NCS 문제 유형과 풀이 방법을 정리하기 어렵다면 온라인 강의를 함께 활용하는 방법도 있는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "제가 소개해드릴 곳은 바로 취업동스쿨입니다! 취업동스쿨에서는 NCS와 인적성검사 등 다양한 채용시험 관련 강의를 온라인으로 학습할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "그래서 오늘 소개해드릴 강의는 지역농협 6급 NCS 프리패스입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "지역농협 6급 NCS 프리패스(2개월) 수강기간: 60일 가격: 526,000원 -> 166,400원 교재 166,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "왜 취업동스쿨의 지역농협 6급 NCS 강의를 선택해야 할까요?!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "류준상 강사님의 응용수리 영역 만점 전략을 통해 고난도 수리 문제도 쉽게 풀어낼 수 있는 비법을 학습합니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "응용 문제 풀이의 핵심을 이해하고, 실제 시험에서 시간을 절약할 수 있는 방법을 익혀보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "자료해석에서 고득점을 목표로 하는 수험생을 위해 류준상 강사의 맞춤 강의를 제공합니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "자료를 빠르게 분석하고 풀이할 수 있는 기술을 배우며 시험에서 요구되는 사고력을 키울 수 있습니다",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "김지영 강사의 언어 영역 총연습 강의로 직무적성 언어 능력을 확실히 강화하세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "언어 해석과 문제 해결 스킬을 체계적으로 학습하며 실제 시험에서도 당황하지 않도록 준비할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "paragraph",
+      "text": "네 오늘은 지역농협6급교재를 활용한 NCS 필기시험 공부방법을 알아봤는데요. 취업동스쿨 강의와 함께 차근차근 준비하셔서 원하는 결과 얻으셨으면 좋겠습니다. 감사합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "url": "https://blog.naver.com/copper567/224413549677",
+  "ok": true,
+  "seconds": 0.29,
+  "title": "정보통신기사시험 후기 총정리, 이것만 봐도 바로 준비시작 가능",
+  "counts": {
+    "heading": 8,
+    "paragraph": 41,
+    "image": 6
+  },
+  "textChars": 2168,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 3,
+    "horizontalLine": 5,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 683
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "정보통신기사시험 후기 총정리, 이것만 봐도 바로 준비시작 가능",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "오늘은 정보통신기사시험에 관심 있으신 분들을 위해서 관련된 정보를 정리해드리려고 합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "정보통신기사시험, 정말 취득하기 쉽지 않은 자격증인데요! 학원을 다니시지 못하는 상황이시라면 어떻게 준비해야할지 정말 막막하실 것 같아요...",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "오늘은 제가 시험에 대한 기본적인 정보부터 후기들을 확인해 모아온 꿀팁까지 싹 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "heading",
+      "text": "1. 정보통신기사는 어떤 자격증인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "정보통신기사",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "✅응시자격이 까다로워요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "1. 관련 학과 전공자 ▶4년제 관련 학과 졸업자/ 졸업예정자 ▶3년제 전문대 관련 학과/ 실무경력 1년 이상 ▶2년제 전문대 관련 학과/ 실무경력 2년 이상 2. 기사 수준의 기술훈련과정 이수자 ▶기술자격 소지자 ▶동일 및 유사 직무분야 다른 종목 기사 자격 취득자 ▶산업기사 취득 후 실무경력 1년 이상 ▶기능사 취득 후 실무경력 3년 이상 3. 순수 경력자 ▶동일 및 유사 직무분야 4년 이상의 실무경력 보유자 4. 학점은행제 이용자 ▶학점은행제 정보통신 관련 전공 106학점 이상 이수자 ▶ 106학점 이상 이수 중인 졸업예정자",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "📌시험 구성",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "✅필기시험(5과목) ▶과목 당 20문제 / 총 100문제 ▶객관식(4지선다 / CBT)/ 150분 ▶합격기준: 과목 당 40점 이상 / 평균 60점 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "✅실기시험 ▶주관식 필답형 15~20 문항/ 150분 ▶합격기준: 60점 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "❓시험 일정은 어떻게 되나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "기사 등급은 1·2·4회로 연 3회 치뤄집니다! 올해에는 4회 시험이 마지막으로 진행중이지만 원서접수가 종료되었습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "heading",
+      "text": "2. 정보통신기사시험 합격자 후기는 어떨까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "CASE 1️⃣13일 집중 공부로 합격 최근 3개년 기출을 통째로 암기해서 합격한 사례",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "\"책 아끼지 마시고 공부하세요, 투자하는 것도 합격의 지름길\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "필기만 고려하면 나쁘지 않은 방법일지도 모르지만, 개인차가 심한 방법이고, 실기 준비에는 적절치 않을 듯 싶습니다...!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "CASE 2️⃣ 책 3번 읽기와 온라인 강의를 병행, 넉넉한 준비 기간",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "\"처음부터 너무 이해하려고 하면 머리 아프다, 적당히 읽고 반복해서 읽는 걸 추천한다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "넉넉한 준비 기간을 가지신 분들에게 적절한 방법이었어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "CASE 3️⃣ 실기에서 한 번 불합격했다가 재도전 끝에 합격한 사례",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "실기를 여러번 재도전하는 경우는 매우 흔한 사례예요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "❓계산문제는 어떻게 공략해야 할까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "heading",
+      "text": "계산 과목을 포기하고 암기에 집중하기 vs 풀이과정까지 숙지하기",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "두 의견이 충돌하는 상황이지만, 준비 기간이 짧다면 암기, 넉넉하다면 풀이과정도!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "heading",
+      "text": "3. 정보통신기사시험 공부 꿀팁 정리",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "실행 가능한 팁들만 정리해드려볼게요! 이건 꼭 하셔야 합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "✅기출문제는 최소 3개년 이상 반복해서 풀기 ✅교재 한 권 여러 번 회독하기 ✅실기는 별도 교재로 하루 10~20개씩 꾸준히 외우기 ✅실기 답안은 몰라도 핵심 키워드라도 적어 부분점수 확보하기",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "heading",
+      "text": "4. 정보통신기사시험 대비 체계적인 강의로 끝내세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "특히 필기시험은 체계적인 강의로 공부하면 정말 많이 도움이 되는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "추천해드릴만한 강의가 있어서 가져와봤습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "바로 자격동스쿨의 [정보통신기사시험 필기 패키지 강의]입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "paragraph",
+      "text": "✅수강기간: 180일 ✅수강료: 423,000원(할인 전 470,000원) 교재 별도 구매 시 134,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "paragraph",
+      "text": "제가 이 강의 패키지를 추천드리는 이유는 아래 3가지예요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "paragraph",
+      "text": "첫째! 쉽게 이해할 수 있는 강의",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "paragraph",
+      "text": "기초부터 고급 기술까지 단계별로 설명해서 개인 별 학습 속도에 맞춰 수강하실 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "paragraph",
+      "text": "둘째! 핵심 이론을 잘 정리해줘요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "필기에 필요한 지식을 체계적으로 정리해주는 필기 합격에 초점이 맞춰진 강의입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "paragraph",
+      "text": "셋째! 최신 출제 경향을 반영했어요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "paragraph",
+      "text": "변화하는 트렌드에 맞춰 준비해야 돌발적인 문제도 해결할 수 있는 문제해결 능력을 기를 수 있겠죠!?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "paragraph",
+      "text": "실제 수강생의 후기도 확인할 수 있었는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "\"처음부터 여기서 공부할 걸 그랬어요. 색인이 있어 헷갈리는 개념을 다시 확인할 수 있어 좋았고, 문제풀이도 꼼꼼하게 해 주셔서 이해 안 되는 부분 없이 들을 수 있었어요!\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "paragraph",
+      "text": "위와 같이 좋은 후기를 남겨주셨더라고요! 그래서 믿고 추천드릴만하다고 느꼈습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "paragraph",
+      "text": "맛보기 강의 영상도 첨부해드릴테니 한 번 참고해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "오늘은 정보통신기사시험에 대해서 궁금해하실 것 같은 정보들을 정리해봤는데 도움이 되셨나요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "paragraph",
+      "text": "정말 취득하기 쉽지 않은 자격증이지만, 차근차근 준비하시면 분명 좋은 결과 있으실 거예요!!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b55",
+      "type": "paragraph",
+      "text": "말씀드린 정보가 유익했길 바라면서 다음에도 좋은 정보 가져와볼게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

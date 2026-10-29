@@ -1,0 +1,493 @@
+{
+  "url": "https://blog.naver.com/copper567/224395864211",
+  "ok": true,
+  "seconds": 0.38,
+  "title": "인간공학기사실기인강 필기와 한 번에 공부하세요, 시험 일정과 공부방법 공유",
+  "counts": {
+    "heading": 7,
+    "paragraph": 44,
+    "image": 8
+  },
+  "textChars": 2044,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 4,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 644
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 725
+    },
+    {
+      "id": "a8",
+      "origin": "blog",
+      "url": "/api/assets/a8",
+      "width": 966,
+      "height": 725
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "인간공학기사실기인강 필기와 한 번에 공부하세요, 시험 일정과 공부방법 공유",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "안녕하세요~ 동동입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "여러분 혹시 '인간공학기사'라는 자격증에 대해서 알고 계신가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "저는 이번에 여러분께 소개드릴 자격증을 알아보다가 처음 알게되었는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "개인적으로 원래 관심을 가지고 계신 분들이 아니시라면, 정보가 많지 않은 생소한 자격증이라 정리해서 공유드려보려고 합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "혼자 준비하시는 분들은 시험정보, 합격률, 공부 방법 등 정보들이 여러 군데 있어서 조사하시는 것도 일이잖아요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "paragraph",
+      "text": "그래서! 오늘은 인간공학기사가 어떤 자격증인지부터 시험 일정, 공부팁까지 한 번에 정리해드릴게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "heading",
+      "text": "1. 인간공학기사는 어떤 자격증인가요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "heading",
+      "text": "인간공학기사",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "인간공학기사 자격증은!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "작업장을 인간 신체 특성에 맞게 분석·개선해서 근골격계 질환이나 산업재해를 예방하는 업무를 다루는 자격증",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "관련 부처는 고용노동부, 시행기관은 한국산업인력공단(Q-net)입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "paragraph",
+      "text": "❓그렇다면 인간공학기사 자격증은 어디에 활용될 수 있을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "paragraph",
+      "text": "대표적인 게 보건관리자 선임 자격이에요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "산업안전보건법 시행령에 인간공학기사 이상 자격이 요건으로 명시되어 있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "그 외 작업환경 분석, 근골격계질환 예방 업무에도 활용된다고 알려져 있어요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "heading",
+      "text": "2. 인간공학기사 시험 일정이 궁금하시죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "준비를 시작하신다면, 시험이 어떻게 구성되어 있는지 알아보셔야겠죠?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "필기와 실기 과목 구성은 아래 표로 정리해드릴게요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "paragraph",
+      "text": "✅필기 합격기준: 평균 60점 이상 / 과목별 40점 미만이면 불합",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "✅ 실기 합격기준: 60점/ 100점 이상",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "paragraph",
+      "text": "2026년 올해에는 3회차만 남았어요! 세부적인 일정은 아래 표를 참고하세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "오늘(8월 31일) 기준으로 3회차의 일정은 실기 원서접수와 실기시험 일정만 아직 남아있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "✅합격률 필기는 70~80%대로 높고 실기는 30~70%대로 회차마다 편차가 큰 편이에요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "개인적으로 느끼기에는 시험 자체가 암기식 공부가 필요한 시험이고, 합격 기준도 크게 난이도 높은 시험은 아니라서",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "paragraph",
+      "text": "필기와 실기 모두 개념을 잘 잡고, 암기만 잘하면 충분히 무난하게 합격할 수 있는 시험이라고 느껴졌어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "heading",
+      "text": "3. 공부는 어떻게 하면 좋을까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "paragraph",
+      "text": "합격 후기들을 찾아보고 공통적으로 나온 팁들을 정리해봤어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "1️⃣ 기출문제 반복 풀이가 필기·실기 모두에서 가장 많이 언급됐습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "paragraph",
+      "text": "2️⃣ 실기는 눈으로만 읽지 말고 손으로 써보며 공부해야 한다는 후기가 많았어요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "3️⃣ 최신 연도 기출과 개정 내용도 꼭 챙기셔야 놓치는 부분이 없어요!!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "4️⃣혼자서 학습 계획을 세우기 어렵다면, 인간공학기사실기인강과 필기 인강으로 준비하세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b36",
+      "type": "paragraph",
+      "text": "어떤 자격증이던지 기출 풀이는 반드시 해야하는 공부이고, 시간을 효율적으로 사용하는 데에는 인강만한 게 없는 것 같아요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b37",
+      "type": "heading",
+      "text": "4. 인간공학기사실기인강! 이 강의로 준비 끝내세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b38",
+      "type": "paragraph",
+      "text": "가장 굼금해하실 인간공학기사실기인강, 제가 추천하는 강의는요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b39",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b40",
+      "type": "paragraph",
+      "text": "바로 자격동스쿨의 [인간공학기사 필기 + 실기]패키지입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b41",
+      "type": "paragraph",
+      "text": "✅ 수강료: 350,000원 ✅ 수강 기간: 180일 ✅교재비: 52,000원 별도",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b42",
+      "type": "paragraph",
+      "text": "이 강의는 현재 특별할인 패키지로 선정돼서 정가 380,000원에서 3만원 할인 된 가격에 수강하실 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b43",
+      "type": "paragraph",
+      "text": "제가 인간공학기사실기인강으로 이 강의를 추천드리는 이유는 아래 3가지예요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b44",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b45",
+      "type": "paragraph",
+      "text": "1️⃣ 인간공학의 기본이론을 체계적으로 이해해서 쌓은 개념을 바탕으로 실생활에 적용 가능한 지식을 쌓을 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b46",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b47",
+      "type": "paragraph",
+      "text": "2️⃣실제 사례를 통해서 각 상황에 맞는 해결책을 찾아 문제 해결 능력을 키워나갈 수 있어요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b48",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b49",
+      "type": "paragraph",
+      "text": "3️⃣다양한 실기 연습 문제와 모의 시험으로 실제 시험과 유사한 환경으로 연습할 수 있어서 시험 대비에 적합해요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b50",
+      "type": "image",
+      "text": null,
+      "assetId": "a8",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b51",
+      "type": "paragraph",
+      "text": "실제 수강생분들이 남긴 후기도 꼼꼼하게 확인해봤는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b52",
+      "type": "paragraph",
+      "text": "\"개념을 확실하게 잡아줘서 좋았다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b53",
+      "type": "paragraph",
+      "text": "\"자격증 인강 여러 개 들어봤지만, 이만큼 자세하게 설명해주는 강의 찾기가 어려울 것 같다\"",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b54",
+      "type": "paragraph",
+      "text": "등 좋은 후기들이 많이 있더라고요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b55",
+      "type": "paragraph",
+      "text": "실제 강의 느낌을 영상으로 확인하실 수 있게 맛보기 강의 영상도 가져왔으니까 확인해보세요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b56",
+      "type": "heading",
+      "text": "5. 마무리하며",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b57",
+      "type": "paragraph",
+      "text": "오늘은 인간공학기사 자격증에 대한 기본적인 정보부터, 시험 정보와 공부 방법, 그리고 인간공학기사실기인강까지 추천드려봤는데요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b58",
+      "type": "paragraph",
+      "text": "준비하시는 분들께 도움이 되는 정보였으면 좋겠네요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b59",
+      "type": "paragraph",
+      "text": "언제든지 궁금한 자격증 있으시면 말씀해주시고, 다음에도 유용한 정보 찾아서 공유해볼게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}

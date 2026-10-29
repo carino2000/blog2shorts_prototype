@@ -1,0 +1,318 @@
+{
+  "url": "https://blog.naver.com/copper567/224447528249",
+  "ok": true,
+  "seconds": 0.27,
+  "title": "상하수도기술사합격후기｜합격 준비 과정에서 중요한 공부방법",
+  "counts": {
+    "heading": 3,
+    "paragraph": 25,
+    "image": 7
+  },
+  "textChars": 1686,
+  "skippedImages": [
+    "https://jkdong.com/test/image_blog.php — 네이버 이미지 서버가 아님"
+  ],
+  "skippedComponents": {
+    "sticker": 2,
+    "horizontalLine": 1,
+    "video": 1
+  },
+  "assets": [
+    {
+      "id": "a1",
+      "origin": "blog",
+      "url": "/api/assets/a1",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a2",
+      "origin": "blog",
+      "url": "/api/assets/a2",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a3",
+      "origin": "blog",
+      "url": "/api/assets/a3",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a4",
+      "origin": "blog",
+      "url": "/api/assets/a4",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a5",
+      "origin": "blog",
+      "url": "/api/assets/a5",
+      "width": 966,
+      "height": 706
+    },
+    {
+      "id": "a6",
+      "origin": "blog",
+      "url": "/api/assets/a6",
+      "width": 966,
+      "height": 724
+    },
+    {
+      "id": "a7",
+      "origin": "blog",
+      "url": "/api/assets/a7",
+      "width": 966,
+      "height": 724
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "heading",
+      "text": "상하수도기술사합격후기｜합격 준비 과정에서 중요한 공부방법",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b2",
+      "type": "paragraph",
+      "text": "상하수도 분야에서 전문성을 높이거나 기술사 자격증 취득을 목표로 한다면 상하수도기술사 시험을 알아보셨을 텐데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b3",
+      "type": "paragraph",
+      "text": "기술사 시험은 전문적인 이론뿐만 아니라 실무 경험을 바탕으로 문제를 분석하고 답안을 작성하는 능력도 중요한데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b4",
+      "type": "image",
+      "text": null,
+      "assetId": "a1",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b5",
+      "type": "paragraph",
+      "text": "상하수도기술사합격후기를 찾아보면 공부기간이나 학습방법이 궁금하겠지만 개인의 경력과 기초 지식에 따라 준비 과정은 달라질 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b6",
+      "type": "paragraph",
+      "text": "따라서 다른 사람의 학습방법을 참고하되 자신에게 맞는 계획을 세우는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b7",
+      "type": "paragraph",
+      "text": "오늘은 상하수도기술사합격후기를 찾는 분들을 위해 필기시험을 준비할 때 알아두면 좋은 공부방법을 함께 살펴보도록 할게요!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b8",
+      "type": "heading",
+      "text": "１. 핵심 이론과 실무 지식을 연결해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b9",
+      "type": "paragraph",
+      "text": "상하수도기술사 필기시험을 준비한다면 먼저 상수도와 하수도 분야의 주요 이론을 체계적으로 정리해야 합니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b10",
+      "type": "paragraph",
+      "text": "수처리 공정과 관로 시설, 수질 관리 등 관련 기술의 기본 원리를 이해하고 실제 현장에서 어떻게 적용되는지 살펴보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b11",
+      "type": "paragraph",
+      "text": "특히 기술사 시험은 단순한 개념 암기보다 문제에서 요구하는 내용을 분석하고 논리적으로 설명하는 능력이 중요한데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b12",
+      "type": "paragraph",
+      "text": "상하수도기술사합격후기를 참고할 때도 어떤 자료를 공부했는지뿐만 아니라 이론을 어떻게 정리했는지 확인해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b13",
+      "type": "paragraph",
+      "text": "자주 등장하는 핵심 용어와 기술적 특징은 자신만의 요약 자료로 정리하고 반복해서 복습하는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b14",
+      "type": "image",
+      "text": null,
+      "assetId": "a2",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b15",
+      "type": "heading",
+      "text": "２. 기출문제와 답안 작성 연습을 병행해보세요",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b16",
+      "type": "paragraph",
+      "text": "기본이론을 어느 정도 익혔다면 기출문제를 분석하면서 출제 경향과 주요 문제 유형을 파악해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b17",
+      "type": "paragraph",
+      "text": "처음에는 문제의 핵심 키워드를 정리하고 답안의 전체적인 구성부터 연습하는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b18",
+      "type": "paragraph",
+      "text": "이후에는 서론과 본론, 결론의 흐름을 고려해 기술적인 내용을 논리적으로 작성하고 필요한 경우 도표와 그림도 활용해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b19",
+      "type": "paragraph",
+      "text": "상하수도기술사합격후기에서 공부기간만 확인하기보다는 반복적인 답안 작성과 복습 과정을 참고하는 것이 도움이 됩니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b20",
+      "type": "paragraph",
+      "text": "또한 제한시간을 정해 답안을 작성하면서 실제 시험에 필요한 시간 관리 능력도 함께 길러보는 것이 좋습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b21",
+      "type": "paragraph",
+      "text": "혼자 방대한 이론을 정리하기 어렵다면 온라인 강의를 활용하는 방법도 있는데요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b22",
+      "type": "image",
+      "text": null,
+      "assetId": "a3",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b23",
+      "type": "paragraph",
+      "text": "제가 소개해드릴 곳은 바로 자격동스쿨입니다! 자격동스쿨에서는 다양한 국가기술자격과 전문자격 시험 대비 강의를 온라인으로 학습할 수 있습니다.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b24",
+      "type": "image",
+      "text": null,
+      "assetId": "a4",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b25",
+      "type": "paragraph",
+      "text": "그래서 오늘 소개해드릴 강의는 상하수도기술사 필기반입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b26",
+      "type": "paragraph",
+      "text": "상하수도기술사 필기반 강좌 구성: 40강 강사: 조용덕 수강기간: 180일 수강료: 550,000원 교재: 58,000원",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b27",
+      "type": "paragraph",
+      "text": "상하수도 분야의 핵심 이론을 정리하고 필기시험에 필요한 학습 방향을 체계적으로 잡고 싶은 분들이라면 강의와 기출문제 학습을 병행해보세요.",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b28",
+      "type": "paragraph",
+      "text": "어떤 분들에게 이 강의를 추천해 드릴까요?",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b29",
+      "type": "image",
+      "text": null,
+      "assetId": "a5",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b30",
+      "type": "paragraph",
+      "text": "1. 상하수도기술사를 더 공부하고 싶은 분들 2. 기본기를 탄탄히 다지면서 마스터하고 싶으신 분들 3. 이론과 실무적인 능력을 함께 습득하고 싶으신 분들",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b31",
+      "type": "image",
+      "text": null,
+      "assetId": "a6",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b32",
+      "type": "paragraph",
+      "text": "상하수도기술사 시험의 핵심 이론을 체계적으로 정리하고 문제풀이까지 학습할 수 있는데요. 실무에 필요한 전문 지식도 함께 익힐 수 있는 고급 과정입니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b33",
+      "type": "image",
+      "text": null,
+      "assetId": "a7",
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b34",
+      "type": "paragraph",
+      "text": "실제 수강생 후기에서도 어려운 전문 용어를 쉽게 설명해 이해하기 좋았다는 평가가 있는데요. 체계적인 강의 구성과 반복 학습으로 시험 준비에 도움이 되었다는 긍정적인 후기를 확인할 수 있습니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    },
+    {
+      "id": "b35",
+      "type": "paragraph",
+      "text": "네 오늘은 상하수도기술사합격후기를 찾는 분들을 위한 필기시험 공부방법을 알아봤는데요. 자격동스쿨의 상하수도기술사 필기반과 함께 꾸준히 준비하셔서 좋은 결과 얻으셨으면 좋겠습니다. 감사합니다!",
+      "assetId": null,
+      "linkedBlockIds": []
+    }
+  ]
+}
