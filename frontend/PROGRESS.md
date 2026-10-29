@@ -12,7 +12,7 @@
   - 할 일: 기존 JS 템플릿을 TS로(`tsconfig*.json`, `.tsx`, `vite.config.ts`, strict), 데모 파일 삭제, Tailwind v4 + `@theme` 토큰(라이트·다크), Pretendard, React Router 뼈대(5개 경로), 빈 `InputPage`, Vite 프록시 `/api → localhost:8000`, `.env.example`(`VITE_API_BASE_URL=`, `VITE_USE_MOCK=true`), README 실행 방법, `npm test` 스크립트(Vitest)
   - 완료: `npm run build`·`npm run lint`·`npm test` 통과, 브라우저에서 빈 입력 화면이 라이트·다크 둘 다 토큰 색으로 보임
 
-- [ ] **F2. API 계층**
+- [x] **F2. API 계층**
   - 필요: F1
   - 할 일: `types.ts`(통합기획서 6-1 그대로), `client.ts`(`ApiError`), `endpoints/` 리소스별 5개, `mock/`(7장 규칙 전부), `index.ts`, `queries/` 훅(3장 API 계층 규칙), `public/mock/` 샘플
   - 완료: `types.ts` 필드를 6-1과 한 줄씩 대조한 결과를 보고에 첨부, mock 상태 전이를 Vitest로 확인
@@ -63,3 +63,4 @@
 |---|---|---|---|
 | 2026-10-29 | 준비 | Vite JS 템플릿 상태, CLAUDE.md·진행표 작성 | 없음 |
 | 2026-10-29 | F1 | build·lint(0건)·test(1 passed) 통과. 1280px 라이트·375px 다크에서 bg·surface·ink·line 계산값이 토큰과 일치, Pretendard 로드, 가로 스크롤 없음, 5개 경로 렌더. `/api` 프록시가 8000으로 넘기는 것 확인(백엔드 미실행이라 502) | TypeScript 7.0.2·React Router 8.5.1·Vitest 5가 설치됨(최신). 이후 단계에서 API 차이가 보이면 기록 |
+| 2026-10-29 | F2 | tsc·lint 0건·test 19 passed(mock 상태 전이·PATCH 규칙·렌더·재시도·검증). types.ts↔6-1 기계 대조: 필드 전부 일치, 차이는 `Subtitle` 인터페이스 분리와 ErrorCode 줄바꿈뿐. Node 24 `fs.rmSync`가 한글 경로에서 죽어 `vite build`가 dist 있을 때 실패 → `emptyOutDir:false` + 비동기 rm `prebuild`로 해결, 연속 2회 빌드 통과 | ffmpeg 없음 → `public/mock/sample.mp4` 미생성(결과 화면은 포스터로 대체). 6장 ErrorCode에 404·409용 코드가 없어 프론트는 HTTP 상태로 판단 |
