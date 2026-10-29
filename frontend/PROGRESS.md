@@ -27,7 +27,7 @@
   - 할 일: `ProjectPage` 상태 분기, 1.5초 폴링·중지, 블록 들어오면 제목·썸네일, 오류별 버튼, 404 만료 안내
   - 완료: mock에서 정상(→ 대본 화면 자동 이동)·`fail` URL·`fail` 본문 세 경로 확인
 
-- [ ] **F5. 대본 확인 화면**
+- [x] **F5. 대본 확인 화면**
   - 필요: F4
   - 할 일: 6-3 전부(핵심 요약 카드, 역할 라벨, 예상 길이 경고, 원문 하이라이트, 화면 안 확인 단계)
   - 완료: mock에서 재생성 흐름 확인, 브라우저 `confirm` 미사용 확인
@@ -67,3 +67,4 @@
 | 2026-10-29 | F3 | vitest 29 passed(naverUrl 허용 4·거부 3+경계). 브라우저: 1280 라이트·375 다크, naver.me/블로그 홈 즉시 안내·버튼 비활성, 올바른 URL+Enter → `/projects/mock-…` 이동, 본문 5자 비활성·219자 활성, 가로 스크롤 없음, 버튼 최소 44px, 콘솔 오류 없음 | health 실패 안내는 mock에서 재현 불가 → F9에서 확인 |
 | 2026-10-29 | 계약 반영 | ErrorCode 3종(NOT_FOUND·INVALID_REQUEST·INVALID_STATE) types·client·mock 반영, 업로드 assetId 형식 가정 제거. tsc·lint 0건, vitest 39 passed, ErrorCode 12종 6-1과 diff 없음 | 없음 |
 | 2026-10-29 | F4 | vitest 49 passed(projectView 상태→화면 10건). 브라우저 mock: 정상(추출 중 → 썸네일 3장 → 대본 단계 → 5.6초에 /script 자동 이동), `fail` URL → 추출 실패+「본문 직접 입력으로 다시 시작」(/?tab=text), `fail` 본문 → LLM_FAILED+「다시 시도」 → 재생성 → /script, 없는 ID → 만료 안내. 1280 라이트·375 다크, 가로 스크롤 없음 | mock 재생성 조건을 "대본 있음"→"블록 있음"으로 완화(첫 대본 실패 후 다시 시도용). 실제 백엔드 /regenerate도 이 경우를 받아야 함 → F9에서 확인 |
+| 2026-10-29 | F5 | 브라우저 mock(1280 라이트·375 다크): 핵심 요약 카드, Hook·본문·CTA 색+글자 라벨, 예상 34.9초 DurationMeter, 장면 클릭 → 원문 근거 문단 강조(넓은 화면 옆 패널, 좁은 화면 접이식), 화면 안 확인 → 재생성 → 처리 중 → 새 대본, `regenfail` → 이전 대본 유지+안내, window.confirm 호출 0회, 가로 스크롤 없음 | 없음 |
