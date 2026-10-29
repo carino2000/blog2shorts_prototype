@@ -17,7 +17,7 @@
   - 할 일: `types.ts`(통합기획서 6-1 그대로), `client.ts`(`ApiError`), `endpoints/` 리소스별 5개, `mock/`(7장 규칙 전부), `index.ts`, `queries/` 훅(3장 API 계층 규칙), `public/mock/` 샘플
   - 완료: `types.ts` 필드를 6-1과 한 줄씩 대조한 결과를 보고에 첨부, mock 상태 전이를 Vitest로 확인
 
-- [ ] **F3. 입력 화면**
+- [x] **F3. 입력 화면**
   - 필요: F2
   - 할 일: 6-1 전부(탭, URL 검증, 글자 수, `PhoneFrame` 예시, health 실패 안내), `naverUrl.ts` + 테스트(허용 4종·거부 3종)
   - 완료: 테스트 통과, 375·1280px 스크린샷 확인, mock에서 제출 → `/projects/:id` 이동
@@ -64,3 +64,4 @@
 | 2026-10-29 | 준비 | Vite JS 템플릿 상태, CLAUDE.md·진행표 작성 | 없음 |
 | 2026-10-29 | F1 | build·lint(0건)·test(1 passed) 통과. 1280px 라이트·375px 다크에서 bg·surface·ink·line 계산값이 토큰과 일치, Pretendard 로드, 가로 스크롤 없음, 5개 경로 렌더. `/api` 프록시가 8000으로 넘기는 것 확인(백엔드 미실행이라 502) | TypeScript 7.0.2·React Router 8.5.1·Vitest 5가 설치됨(최신). 이후 단계에서 API 차이가 보이면 기록 |
 | 2026-10-29 | F2 | tsc·lint 0건·test 19 passed(mock 상태 전이·PATCH 규칙·렌더·재시도·검증). types.ts↔6-1 기계 대조: 필드 전부 일치, 차이는 `Subtitle` 인터페이스 분리와 ErrorCode 줄바꿈뿐. Node 24 `fs.rmSync`가 한글 경로에서 죽어 `vite build`가 dist 있을 때 실패 → `emptyOutDir:false` + 비동기 rm `prebuild`로 해결, 연속 2회 빌드 통과 | ffmpeg 없음 → `public/mock/sample.mp4` 미생성(결과 화면은 포스터로 대체). 6장 ErrorCode에 404·409용 코드가 없어 프론트는 HTTP 상태로 판단 |
+| 2026-10-29 | F3 | vitest 29 passed(naverUrl 허용 4·거부 3+경계). 브라우저: 1280 라이트·375 다크, naver.me/블로그 홈 즉시 안내·버튼 비활성, 올바른 URL+Enter → `/projects/mock-…` 이동, 본문 5자 비활성·219자 활성, 가로 스크롤 없음, 버튼 최소 44px, 콘솔 오류 없음 | health 실패 안내는 mock에서 재현 불가 → F9에서 확인 |

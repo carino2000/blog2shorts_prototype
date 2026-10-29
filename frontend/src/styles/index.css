@@ -54,6 +54,38 @@
   --radius-control: 8px;
 }
 
+/* 장면 모션 미리보기 (백엔드 ⑦ 모션 표와 같은 값: zoom 1↔1.12, pan은 1.12 배율에서 가로 끝↔끝). 3초 반복 */
+@keyframes motion-zoom-in {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
+@keyframes motion-zoom-out {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+/* (1.12 - 1) / 2 = 6% 씩 양옆이 남는다. pan_left는 보이는 창이 오른쪽으로 가서 그림이 왼쪽으로 흐른다 */
+@keyframes motion-pan-left {
+  from { transform: translateX(6%) scale(1.12); }
+  to { transform: translateX(-6%) scale(1.12); }
+}
+@keyframes motion-pan-right {
+  from { transform: translateX(-6%) scale(1.12); }
+  to { transform: translateX(6%) scale(1.12); }
+}
+.motion-zoom_in { animation: motion-zoom-in 3s linear infinite; }
+.motion-zoom_out { animation: motion-zoom-out 3s linear infinite; }
+.motion-pan_left { animation: motion-pan-left 3s linear infinite; }
+.motion-pan_right { animation: motion-pan-right 3s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-zoom_in,
+  .motion-zoom_out,
+  .motion-pan_left,
+  .motion-pan_right {
+    animation: none;
+  }
+}
+
 @layer base {
   html,
   body {

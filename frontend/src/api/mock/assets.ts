@@ -2,14 +2,13 @@ import { ApiError } from '../client'
 import type { Asset } from '../types'
 import { ERROR_MESSAGES, getRecord, persist } from './db'
 import { latency } from './latency'
+import { checkUpload } from '../../lib/limits'
 
-const ALLOWED = ['image/jpeg', 'image/png', 'image/webp']
-const MAX_BYTES = 10 * 1024 * 1024
 
 export async function uploadAsset(projectId: string, file: File): Promise<Asset> {
   await latency(400)
   const rec = getRecord(projectId)
-  if (!ALLOWED.includes(file.type) || file.size > MAX_BYTES) {
+  if (checkUpload(file)) {
     throw new ApiError(400, 'UPLOAD_INVALID', ERROR_MESSAGES.UPLOAD_INVALID)
   }
   const url = await readDataUrl(file)

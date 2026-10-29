@@ -2,10 +2,9 @@ import { ApiError } from '../client'
 import type { CreateProjectRequest, IdResponse, Project } from '../types'
 import { parseNaverUrl } from '../../lib/naverUrl'
 import { countChars } from '../../lib/duration'
+import { MIN_TEXT_CHARS } from '../../lib/limits'
 import { ERROR_MESSAGES, createRecord, getRecord, persist, snapshot, startRegenerate } from './db'
 import { latency } from './latency'
-
-export const MIN_TEXT_CHARS = 200
 
 export async function createProject(req: CreateProjectRequest): Promise<IdResponse> {
   await latency()

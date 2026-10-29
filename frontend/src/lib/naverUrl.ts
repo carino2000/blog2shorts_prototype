@@ -44,3 +44,16 @@ export function parseNaverUrl(input: string): NaverPost | null {
 export function isNaverPostUrl(input: string): boolean {
   return parseNaverUrl(input) !== null
 }
+
+/** 입력 즉시 보여 줄 안내. 비어 있거나 올바르면 null */
+export function explainInvalidUrl(input: string): string | null {
+  const raw = input.trim()
+  if (!raw || parseNaverUrl(raw)) return null
+  if (/(^|\/\/)naver\.me\//i.test(raw)) {
+    return 'naver.me 단축 주소는 쓸 수 없습니다. 글을 열어 주소창의 전체 주소를 복사해 주세요.'
+  }
+  if (/(^|\/\/)(m\.)?blog\.naver\.com(\/|$)/i.test(raw)) {
+    return '글 번호가 없는 주소입니다. 블로그 홈이 아니라 글 하나의 주소를 넣어 주세요.'
+  }
+  return '네이버 블로그 글 주소가 아닙니다. 다른 블로그 글은 "본문 직접 입력"을 써 주세요.'
+}
