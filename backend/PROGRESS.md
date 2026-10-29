@@ -22,7 +22,7 @@
   - 할 일: `.venv` 생성, `requirements*.txt`, `main.py`·`config.py`, `GET /api/health`, CORS, `.env.example`(4장 변수 이름만), `README.md`, pytest 설정(`external` 마커 등록, 기본 실행에서 제외), `tests/test_health.py`
   - 완료: `pytest` 통과, 서버 실행 후 `curl localhost:8000/api/health` → `{"ok":true}`, `/docs` 열림
 
-- [ ] **B2. 모델·저장소·가짜 파이프라인**
+- [x] **B2. 모델·저장소·가짜 파이프라인**
   - 필요: B1
   - 할 일: `models.py`(통합기획서 6-1 그대로, camelCase), `errors.py`(공통 오류 형식), `store.py`, `routers/health.py`·`routers/projects.py`·`pipeline/runner.py`(3장 레이어 규칙)로 `POST /api/projects`·`GET /api/projects/{id}`를 sleep + 샘플 데이터로 `extracting → scripting → ready` 전이. `GET /api/assets/{id}`는 샘플 이미지 서빙
   - 완료: pytest로 전이·404·오류 형식 확인, `/openapi.json`의 `Project` 필드명이 6-1과 일치(목록 비교 결과를 보고에 첨부)
@@ -74,3 +74,4 @@
 |---|---|---|---|
 | 2026-10-29 | 준비 | 빈 파일 뼈대 생성(코드 없음) | H1~H6 |
 | 2026-10-29 | B1 | pytest 3 passed. uvicorn 실행 후 `/api/health` → `{"ok":true}`, `/docs` 200. 시작 시 ffmpeg·ffprobe·폰트 없음 경고 출력 확인 | H2(FFmpeg)·H3(폰트) 없음 → B3 전에 필요. pytest-asyncio loop scope 경고·starlette httpx2 경고는 미처리 |
+| 2026-10-29 | B2 | pytest 16 passed(전이·404·422·없는 경로 오류 형식, openapi 필드 11개 스키마가 6-1과 일치, 샘플 대본 규칙). 실서버 폴링으로 extracting→scripting→ready, 이미지 200 확인 | ErrorCode에 NOT_FOUND·INVALID_REQUEST·INVALID_STATE 추가(사람 승인 10/29) → 통합기획서 6-1·프론트 types.ts 반영 필요(백엔드 세션 밖). asset ID는 `/api/assets/{assetId}`에 프로젝트 ID가 없어 전역 유일값(`a`+hex10) 사용 |
