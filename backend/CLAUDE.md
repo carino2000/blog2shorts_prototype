@@ -161,12 +161,14 @@ data/                   # DATA_DIR. 실행 중 생성. 커밋 금지(.gitkeep만
 6. 각 장면에 근거 블록 ID(sourceBlockIds)를 1개 이상 단다.
 7. 각 장면에 어울리는 이미지(assetId)를 아래 목록에서 고른다. 근거 문단과 연결된 이미지를 우선한다. 없으면 null.
 8. motion은 zoom_in, zoom_out, pan_left, pan_right, none 중 하나. 연속 장면에 같은 값을 피한다.
-9. 반드시 지정한 JSON 형식만 출력한다.
+9. 대본을 쓰기 전에 원문의 핵심 요약(2~3문장)과 핵심 포인트(3~5개, 각 한 문장)를 analysis에 쓴다. 대본은 이 분석을 바탕으로 쓴다. 요약에도 1번 규칙이 그대로 적용된다.
+10. 반드시 지정한 JSON 형식만 출력한다.
 ```
 
 출력 JSON 스키마(LLM 구조화 출력으로 강제):
 ```json
 {
+  "analysis": { "summary": "string", "keyPoints": ["string"] },
   "script": { "hook": "string", "body": "string", "cta": "string" },
   "scenes": [
     { "role": "hook|body|cta", "text": "string", "assetId": "string|null",
@@ -175,7 +177,7 @@ data/                   # DATA_DIR. 실행 중 생성. 커밋 금지(.gitkeep만
 }
 ```
 
-검증(코드): 장면 수 4~6, 첫 장면 hook·마지막 cta, 전체 글자 수 210~400, `assetId`가 assets에 있음, `sourceBlockIds`가 blocks에 있음, **장면 문구의 숫자가 원문에 없으면 위반**. 위반 시 위반 목록을 붙여 1회 재요청, 그래도 실패하면 `LLM_FAILED`. `estimatedSec` = 전체 글자 수 ÷ 7 🟡(TTS 실측 후 조정). 호출마다 토큰 사용량을 로그로 남긴다.
+검증(코드): `analysis.summary` 비어 있지 않음·`keyPoints` 3~5개, 장면 수 4~6, 첫 장면 hook·마지막 cta, 전체 글자 수 210~400, `assetId`가 assets에 있음, `sourceBlockIds`가 blocks에 있음, **장면 문구의 숫자가 원문에 없으면 위반**. 위반 시 위반 목록을 붙여 1회 재요청, 그래도 실패하면 `LLM_FAILED`. `estimatedSec` = 전체 글자 수 ÷ 7 🟡(TTS 실측 후 조정). 호출마다 토큰 사용량을 로그로 남긴다.
 
 ### ④ 미디어 매칭 보정 `pipeline/match.py`
 - `assetId`가 null이거나 없는 ID인 장면 → 블로그 이미지를 원문 순서대로 돌아가며 배정(이미 쓴 이미지는 뒤로).

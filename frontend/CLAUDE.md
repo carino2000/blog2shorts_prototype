@@ -157,6 +157,7 @@ server: { proxy: { "/api": "http://localhost:8000" } }
 - `ready`가 되면 자동으로 `/projects/:id/script`로 이동
 
 ### 6-3. 대본 확인 `/projects/:id/script`
+- 맨 위 "핵심 요약" 카드: `analysis.summary`와 `keyPoints` 목록(기업 요구 FR-AI-01). `analysis`가 null이면 카드를 숨긴다.
 - Hook / 본문 / CTA를 역할 색 라벨과 함께 세 블록으로. 예상 길이(초) 표시, 30초 미만·60초 초과면 경고 색.
 - 각 장면이 원문 어느 문단에서 왔는지 `sourceBlockIds`로 원문 패널에 하이라이트(오른쪽 또는 접이식).
 - 버튼: 주 `장면 편집으로`, 보조 `대본 다시 만들기`(확인 단계를 화면 안에 표시, 브라우저 confirm 사용 금지)
@@ -184,7 +185,7 @@ server: { proxy: { "/api": "http://localhost:8000" } }
 ## 7. Mock 모드 규칙
 - `mock.ts`는 실제 API와 같은 함수 시그니처를 가진다. 화면 코드는 mock 여부를 모른다.
 - 상태 전이를 시간으로 흉내 낸다: 생성 → 1.5초 `extracting` → 3초 `scripting` → `ready`. 렌더는 TTS 2초 → 자막 1초 → 합성 4초 → `done`.
-- 샘플 데이터: 블록 10개(문단 7, 이미지 3), 장면 5개(hook 1, body 3, cta 1). 이미지는 `public/mock/` 정적 파일. 영상은 짧은 샘플 mp4 하나.
+- 샘플 데이터: 블록 10개(문단 7, 이미지 3), `analysis`(요약 2문장 + 포인트 3개), 장면 5개(hook 1, body 3, cta 1). 이미지는 `public/mock/` 정적 파일. 영상은 짧은 샘플 mp4 하나.
 - URL에 `fail`이 들어가면 `EXTRACT_FAILED`, 본문에 `fail`이 들어가면 `LLM_FAILED`를 돌려준다(오류 화면 개발용).
 - `PATCH /scenes` 흉내도 통합기획서 6-2 규칙을 따른다: `text`가 바뀐 장면은 `durationSec=null`·`subtitles=[]`, 무엇이든 바뀌면 `video=null`, `done`이면 `ready`로.
 - 렌더 완료 시 각 장면에 `durationSec`(글자 수 ÷ 7 + 0.3)과 `subtitles`를 채운다.
