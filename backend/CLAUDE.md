@@ -70,14 +70,18 @@ requirements-dev.txt    # 테스트 의존성 (-r requirements.txt 포함)
 .env.example            # 4장 변수 이름만, 값은 비움
 .claude/launch.json     # 데스크톱 앱 preview_start용 (uvicorn 8000)
 app/
-  main.py               # FastAPI 앱, CORS, 라우터 등록, GET /api/health, 시작 시 ffmpeg·폰트 확인
+  main.py               # 앱 생성, CORS, 예외 핸들러·라우터 등록, 시작 시 ffmpeg·폰트 확인. 엔드포인트를 직접 두지 않는다
   config.py             # 환경변수 (pydantic-settings)
-  models.py             # 통합기획서 6-1 그대로
+  models.py             # 통합기획서 6-1 그대로 + 요청 바디 모델
   store.py              # 메모리 프로젝트 저장소 + 파일 경로 관리
-  routers/
-    projects.py         # 6-2 엔드포인트
-    assets.py
+  routers/              # 리소스별 분리. 6-2 엔드포인트 한 줄 = 함수 하나
+    health.py           # GET /api/health
+    projects.py         # POST /projects, GET /projects/{id}, POST /projects/{id}/regenerate
+    scenes.py           # PATCH /projects/{id}/scenes
+    assets.py           # POST /projects/{id}/assets, GET /assets/{assetId}
+    render.py           # POST /projects/{id}/render(?from=), GET /projects/{id}/video
   pipeline/
+    runner.py           # 단계 실행 순서·status/progress 갱신·오류 기록·렌더 동시 1건. 라우터는 이것만 호출
     naver.py            # ① URL 파싱·글 가져오기·구조 추출·이미지 다운로드
     relate.py           # ② 이미지-문단 연결
     script.py           # ③ LLM 호출·프롬프트·검증
@@ -105,6 +109,21 @@ data/                   # DATA_DIR. 실행 중 생성. 커밋 금지(.gitkeep만
 ```
 
 `Dockerfile`은 배포 보류라 만들지 않는다(7장 참고).
+
+### 레이어 규칙 (FastAPI)
+
+| 레이어 | 하는 일 | 하지 않는 일 |
+|---|---|---|
+| `routers/` | 요청 검증(Pydantic), `store` 조회, `runner` 호출, 상태 코드·`response_model` 지정 | 크롤링·LLM·FFmpeg 호출, 파일 경로 계산, 상태 전이 로직 |
+| `pipeline/runner.py` | 단계 순서, `status`·`progress`·`error` 갱신, `BackgroundTasks`에 넘길 함수 | HTTP 객체(`Request`, `HTTPException`) 사용 |
+| `pipeline/*.py` (①~⑦) | 한 단계의 순수 처리. 입력을 받아 결과를 돌려줌 | `store`·`Project` 상태 직접 변경, 다른 단계 호출 |
+| `providers/` | 외부 API 호출만. `*_base.py`의 인터페이스를 구현 | 프롬프트 조립·검증(그건 `script.py`) |
+| `errors.py` | `AppError(code, message, status)` + 전역 예외 핸들러가 통합기획서 6-2 오류 형식으로 변환 | 라우터마다 오류 JSON을 직접 만들기 |
+
+- 모든 엔드포인트에 `response_model`, `status_code`, `tags`(리소스 이름)를 단다. `/docs`가 곧 API 문서다.
+- 라우터는 `APIRouter(prefix="/api", tags=[...])`로 만들고 `main.py`에서 `include_router`만 한다.
+- 의존성(`store`, 설정)은 `Depends`로 주입해 테스트에서 바꿔 끼울 수 있게 한다.
+- 동기 블로킹 작업(FFmpeg, Pillow, 큰 파일 쓰기)은 `async` 함수 안에서 직접 부르지 않고 `asyncio.to_thread`로.
 
 ## 4. 환경변수
 

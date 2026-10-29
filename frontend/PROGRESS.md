@@ -14,7 +14,7 @@
 
 - [ ] **F2. API 계층**
   - 필요: F1
-  - 할 일: `types.ts`(통합기획서 6-1 그대로), `client.ts`(`ApiError`), `projects.ts`, `mock.ts`(7장 규칙 전부), `public/mock/` 샘플
+  - 할 일: `types.ts`(통합기획서 6-1 그대로), `client.ts`(`ApiError`), `endpoints/` 리소스별 5개, `mock/`(7장 규칙 전부), `index.ts`, `queries/` 훅(3장 API 계층 규칙), `public/mock/` 샘플
   - 완료: `types.ts` 필드를 6-1과 한 줄씩 대조한 결과를 보고에 첨부, mock 상태 전이를 Vitest로 확인
 
 - [ ] **F3. 입력 화면**

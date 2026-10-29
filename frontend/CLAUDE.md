@@ -56,9 +56,21 @@ public/mock/          # mock 이미지 3장 + 짧은 mp4 1개 (mp4가 없으면 
 src/
   api/
     types.ts          # 통합기획서 6-1 타입 그대로
-    client.ts         # fetch 래퍼, 오류를 ApiError로 변환
-    projects.ts       # 엔드포인트 함수
-    mock.ts           # VITE_USE_MOCK=true일 때 쓰는 가짜 백엔드
+    client.ts         # fetch 래퍼(기본 주소, JSON, 오류 → ApiError). 이 파일만 fetch를 부른다
+    endpoints/        # 리소스별 분리. 6-2 엔드포인트 한 줄 = 함수 하나
+      health.ts       # getHealth
+      projects.ts     # createProject, getProject, regenerateProject
+      scenes.ts       # updateScenes
+      assets.ts       # uploadAsset, assetUrl(id)
+      render.ts       # startRender(from?), videoUrl(id, download?)
+    mock/             # endpoints/와 같은 파일 이름·같은 함수 시그니처
+      db.ts           # 메모리 상태와 시간 기반 상태 전이
+      health.ts, projects.ts, scenes.ts, assets.ts, render.ts
+    index.ts          # VITE_USE_MOCK에 따라 endpoints 또는 mock을 내보냄. 화면은 여기서만 가져온다
+    queries/          # TanStack Query 훅. 리소스별 파일
+      keys.ts         # 쿼리 키 한곳에서 정의
+      useHealth.ts, useProject.ts(폴링 포함), useCreateProject.ts, useUpdateScenes.ts(디바운스 저장),
+      useUploadAsset.ts, useRender.ts, useRegenerate.ts
   pages/
     InputPage.tsx
     ProjectPage.tsx   # status에 따라 처리중/대본/장면/결과로 분기
@@ -74,12 +86,19 @@ src/
   styles/
 ```
 
+### API 계층 규칙
+- 화면(`pages/`, `components/`)은 `api/queries/` 훅만 쓴다. `fetch`, URL 문자열, `endpoints/`·`mock/` 직접 import 금지.
+- `/api/...` 경로 문자열은 `endpoints/` 안에만 있다. 엔드포인트가 추가되면 해당 리소스 파일에 함수 하나를 더한다.
+- 응답 타입은 `types.ts`의 타입만 쓴다. 화면용으로 모양을 바꿔야 하면 훅 안의 `select`나 `lib/`의 함수로 한다.
+- 오류는 `client.ts`가 `ApiError { status, code, message }`로 통일한다. 화면은 `code`로 분기하고 `message`를 그대로 보여준다.
+- mock과 실제가 같은 시그니처인지는 `index.ts`의 타입으로 강제한다(한쪽만 바뀌면 빌드 실패).
+
 ## 4. 환경변수
 
 | 이름 | 예 | 설명 |
 |---|---|---|
 | `VITE_API_BASE_URL` | (비워 둠) | 비우면 `/api`로 요청하고 Vite 프록시가 `localhost:8000`으로 넘긴다. 배포 시에만 백엔드 주소를 넣는다 |
-| `VITE_USE_MOCK` | `true` / `false` | `true`면 `mock.ts` 사용. 백엔드 없이 모든 화면 개발 가능 |
+| `VITE_USE_MOCK` | `true` / `false` | `true`면 `api/mock/` 사용(`api/index.ts`가 선택). 백엔드 없이 모든 화면 개발 가능 |
 
 `vite.config.ts` 프록시 설정:
 ```ts
@@ -183,7 +202,7 @@ server: { proxy: { "/api": "http://localhost:8000" } }
 - `error`: 실패한 단계 강조 + `○○부터 다시 시도`(`/render?from=…`).
 
 ## 7. Mock 모드 규칙
-- `mock.ts`는 실제 API와 같은 함수 시그니처를 가진다. 화면 코드는 mock 여부를 모른다.
+- `api/mock/`은 `api/endpoints/`와 같은 파일 구성·같은 함수 시그니처를 가진다. 화면 코드는 mock 여부를 모른다.
 - 상태 전이를 시간으로 흉내 낸다: 생성 → 1.5초 `extracting` → 3초 `scripting` → `ready`. 렌더는 TTS 2초 → 자막 1초 → 합성 4초 → `done`.
 - 샘플 데이터: 블록 10개(문단 7, 이미지 3), `analysis`(요약 2문장 + 포인트 3개), 장면 5개(hook 1, body 3, cta 1). 이미지는 `public/mock/` 정적 파일. 영상은 짧은 샘플 mp4 하나.
 - URL에 `fail`이 들어가면 `EXTRACT_FAILED`, 본문에 `fail`이 들어가면 `LLM_FAILED`를 돌려준다(오류 화면 개발용).
@@ -196,7 +215,7 @@ server: { proxy: { "/api": "http://localhost:8000" } }
 각 단계 끝에 브라우저에서 확인하고 커밋한다. 단계 번호는 `PROGRESS.md`의 F1~F10과 같고, 필요 조건·완료 조건은 `PROGRESS.md`에 있다.
 
 1. 기존 JS 템플릿을 TS로 전환(3장) + Tailwind v4 + 5장 토큰 + Pretendard, 빈 `InputPage`, Vite 프록시, README에 실행 방법
-2. `api/types.ts`(통합기획서 6-1 그대로), `client.ts`, `mock.ts`, `projects.ts`
+2. `api/types.ts`(통합기획서 6-1 그대로), `client.ts`, `endpoints/`, `mock/`, `index.ts`, `queries/` (3장 API 계층 규칙)
 3. 입력 화면 완성(탭·URL 검증·본문 글자 수·오류·`PhoneFrame` 예시) + `naverUrl.ts` 단위 테스트(Vitest)
 4. `ProjectPage` 상태 분기 + 처리 중 화면 + 폴링
 5. 대본 확인 화면

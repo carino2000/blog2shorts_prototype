@@ -24,7 +24,7 @@
 
 - [ ] **B2. 모델·저장소·가짜 파이프라인**
   - 필요: B1
-  - 할 일: `models.py`(통합기획서 6-1 그대로, camelCase), `errors.py`(공통 오류 형식), `store.py`, `POST /api/projects`·`GET /api/projects/{id}`를 sleep + 샘플 데이터로 `extracting → scripting → ready` 전이. `GET /api/assets/{id}`는 샘플 이미지 서빙
+  - 할 일: `models.py`(통합기획서 6-1 그대로, camelCase), `errors.py`(공통 오류 형식), `store.py`, `routers/health.py`·`routers/projects.py`·`pipeline/runner.py`(3장 레이어 규칙)로 `POST /api/projects`·`GET /api/projects/{id}`를 sleep + 샘플 데이터로 `extracting → scripting → ready` 전이. `GET /api/assets/{id}`는 샘플 이미지 서빙
   - 완료: pytest로 전이·404·오류 형식 확인, `/openapi.json`의 `Project` 필드명이 6-1과 일치(목록 비교 결과를 보고에 첨부)
   - 이 단계가 끝나면 프론트가 `VITE_USE_MOCK=false`로 붙어 볼 수 있다
 
