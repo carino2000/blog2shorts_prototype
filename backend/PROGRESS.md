@@ -28,7 +28,7 @@
   - 완료: pytest로 전이·404·오류 형식 확인, `/openapi.json`의 `Project` 필드명이 6-1과 일치(목록 비교 결과를 보고에 첨부)
   - 이 단계가 끝나면 프론트가 `VITE_USE_MOCK=false`로 붙어 볼 수 있다
 
-- [ ] **B3. 렌더 PoC** (`scripts/poc_render.py`)
+- [x] **B3. 렌더 PoC** (`scripts/poc_render.py`)
   - 필요: B1, H2, H3
   - 할 일: 이미지 3장(가로·세로·정사각, `tests/fixtures/images`에 코드로 생성) + 음성 3개(FFmpeg `sine`/무음으로 생성, TTS 안 씀) + 한글 자막 → 1080×1920 MP4. 모션 5종 확인
   - 완료: `ffprobe`로 해상도·fps·길이 확인, 한글 자막이 깨지지 않음(프레임 하나를 png로 뽑아 눈으로 확인), 장면당 렌더 시간을 `samples/render_poc/RESULT.md`와 `CLAUDE.md` 5장 ⑦에 기록
@@ -76,3 +76,4 @@
 | 2026-10-29 | B1 | pytest 3 passed. uvicorn 실행 후 `/api/health` → `{"ok":true}`, `/docs` 200. 시작 시 ffmpeg·ffprobe·폰트 없음 경고 출력 확인 | H2(FFmpeg)·H3(폰트) 없음 → B3 전에 필요. pytest-asyncio loop scope 경고·starlette httpx2 경고는 미처리 |
 | 2026-10-29 | B2 | pytest 16 passed(전이·404·422·없는 경로 오류 형식, openapi 필드 11개 스키마가 6-1과 일치, 샘플 대본 규칙). 실서버 폴링으로 extracting→scripting→ready, 이미지 200 확인 | ErrorCode에 NOT_FOUND·INVALID_REQUEST·INVALID_STATE 추가(사람 승인 10/29) → 통합기획서 6-1·프론트 types.ts 반영 필요(백엔드 세션 밖). asset ID는 `/api/assets/{assetId}`에 프로젝트 ID가 없어 전역 유일값(`a`+hex10) 사용 |
 | 2026-10-29 | B4 | pytest 35 passed·1 skipped(external, `-m external`로 따로 1 passed). 실제 글 19건(copper567, 사람이 준 20건 중 중복 1건 제외) 모두 추출 성공: 제목·문단·소제목·이미지 원문 순서 일치, 이미지 6~9장/글(966px), 외부 추적 이미지·200px 미만 제외. 🟡 결론을 CLAUDE.md ①에 반영 | 19건 모두 같은 블로그·스마트에디터 ONE·이미지 있는 글 → 구 에디터·사진 없는 글·다른 작성자 글은 확인 못 함. 테스트용 HTML은 2건만 저장 |
+| 2026-10-29 | B3 | FFmpeg 9.0.2(winget)·NotoSansKR-Bold.ttf(Google Fonts 정적 Bold, 6.2MB) 설치. PoC: 모션 5종 장면 5개 → 1080×1920·30fps·yuv420p, 17.02초, 프레임 수 정확, 한글 자막 프레임 5장 눈으로 확인, 장면 렌더 0.58~1.06초. RESULT.md·CLAUDE.md ⑦ 기록 | 문서 명령대로면 yuvj420p가 됨 → 색 범위 변환 줄 추가(B9에 반영 필요). zoompan 흔들림·실제 플레이어 재생은 눈으로 확인 못 함. 이 세션은 앱 재시작 전이라 PATH에 FFmpeg 없음(사용자 PATH에는 등록됨) |

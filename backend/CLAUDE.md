@@ -223,12 +223,15 @@ ffmpeg -y -i scene.jpg -i scene.mp3 -filter_complex "
   [0:v]scale=1080:1920:force_original_aspect_ratio=decrease[fg];
   [bg][fg]overlay=(W-w)/2:(H-h)/2,
   zoompan=z='<Z>':x='<X>':y='<Y>':d=F:s=1080x1920:fps=30,
-  ass=scene.ass[v];
+  ass=scene.ass:fontsdir=fonts,
+  scale=out_range=tv,format=yuv420p[v];
   [1:a]apad[a]" \
   -map "[v]" -map "[a]" -t <durationSec> \
   -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k sXX.mp4
 ```
 - 검증(2026-10-29, 기획 작업 환경): 가로 1200×800 이미지로 zoom_in 3.0초·pan_left 3.5초 장면을 만들어 연결 → 프레임 90·105개, 1080×1920·30fps, 연결본 6.52초, 한글 자막 번인 정상. 3초 클립 렌더에 2.0~2.8초 걸림. **팀원 PC에서 다시 실측해야 한다.**
+- ✅ 실측(2026-10-29, 개발 PC, B3 `scripts/poc_render.py`, FFmpeg 9.0.2, AMD 12스레드): 가로·세로·정사각 이미지로 모션 5종 장면 5개(3.1~3.8초) → 프레임 수 정확(99·114·99·105·93), 1080×1920·30fps, 연결본 17.02초, 한글 자막 정상. **장면 렌더 0.58~1.06초(영상 1초당 약 0.25초)**, 연결 0.11초. 45초 영상이면 렌더 약 11초로 추정. 상세는 `samples/render_poc/RESULT.md`.
+- ✅ 발견(B3): 위 명령에서 `scale=out_range=tv,format=yuv420p` 줄이 없으면 JPEG 입력의 풀 레인지가 남아 결과가 `yuvj420p`가 된다(`-pix_fmt yuv420p`를 줘도). 이 줄을 빼지 않는다.
 - 원본이 세로가 아니어도 잘리지 않게, 흐린 배경 위에 원본 전체를 올린다.
 - 이미지 입력에 `-loop 1`을 쓰지 않는다. 프레임 수는 zoompan의 `d`로 만든다.
 - 모션 식(`on` = 출력 프레임 번호):
