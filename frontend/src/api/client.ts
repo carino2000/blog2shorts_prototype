@@ -21,7 +21,7 @@ export function isApiError(e: unknown): e is ApiError {
 
 /** 404 = 작업이 없음(백엔드 재시작으로 사라졌거나 잘못된 주소) */
 export function isNotFound(e: unknown): boolean {
-  return isApiError(e) && e.status === 404
+  return isApiError(e) && (e.code === 'NOT_FOUND' || e.status === 404)
 }
 
 const BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '')
@@ -61,7 +61,10 @@ export async function request<T>(path: string, init: RequestInit = {}): Promise<
 
   if (!res.ok) {
     if (isErrorResponse(body)) throw new ApiError(res.status, body.error.code, body.error.message)
-    if (res.status === 404) throw new ApiError(404, 'UNKNOWN', '작업을 찾을 수 없습니다.')
+    // 본문이 공통 형식이 아닐 때(프록시·서버 밖 오류)도 상태 코드로 계약 코드를 맞춘다
+    if (res.status === 404) throw new ApiError(404, 'NOT_FOUND', '작업을 찾을 수 없습니다.')
+    if (res.status === 409) throw new ApiError(409, 'INVALID_STATE', '지금 상태에서는 할 수 없는 요청입니다.')
+    if (res.status === 422 || res.status === 405) throw new ApiError(res.status, 'INVALID_REQUEST', '요청 형식이 올바르지 않습니다.')
     if (res.status >= 500 && res.status !== 501) {
       // Vite 프록시가 백엔드에 연결하지 못하면 5xx(본문 없음)를 돌려준다
       throw new ApiError(res.status, body === undefined ? 'NETWORK' : 'UNKNOWN', '서버 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')

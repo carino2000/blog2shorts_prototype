@@ -81,6 +81,9 @@ export type ErrorCode =
   | 'RENDER_FAILED'
   | 'MISSING_IMAGE'
   | 'UPLOAD_INVALID'
+  | 'NOT_FOUND' // 404: 없는 프로젝트·이미지·경로. 프론트는 "작업 만료" 안내
+  | 'INVALID_REQUEST' // 422(405 포함): 요청 형식 오류
+  | 'INVALID_STATE' // 409: 지금 상태에서 할 수 없는 요청(예: rendering 중 PATCH)
 
 // ---- 6-2. 엔드포인트 요청·응답 ----
 

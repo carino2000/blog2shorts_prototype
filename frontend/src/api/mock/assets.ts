@@ -4,7 +4,6 @@ import { ERROR_MESSAGES, getRecord, persist } from './db'
 import { latency } from './latency'
 import { checkUpload } from '../../lib/limits'
 
-
 export async function uploadAsset(projectId: string, file: File): Promise<Asset> {
   await latency(400)
   const rec = getRecord(projectId)
@@ -13,8 +12,8 @@ export async function uploadAsset(projectId: string, file: File): Promise<Asset>
   }
   const url = await readDataUrl(file)
   const { width, height } = await imageSize(url)
-  const n = rec.project.assets.reduce((max, a) => Math.max(max, Number(a.id.slice(1)) || 0), 0) + 1
-  const asset: Asset = { id: `a${n}`, origin: 'upload', url, width, height }
+  // assetId는 전역 유일한 임의 문자열(통합기획서 6-1). 형식에 기대지 않는다
+  const asset: Asset = { id: `a${crypto.randomUUID().replace(/-/g, '').slice(0, 16)}`, origin: 'upload', url, width, height }
   rec.project.assets.push(asset)
   persist()
   return structuredClone(asset)

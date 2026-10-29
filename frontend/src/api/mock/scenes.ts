@@ -9,13 +9,13 @@ export async function updateScenes(projectId: string, scenes: SceneUpdate[]): Pr
   const rec = getRecord(projectId)
   const p = rec.project
   if (!['ready', 'done', 'error'].includes(p.status)) {
-    throw new ApiError(409, 'UNKNOWN', '작업이 진행 중이라 장면을 고칠 수 없습니다.')
+    throw new ApiError(409, 'INVALID_STATE', '작업이 진행 중이라 장면을 고칠 수 없습니다.')
   }
 
   let changed = false
   for (const update of scenes) {
     const scene = p.scenes.find((s) => s.id === update.id)
-    if (!scene) throw new ApiError(400, 'UNKNOWN', `없는 장면입니다: ${update.id}`)
+    if (!scene) throw new ApiError(422, 'INVALID_REQUEST', `없는 장면입니다: ${update.id}`)
 
     if (update.assetId !== undefined && update.assetId !== scene.assetId) {
       if (!p.assets.some((a) => a.id === update.assetId)) {

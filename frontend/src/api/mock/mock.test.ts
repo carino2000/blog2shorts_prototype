@@ -102,12 +102,12 @@ describe('mock 생성 흐름', () => {
     expect(p.scenes.every((s) => s.assetId === null)).toBe(true)
   })
 
-  it('없는 ID는 404', () => {
+  it('없는 ID는 404 NOT_FOUND', () => {
     expect(() => getRecord('nope')).toThrow(ApiError)
     try {
       getRecord('nope')
     } catch (e) {
-      expect((e as ApiError).status).toBe(404)
+      expect(e).toMatchObject({ status: 404, code: 'NOT_FOUND' })
     }
   })
 })
@@ -189,6 +189,14 @@ describe('mock PATCH /scenes (6-2 규칙)', () => {
     expect(p.video).not.toBeNull()
   })
 
+  it('없는 장면 ID는 INVALID_REQUEST', async () => {
+    const p0 = await readyAndRendered()
+    await expect(settle(scenes.updateScenes(p0.id, [{ id: 's99', text: 'x' }]))).rejects.toMatchObject({
+      status: 422,
+      code: 'INVALID_REQUEST',
+    })
+  })
+
   it('없는 assetId는 MISSING_IMAGE', async () => {
     const p0 = await readyAndRendered()
     await expect(settle(scenes.updateScenes(p0.id, [{ id: 's1', assetId: 'a99' }]))).rejects.toMatchObject({
@@ -198,7 +206,7 @@ describe('mock PATCH /scenes (6-2 규칙)', () => {
 
   it('진행 중에는 수정 불가(409)', async () => {
     const { id } = createRecord({ type: 'url', url: URL_OK })
-    await expect(settle(scenes.updateScenes(id, [{ id: 's1', text: 'x' }]))).rejects.toMatchObject({ status: 409 })
+    await expect(settle(scenes.updateScenes(id, [{ id: 's1', text: 'x' }]))).rejects.toMatchObject({ status: 409, code: 'INVALID_STATE' })
   })
 })
 
@@ -224,6 +232,14 @@ describe('mock 렌더', () => {
     // 7장: 글자 수 ÷ 7 + 0.3, 자막 시간 합 = 장면 길이
     expect(s1.durationSec).toBeCloseTo(countChars(s1.text) / 7 + 0.3, 1)
     expect(s1.subtitles.at(-1)?.endSec).toBeCloseTo(s1.durationSec!, 1)
+  })
+
+  it('렌더 중 다시 렌더·재생성 요청은 INVALID_STATE', () => {
+    const { id } = createRecord({ type: 'url', url: URL_OK })
+    at(10_000)
+    startRenderJob(getRecord(id), undefined)
+    expect(() => startRenderJob(getRecord(id), undefined)).toThrow(expect.objectContaining({ code: 'INVALID_STATE' }))
+    expect(() => startRegenerate(getRecord(id))).toThrow(expect.objectContaining({ code: 'INVALID_STATE' }))
   })
 
   it('이미지 없는 장면이 있으면 MISSING_IMAGE', () => {

@@ -107,7 +107,7 @@ export function createRecord(
 
 export function getRecord(id: string): MockRecord {
   const rec = records.get(id)
-  if (!rec) throw new ApiError(404, 'UNKNOWN', '작업을 찾을 수 없습니다.')
+  if (!rec) throw new ApiError(404, 'NOT_FOUND', ERROR_MESSAGES.NOT_FOUND)
   advance(rec, now())
   save()
   return rec
@@ -126,7 +126,7 @@ export function persist(): void {
 export function startRegenerate(rec: MockRecord): void {
   const p = rec.project
   if (!['ready', 'done', 'error'].includes(p.status) || !p.script) {
-    throw new ApiError(409, 'UNKNOWN', '지금은 대본을 다시 만들 수 없습니다.')
+    throw new ApiError(409, 'INVALID_STATE', '지금은 대본을 다시 만들 수 없습니다.')
   }
   p.status = 'scripting'
   p.error = null
@@ -137,7 +137,7 @@ export function startRegenerate(rec: MockRecord): void {
 export function startRenderJob(rec: MockRecord, from: RenderStage | undefined): void {
   const p = rec.project
   if (!['ready', 'done', 'error'].includes(p.status) || p.scenes.length === 0) {
-    throw new ApiError(409, 'UNKNOWN', '지금은 영상을 만들 수 없습니다.')
+    throw new ApiError(409, 'INVALID_STATE', '지금은 영상을 만들 수 없습니다.')
   }
   if (p.scenes.some((s) => !s.assetId)) {
     throw new ApiError(400, 'MISSING_IMAGE', '이미지가 없는 장면이 있습니다. 모든 장면에 이미지를 넣어 주세요.')
@@ -276,6 +276,9 @@ export const ERROR_MESSAGES: Record<ErrorCode, string> = {
   RENDER_FAILED: '영상을 합치지 못했습니다. 다시 시도해 주세요.',
   MISSING_IMAGE: '이미지가 없는 장면이 있습니다. 모든 장면에 이미지를 넣어 주세요.',
   UPLOAD_INVALID: '이미지는 jpg, png, webp 형식, 10MB 이하만 올릴 수 있습니다.',
+  NOT_FOUND: '작업이 만료되었습니다. 처음부터 다시 시작해 주세요.',
+  INVALID_REQUEST: '요청 형식이 올바르지 않습니다.',
+  INVALID_STATE: '지금 상태에서는 할 수 없는 요청입니다.',
 }
 
 // ---- 테스트용 ----
