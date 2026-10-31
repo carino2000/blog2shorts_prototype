@@ -1,15 +1,17 @@
 import type { RouteObject } from 'react-router'
-import { InputPage } from './pages/InputPage'
-import { ProjectPage } from './pages/ProjectPage'
-import { ResultPage } from './pages/ResultPage'
-import { ScenesPage } from './pages/ScenesPage'
-import { ScriptPage } from './pages/ScriptPage'
+import { RootLayout } from './variants/RootLayout'
+import { VariantScreen } from './variants/VariantScreen'
 
-// 경로는 통합기획서 7장 표와 같다
+// 경로는 통합기획서 7장 표와 같다. 화면은 주소의 ?v=시안id에 맞는 시안이 그린다(src/variants/)
 export const routes: RouteObject[] = [
-  { path: '/', element: <InputPage /> },
-  { path: '/projects/:id', element: <ProjectPage /> },
-  { path: '/projects/:id/script', element: <ScriptPage /> },
-  { path: '/projects/:id/scenes', element: <ScenesPage /> },
-  { path: '/projects/:id/result', element: <ResultPage /> },
+  {
+    element: <RootLayout />,
+    children: [
+      { path: '/', element: <VariantScreen screen="input" /> },
+      { path: '/projects/:id', element: <VariantScreen screen="processing" /> },
+      { path: '/projects/:id/script', element: <VariantScreen screen="script" /> },
+      { path: '/projects/:id/scenes', element: <VariantScreen screen="scenes" /> },
+      { path: '/projects/:id/result', element: <VariantScreen screen="result" /> },
+    ],
+  },
 ]

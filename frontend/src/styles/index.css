@@ -22,6 +22,14 @@
   --danger-ink: #c5282e;
   --danger-soft: #fff5f5;
   --danger-line: #f3d5d5;
+  /* 디자인 시안(src/variants)이 자기 범위(html[data-variant])에서 덮어쓰는 보조 토큰. base에서는 위 값을 따른다 */
+  --panel: var(--surface);
+  --panel-2: var(--bg);
+  --edge: var(--line);
+  --hi: var(--accent);
+  --on-hi: var(--on-accent);
+  --v-display: var(--font-sans);
+  --v-mono: ui-monospace, 'Cascadia Mono', Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -70,6 +78,13 @@
   --color-danger-ink: var(--danger-ink);
   --color-danger-soft: var(--danger-soft);
   --color-danger-line: var(--danger-line);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-edge: var(--edge);
+  --color-hi: var(--hi);
+  --color-on-hi: var(--on-hi);
+  --font-display: var(--v-display);
+  --font-mono: var(--v-mono);
 }
 
 @theme {
@@ -171,4 +186,9 @@
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* 전환 패널(왼쪽 아래 44px 버튼)이 시안의 아래 고정 바를 가리지 않게, 그 바의 안쪽 왼쪽을 비운다 */
+.sw-inset {
+  padding-left: 3.75rem;
 }
