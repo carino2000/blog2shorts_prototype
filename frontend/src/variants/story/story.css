@@ -1,0 +1,57 @@
+/* 시안 story — 세로 스토리. 검은 바탕 한가운데 9:16 무대 하나. 다크 전용 */
+html[data-variant='story'] {
+  color-scheme: dark;
+  --bg: #000000;
+  --surface: #121317;
+  --panel: #16181d;
+  --panel-2: #1f2229;
+  --ink: #ffffff;
+  --muted: #b7bdc8;
+  --placeholder: #8a919d;
+  --line: #2a2e37;
+  --edge: #3a3f4a;
+  --segment: #1f2229;
+  --accent: #3ddcff;
+  --accent-hover: #7be8ff;
+  --accent-bright: #3ddcff;
+  --accent-soft: #0f2a33;
+  --on-accent: #001318;
+  --hi: #3ddcff;
+  --on-hi: #001318;
+  --hook: #ffb547;
+  --body: #b7bdc8;
+  --cta: #6cf0a5;
+  --danger: #ff7a70;
+  --danger-ink: #ff9d95;
+  --danger-soft: #2b1614;
+  --danger-line: #7a3a35;
+  --radius-card: 24px;
+  --radius-control: 999px;
+  --radius-small: 12px;
+  --v-display: 'Pretendard Variable', Pretendard, sans-serif;
+  --v-mono: 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+/* 무대 크기: 화면 높이에 맞추되 너비를 넘지 않는다 */
+.st-stage {
+  width: min(100%, calc((100dvh - 7.5rem) * 9 / 16));
+  min-width: min(100%, 17rem);
+}
+
+/* 스크롤 쪽 위치 맞춤 */
+.st-snap {
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.st-snap::-webkit-scrollbar {
+  display: none;
+}
+.st-page {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-snap {
+    scroll-behavior: auto;
+  }
+}
