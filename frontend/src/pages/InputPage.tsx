@@ -175,7 +175,7 @@ export function InputPage() {
 
           <aside className="mx-auto w-full max-w-[280px] md:max-w-none" aria-label="결과 예시">
             <PhoneFrame badge="샘플 미리보기" label="샘플 미리보기: 9:16 세로 화면에 블로그 사진과 자막">
-              <SceneFrame src={EXAMPLE_IMAGE} subtitle="제주 해안 길, 3시간 걸어 봤어요" />
+              <SceneFrame src={EXAMPLE_IMAGE} subtitle="제주 해안 길 3시간 걷기" />
             </PhoneFrame>
             <p className="m-0 mt-3 text-center text-xs text-muted tabular-nums">
               {VIDEO_WIDTH} × {VIDEO_HEIGHT} · 9:16 세로 영상

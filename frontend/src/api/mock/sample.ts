@@ -1,5 +1,6 @@
 // mock 샘플 데이터 (frontend/CLAUDE.md 7장): 블록 10개(문단 7, 이미지 3), analysis, 장면 5개
 // 글 내용은 이 프로젝트용으로 지어낸 것이다. 이미지는 public/mock/의 코드로 만든 SVG.
+import { splitSubtitleChunks } from '../../lib/render'
 import type { Asset, Block, Motion, Project, Scene, Subtitle } from '../types'
 import { CHARS_PER_SEC, countChars } from '../../lib/duration'
 
@@ -96,13 +97,9 @@ export function mockDurationSec(text: string): number {
   return round1(countChars(text) / CHARS_PER_SEC + 0.3)
 }
 
-/** 백엔드 ⑥과 같은 규칙: 문장부호로 나누고 18자 넘으면 어절로 다시 나눔, 시간은 글자 수 비례 */
+/** 백엔드 ⑥과 같은 규칙으로 나눈다. 시간은 글자 수 비례 */
 export function mockSubtitles(text: string, durationSec: number): Subtitle[] {
-  const pieces = text
-    .split(/(?<=[.?!,])\s*/)
-    .map((t) => t.trim())
-    .filter(Boolean)
-    .flatMap(splitLong)
+  const pieces = splitSubtitleChunks(text)
   const total = pieces.reduce((n, t) => n + countChars(t), 0) || 1
   let t = 0
   return pieces.map((piece) => {
@@ -113,22 +110,6 @@ export function mockSubtitles(text: string, durationSec: number): Subtitle[] {
   })
 }
 
-function splitLong(piece: string): string[] {
-  if (countChars(piece) <= 18) return [piece]
-  const out: string[] = []
-  let line = ''
-  for (const word of piece.split(/\s+/)) {
-    const next = line ? `${line} ${word}` : word
-    if (line && countChars(next) > 18) {
-      out.push(line)
-      line = word
-    } else {
-      line = next
-    }
-  }
-  if (line) out.push(line)
-  return out
-}
 
 function p(id: string, text: string): Block {
   return { id, type: 'paragraph', text, assetId: null, linkedBlockIds: [] }
