@@ -28,7 +28,7 @@ export function Input() {
   const take = (
     <button type="submit" data-act="submit" disabled={!f.canSubmit} className={cx(btn.take, 'shrink-0')}>
       {f.pending && <Loader2 aria-hidden="true" className="size-5 motion-safe:animate-spin" />}
-      {f.pending ? 'Sending' : 'Take'}
+      <span className="flex flex-col items-center gap-0.5"><span>{f.pending ? 'Sending' : 'Take'}</span><span className="font-sans text-[12px] font-semibold normal-case tracking-normal">{f.pending ? '보내는 중' : '영상 만들기'}</span></span>
     </button>
   )
 

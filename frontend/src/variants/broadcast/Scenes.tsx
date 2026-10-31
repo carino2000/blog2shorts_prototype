@@ -224,7 +224,7 @@ function Switcher({ project }: { project: Project }) {
             </p>
             <Quality ed={ed} />
             <button type="button" data-act="render" className={btn.take} disabled={!ed.canRender} onClick={() => void ed.startRender()}>
-              {ed.renderPending ? 'Starting' : 'Take'}
+              <span className="flex flex-col items-center gap-0.5"><span>{ed.renderPending ? 'Starting' : 'Take'}</span><span className="font-sans text-[12px] font-semibold normal-case tracking-normal">{ed.renderPending ? '시작하는 중' : '영상 만들기'}</span></span>
             </button>
           </section>
         </div>
