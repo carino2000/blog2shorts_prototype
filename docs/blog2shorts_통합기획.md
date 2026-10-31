@@ -171,8 +171,8 @@ type ErrorCode =
 | `POST /api/projects/{id}/regenerate` | — | `202 { id }` | 대본·장면 다시 생성(③④만) |
 | `POST /api/projects/{id}/assets` | multipart `file` (jpg/png/webp, 10MB 이하) | `201 Asset` | 이미지 업로드 |
 | `GET /api/assets/{assetId}` | — | 이미지 | 블로그·업로드 이미지 서빙 |
-| `POST /api/projects/{id}/render` | — | `202 { id }` | ⑤~⑦ 시작. 모든 장면에 `assetId`가 있어야 함 |
-| `POST /api/projects/{id}/render?from=subtitle` | — | `202` | 실패한 단계부터 재시도(완료된 TTS 재사용) |
+| `POST /api/projects/{id}/render` | 선택 `{ motionQuality?: "fast" \| "smooth" }` | `202 { id }` | ⑤~⑦ 시작. 모든 장면에 `assetId`가 있어야 함. ✅ 추가(10/31, 사용자 지시): `fast` = 기존 zoompan(빠름, 약간 떨림), `smooth` = 보간(부드러움, 합성이 더 오래 걸림). 생략하면 `smooth` |
+| `POST /api/projects/{id}/render?from=subtitle` | 위와 같은 선택 본문 | `202` | 실패한 단계부터 재시도(완료된 TTS 재사용). `motionQuality`를 바꿔도 음성은 다시 만들지 않고 영상 합성만 새로 한다 |
 | `GET /api/projects/{id}/video` | — | `video/mp4` | 미리보기·다운로드(`?download=1`이면 attachment) |
 | `GET /api/health` | — | `{ ok: true }` | 백엔드 실행 여부 확인 |
 
