@@ -1,0 +1,36 @@
+/* 시안 ledger — 단정한 안내. 라이트 전용, 큰 글자와 넓은 여백 */
+html[data-variant='ledger'] {
+  color-scheme: light;
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f3f1ec;
+  --ink: #1f2933;
+  --muted: #52606d;
+  --placeholder: #8a96a3;
+  --line: #e4e1d9;
+  --edge: #cfcac0;
+  --segment: #f3f1ec;
+  --accent: #0f766e;
+  --accent-hover: #115e59;
+  --accent-bright: #0f766e;
+  --accent-soft: #e3f2ef;
+  --on-accent: #ffffff;
+  --hi: #0f766e;
+  --on-hi: #ffffff;
+  --hook: #b45309;
+  --body: #52606d;
+  --cta: #0f766e;
+  --danger: #b42318;
+  --danger-ink: #b42318;
+  --danger-soft: #fef3f2;
+  --danger-line: #fecdca;
+  --radius-card: 18px;
+  --radius-control: 14px;
+  --radius-small: 10px;
+}
+
+html[data-variant='ledger'] body {
+  font-size: 18px;
+  line-height: 1.7;
+}
