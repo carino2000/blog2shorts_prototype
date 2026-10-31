@@ -39,6 +39,7 @@ export const VARIANTS: VariantEntry[] = [
   { id: 'soft', name: '부드러운 유리', mood: '친근 · 가벼움', swatch: ['#EEF6F3', '#1D2B28', '#0E7566'], load: () => import('./soft') },
   { id: 'desktop', name: '옛 PC 책상', mood: '복고 · 장난기', swatch: ['#7FB5A0', '#1B1B1B', '#2B3A67'], load: () => import('./desktop') },
   { id: 'story', name: '세로 스토리', mood: '모바일 · 몰입', swatch: ['#000000', '#FFFFFF', '#3DDCFF'], load: () => import('./story') },
+  { id: 'storyboard', name: '콘티 용지', mood: '실무 · 아날로그', swatch: ['#F1EEE6', '#1F2328', '#2C4A86'], load: () => import('./storyboard') },
 ]
 
 export function findVariant(id: string): VariantEntry | undefined {

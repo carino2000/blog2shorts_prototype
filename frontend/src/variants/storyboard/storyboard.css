@@ -1,0 +1,62 @@
+/* 시안 storyboard — 콘티 용지. 인쇄된 양식 위에 연필로 적은 느낌. 라이트 전용 */
+html[data-variant='storyboard'] {
+  color-scheme: light;
+  --bg: #f1eee6;
+  --surface: #fffefb;
+  --panel: #fffefb;
+  --panel-2: #f6f3ea;
+  --ink: #1f2328;
+  --muted: #52565c;
+  --placeholder: #7d7f84;
+  --line: #d3cdbd;
+  --edge: #8d8672;
+  --segment: #ebe7da;
+  --accent: #2c4a86;
+  --accent-hover: #213a6c;
+  --accent-bright: #2c4a86;
+  --accent-soft: #e3e9f6;
+  --on-accent: #ffffff;
+  --hi: #2c4a86;
+  --on-hi: #ffffff;
+  --hook: #9f4700;
+  --body: #52565c;
+  --cta: #2a6a39;
+  --danger: #b3261e;
+  --danger-ink: #9c1f18;
+  --danger-soft: #fbeceb;
+  --danger-line: #b3261e;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+  --v-display: 'Nanum Pen Script', 'Pretendard Variable', Pretendard, sans-serif;
+  --v-mono: 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+html[data-variant='storyboard'] body {
+  background-color: #e9e5da;
+}
+
+/* 인쇄 용지 */
+.sb-sheet {
+  background: #fffefb;
+  border: 1px solid #8d8672;
+  box-shadow: 0 1px 0 #fff inset, 0 18px 30px -22px rgba(31, 35, 40, 0.5);
+}
+
+/* 연필 글씨 */
+.sb-pencil {
+  font-family: 'Nanum Pen Script', 'Pretendard Variable', Pretendard, sans-serif;
+  color: #2c4a86;
+}
+
+/* 줄 쳐진 칸: 글줄 간격 28px */
+.sb-lines {
+  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, #cfc9ba 27px 28px);
+  line-height: 28px;
+}
+
+/* 그림 칸 모서리 표시 */
+.sb-frame {
+  border: 1.5px solid #1f2328;
+  background: #fff;
+}
