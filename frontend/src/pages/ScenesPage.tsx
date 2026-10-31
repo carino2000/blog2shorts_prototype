@@ -1,22 +1,24 @@
 import { ChevronDown, Clapperboard, ImagePlus } from 'lucide-react'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { assetUrl, isApiError } from '../api'
 import { useRender } from '../api/queries/useRender'
 import { useUpdateScenes } from '../api/queries/useUpdateScenes'
-import type { Project } from '../api/types'
+import type { MotionQuality, Project } from '../api/types'
 import { AssetPicker } from '../components/AssetPicker'
 import { DurationMeter } from '../components/DurationMeter'
 import { ErrorBanner } from '../components/ErrorBanner'
 import { MediaGrid } from '../components/MediaGrid'
+import { MotionQualityPicker } from '../components/MotionQualityPicker'
 import { ProjectShell } from '../components/ProjectShell'
 import { SaveStatus } from '../components/SaveStatus'
 import { SceneCard } from '../components/SceneCard'
 import { ScenePreview } from '../components/ScenePreview'
 import { totalSec } from '../lib/duration'
+import { MOTION_QUALITIES, loadMotionQuality, saveMotionQuality } from '../lib/motionQuality'
 import { showUploadNotice } from '../lib/projectView'
 import { WIDE_QUERY, useMediaQuery } from '../lib/useMediaQuery'
-import { btnPrimary } from '../lib/ui'
+import { btnPrimary, cx } from '../lib/ui'
 
 export function ScenesPage() {
   const { id = '' } = useParams()
@@ -34,6 +36,12 @@ function ScenesEditor({ project }: { project: Project }) {
   const [selectedId, setSelectedId] = useState(project.scenes[0]?.id ?? '')
   const [renderError, setRenderError] = useState<string | null>(null)
   const [pickerOpen, setPickerOpen] = useState(false)
+  const [motionQuality, setMotionQuality] = useState<MotionQuality>(() => loadMotionQuality(project.id))
+  const qualityHintId = useId()
+  const changeQuality = (quality: MotionQuality) => {
+    setMotionQuality(quality)
+    saveMotionQuality(project.id, quality)
+  }
   const isWide = useMediaQuery(WIDE_QUERY)
 
   const scenes = updates.applyDrafts(project.scenes)
@@ -75,7 +83,7 @@ function ScenesEditor({ project }: { project: Project }) {
     setRenderError(null)
     try {
       await updates.flush()
-      await render.mutateAsync(undefined)
+      await render.mutateAsync({ motionQuality })
       navigate(`/projects/${project.id}/result`)
     } catch (e) {
       setRenderError(isApiError(e) ? e.message : '영상 만들기를 시작하지 못했습니다.')
@@ -173,6 +181,7 @@ function ScenesEditor({ project }: { project: Project }) {
       )}
 
       <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-line bg-bg/95 px-4 py-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
         <p className="m-0 text-sm text-muted" aria-live="polite">
           {missingCount > 0 ? (
             <span className="text-danger-ink">이미지가 없는 장면 {missingCount}개 · 모든 장면에 이미지를 넣어야 영상을 만들 수 있습니다.</span>
@@ -184,15 +193,22 @@ function ScenesEditor({ project }: { project: Project }) {
             <>장면 {scenes.length}개로 음성·자막을 입혀 MP4를 만듭니다.</>
           )}
         </p>
+        <p id={qualityHintId} className="m-0 mt-0.5 text-xs text-muted">
+          {MOTION_QUALITIES.find((q) => q.value === motionQuality)?.description}
+        </p>
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
+        <MotionQualityPicker value={motionQuality} onChange={changeQuality} disabled={render.isPending} describedBy={qualityHintId} />
         <button
           type="button"
-          className={btnPrimary}
+          className={cx(btnPrimary, 'flex-1 whitespace-nowrap px-3 sm:flex-none sm:px-4')}
           disabled={missingCount > 0 || render.isPending || updates.saveState === 'error'}
           onClick={() => void startRender()}
         >
           <Clapperboard aria-hidden="true" className="size-4" />
           {render.isPending ? '시작하는 중…' : '영상 만들기'}
         </button>
+        </div>
       </div>
     </div>
   )

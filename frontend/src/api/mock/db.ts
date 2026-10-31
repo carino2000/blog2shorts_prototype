@@ -10,7 +10,7 @@
 //   장면 문구에 "ttsfail"     → 렌더 TTS 단계에서 TTS_FAILED (다시 시도하면 통과)
 //   장면 문구에 "renderfail"  → 렌더 합성 단계에서 RENDER_FAILED (다시 시도하면 통과)
 import { ApiError } from '../client'
-import type { Asset, ErrorCode, Project, RenderStage, Stage } from '../types'
+import type { Asset, ErrorCode, MotionQuality, Project, RenderStage, Stage } from '../types'
 import {
   SAMPLE_ANALYSIS,
   SAMPLE_ASSETS,
@@ -30,10 +30,11 @@ export const TIMING = {
   ttsMs: 2000,
   subtitleMs: 1000,
   renderMs: 4000,
+  /** motionQuality=smooth는 합성이 더 오래 걸린다 */
+  smoothRenderMs: 6000,
 } as const
 
 const RENDER_STAGES: RenderStage[] = ['tts', 'subtitle', 'render']
-const RENDER_MS: Record<RenderStage, number> = { tts: TIMING.ttsMs, subtitle: TIMING.subtitleMs, render: TIMING.renderMs }
 
 const MESSAGES: Record<Stage, string> = {
   extract: '글 구조를 읽고 있습니다',
@@ -46,7 +47,7 @@ const MESSAGES: Record<Stage, string> = {
 type Job =
   | { kind: 'create'; startedAt: number; fail: { stage: Stage; code: ErrorCode } | null }
   | { kind: 'regenerate'; startedAt: number; fail: boolean }
-  | { kind: 'render'; startedAt: number; from: RenderStage; failAt: RenderStage | null; done: RenderStage[] }
+  | { kind: 'render'; startedAt: number; from: RenderStage; failAt: RenderStage | null; done: RenderStage[]; renderMs: number }
 
 interface MockRecord {
   project: Project
@@ -135,7 +136,7 @@ export function startRegenerate(rec: MockRecord): void {
   rec.job = { kind: 'regenerate', startedAt: now(), fail: rec.regenFail }
 }
 
-export function startRenderJob(rec: MockRecord, from: RenderStage | undefined): void {
+export function startRenderJob(rec: MockRecord, from: RenderStage | undefined, motionQuality: MotionQuality = 'fast'): void {
   const p = rec.project
   if (!['ready', 'done', 'error'].includes(p.status) || p.scenes.length === 0) {
     throw new ApiError(409, 'INVALID_STATE', '지금은 영상을 만들 수 없습니다.')
@@ -157,7 +158,8 @@ export function startRenderJob(rec: MockRecord, from: RenderStage | undefined): 
   p.error = null
   p.video = null
   p.progress = { stage: start, percent: 0, message: MESSAGES[start] }
-  rec.job = { kind: 'render', startedAt: now(), from: start, failAt, done: [] }
+  const renderMs = motionQuality === 'smooth' ? TIMING.smoothRenderMs : TIMING.renderMs
+  rec.job = { kind: 'render', startedAt: now(), from: start, failAt, done: [], renderMs }
 }
 
 // ---- 상태 전이 ----
@@ -211,7 +213,7 @@ export function advance(rec: MockRecord, t: number): void {
   const stages = RENDER_STAGES.slice(RENDER_STAGES.indexOf(job.from))
   let offset = 0
   for (const stage of stages) {
-    const ms = RENDER_MS[stage]
+    const ms = stage === 'tts' ? TIMING.ttsMs : stage === 'subtitle' ? TIMING.subtitleMs : job.renderMs
     const local = elapsed - offset
     if (job.failAt === stage && local >= ms / 2) {
       return fail(rec, stage, stage === 'tts' ? 'TTS_FAILED' : 'RENDER_FAILED')

@@ -242,6 +242,39 @@ describe('mock 렌더', () => {
     expect(() => startRegenerate(getRecord(id))).toThrow(expect.objectContaining({ code: 'INVALID_STATE' }))
   })
 
+  it('fast는 smooth보다 합성이 짧다', () => {
+    const { id } = createRecord({ type: 'url', url: URL_OK })
+    at(10_000)
+    startRenderJob(getRecord(id), undefined, 'fast')
+    at(10_000 + TIMING.ttsMs + TIMING.subtitleMs + TIMING.renderMs)
+    expect(snapshot(getRecord(id)).status).toBe('done')
+    expect(TIMING.smoothRenderMs).toBeGreaterThan(TIMING.renderMs)
+  })
+
+  it('smooth는 fast 시간에는 아직 합성 중이다', () => {
+    const { id } = createRecord({ type: 'url', url: URL_OK })
+    at(10_000)
+    startRenderJob(getRecord(id), undefined, 'smooth')
+    at(10_000 + TIMING.ttsMs + TIMING.subtitleMs + TIMING.renderMs)
+    const p = snapshot(getRecord(id))
+    expect(p.status).toBe('rendering')
+    expect(p.progress?.stage).toBe('render')
+  })
+
+  it('품질만 바꿔 합성부터 다시 만들면 음성 길이가 유지된다', () => {
+    const { id } = createRecord({ type: 'url', url: URL_OK })
+    at(10_000)
+    startRenderJob(getRecord(id), undefined)
+    at(10_000 + TIMING.ttsMs + TIMING.subtitleMs + TIMING.renderMs)
+    const before = snapshot(getRecord(id)).scenes.map((s) => s.durationSec)
+    startRenderJob(getRecord(id), 'render', 'smooth')
+    expect(snapshot(getRecord(id)).progress?.stage).toBe('render')
+    at(10_000 + TIMING.ttsMs + TIMING.subtitleMs + TIMING.renderMs + TIMING.smoothRenderMs)
+    const p = snapshot(getRecord(id))
+    expect(p.status).toBe('done')
+    expect(p.scenes.map((s) => s.durationSec)).toEqual(before)
+  })
+
   it('이미지 없는 장면이 있으면 MISSING_IMAGE', () => {
     const { id } = createRecord({ type: 'text', text: '가나다라마바사 '.repeat(40) })
     at(10_000)

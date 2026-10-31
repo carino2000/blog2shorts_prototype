@@ -1,15 +1,16 @@
-import { Download, Pencil, RotateCcw } from 'lucide-react'
+import { Download, Pencil, RotateCcw, Sparkles, Zap } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { assetUrl, isApiError, videoUrl } from '../api'
 import { useRender } from '../api/queries/useRender'
-import type { Project, RenderStage } from '../api/types'
+import type { MotionQuality, Project, RenderStage } from '../api/types'
 import { ErrorBanner } from '../components/ErrorBanner'
 import { PhoneFrame } from '../components/PhoneFrame'
 import { ProjectShell } from '../components/ProjectShell'
 import { SceneFrame } from '../components/SceneFrame'
 import { StageList, type StageItem } from '../components/StageList'
 import { formatSec } from '../lib/duration'
+import { loadMotionQuality, saveMotionQuality } from '../lib/motionQuality'
 import { VIDEO_HEIGHT, VIDEO_WIDTH, sceneSubtitle } from '../lib/render'
 import { btnPrimary, btnSecondary, cx } from '../lib/ui'
 
@@ -57,7 +58,7 @@ function Rendering({ project }: { project: Project }) {
           message={project.error.message}
           actions={
             <>
-              <button type="button" className={btnPrimary} disabled={render.isPending} onClick={() => render.mutate(failed)}>
+              <button type="button" className={btnPrimary} disabled={render.isPending} onClick={() => render.mutate({ from: failed, motionQuality: loadMotionQuality(project.id) })}>
                 <RotateCcw aria-hidden="true" className="size-4" />
                 {render.isPending ? '요청 중…' : `${failedLabel}부터 다시 시도`}
               </button>
@@ -80,6 +81,17 @@ function Rendering({ project }: { project: Project }) {
 
 function Done({ project, video }: { project: Project; video: NonNullable<Project['video']> }) {
   const [videoFailed, setVideoFailed] = useState(false)
+  // 렌더가 끝나 이 화면이 다시 열릴 때마다 새 값이 되어, 다시 만든 영상을 캐시가 아닌 서버에서 읽는다
+  const [version] = useState(() => Date.now())
+  const render = useRender(project.id)
+  const other: MotionQuality = loadMotionQuality(project.id) === 'fast' ? 'smooth' : 'fast'
+  const OtherIcon = other === 'smooth' ? Sparkles : Zap
+
+  function remake() {
+    saveMotionQuality(project.id, other)
+    // 음성·자막은 그대로 두고 합성만 새로 한다(통합기획서 6-2)
+    render.mutate({ from: 'render', motionQuality: other })
+  }
   const first = project.scenes[0]
   const firstAsset = first?.assetId ? project.assets.find((a) => a.id === first.assetId) : undefined
   const poster = firstAsset ? assetUrl(firstAsset) : undefined
@@ -93,7 +105,7 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
           ) : (
             <video
               key={video.url}
-              src={videoUrl(project.id)}
+              src={videoUrl(project.id, false, version)}
               poster={poster}
               controls
               playsInline
@@ -133,7 +145,7 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
 
         <div className="flex flex-col gap-2 sm:flex-row">
           <a
-            href={videoFailed ? undefined : videoUrl(project.id, true)}
+            href={videoFailed ? undefined : videoUrl(project.id, true, version)}
             download={videoFailed ? undefined : 'blog2shorts.mp4'}
             aria-disabled={videoFailed || undefined}
             className={cx(btnPrimary, videoFailed && 'pointer-events-none opacity-50')}
@@ -145,6 +157,22 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
             <Pencil aria-hidden="true" className="size-4" />
             장면 다시 편집
           </Link>
+        </div>
+
+        <div className="flex flex-col gap-3 rounded-card border border-line bg-surface p-4">
+          <p className="m-0 text-sm">
+            {other === 'smooth' ? '움직임을 더 매끄럽게 만들 수 있어요. 조금 더 걸립니다.' : '영상을 더 빨리 다시 만들 수 있어요. 움직임이 조금 떨릴 수 있습니다.'}{' '}
+            <span className="text-muted">음성은 다시 만들지 않아요.</span>
+          </p>
+          <div>
+            <button type="button" className={btnSecondary} disabled={render.isPending} onClick={remake}>
+              <OtherIcon aria-hidden="true" className="size-4" />
+              {render.isPending ? '요청 중…' : `${other === 'smooth' ? '부드럽게' : '빠르게'} 다시 만들기`}
+            </button>
+          </div>
+          {render.isError && (
+            <ErrorBanner message={isApiError(render.error) ? render.error.message : '다시 만들기를 시작하지 못했습니다.'} />
+          )}
         </div>
 
         <p className="m-0 text-sm text-muted">

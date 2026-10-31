@@ -100,6 +100,9 @@ export interface SceneUpdate {
   motion?: Motion
 }
 
+/** 렌더 움직임 품질. 생략하면 서버 기본값 fast. Project에는 없는 값 */
+export type MotionQuality = 'fast' | 'smooth'
+
 /** POST /render?from= 에 쓸 수 있는 단계 */
 export type RenderStage = Extract<Stage, 'tts' | 'subtitle' | 'render'>
 
