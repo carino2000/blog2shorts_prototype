@@ -118,7 +118,7 @@ function Room({ project }: { project: Project }) {
               <label htmlFor={textId} className="text-[13px] font-medium text-muted">
                 자막·음성 문구
               </label>
-              <textarea id={textId} data-scene-text rows={5} value={sel.text} onChange={(e) => ed.setText(sel.id, e.target.value)} className={cx(field, 'resize-y py-3 leading-relaxed')} />
+              <textarea id={textId} data-scene-text data-selected="true" rows={5} value={sel.text} onChange={(e) => ed.setText(sel.id, e.target.value)} className={cx(field, 'resize-y py-3 leading-relaxed')} />
               <p className="m-0 font-mono text-xs tabular-nums text-muted">{countChars(sel.text)}자</p>
             </div>
 

@@ -1,0 +1,64 @@
+/* 시안 press — 흑백 인쇄. 라이트 전용, 색은 쓰지 않는다(역할·오류는 모양과 글자로 구분) */
+html[data-variant='press'] {
+  color-scheme: light;
+  --bg: #f6f5f1;
+  --surface: #f6f5f1;
+  --panel: #f6f5f1;
+  --panel-2: #ecebe6;
+  --ink: #111111;
+  --muted: #55554f;
+  --placeholder: #85857e;
+  --line: #c9c8c2;
+  --edge: #111111;
+  --segment: #ecebe6;
+  --accent: #111111;
+  --accent-hover: #333333;
+  --accent-bright: #111111;
+  --accent-soft: #e2e1db;
+  --on-accent: #f6f5f1;
+  --hi: #111111;
+  --on-hi: #f6f5f1;
+  --hook: #111111;
+  --body: #55554f;
+  --cta: #111111;
+  --danger: #111111;
+  --danger-ink: #111111;
+  --danger-soft: #e9e8e3;
+  --danger-line: #111111;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+  --v-display: 'Noto Serif KR', 'Nanum Myeongjo', 'Batang', serif;
+  --font-serif: 'Noto Serif KR', 'Nanum Myeongjo', 'Batang', serif;
+}
+
+html[data-variant='press'] ::selection {
+  background: #111111;
+  color: #f6f5f1;
+}
+
+/* 흑백 인쇄: 목록·원문의 사진은 먼저 흑백으로 보이고, 고르거나 올리면 원래 색 */
+.press-photo {
+  filter: grayscale(1) contrast(1.08);
+  transition: filter 200ms ease;
+}
+.press-photo-on,
+.group:hover .press-photo,
+button:hover > .press-photo,
+button:focus-visible > .press-photo {
+  filter: none;
+}
+
+/* 겹줄(신문 제호 아래) */
+.press-double {
+  border-top: 3px double #111111;
+}
+
+@keyframes press-rule {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(260%); }
+}
+.press-sweep { animation: press-rule 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .press-sweep { animation: none; }
+}
