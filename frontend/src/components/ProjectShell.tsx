@@ -96,7 +96,7 @@ export function ProjectShell({
 export function ExpiredNotice() {
   return (
     <section className="mx-auto flex max-w-md flex-col items-center gap-4 rounded-card border border-line bg-surface p-8 text-center">
-      <h1 className="m-0 text-lg font-semibold">작업이 만료되었습니다. 처음부터 다시 시작해 주세요.</h1>
+      <h1 className="m-0 text-section font-semibold">작업이 만료되었습니다. 처음부터 다시 시작해 주세요.</h1>
       <p className="m-0 text-sm text-muted">작업은 서버 메모리에만 있어서 서버가 다시 시작되면 사라집니다.</p>
       <Link to="/" className={btnPrimary}>
         입력 화면으로

@@ -41,7 +41,7 @@ export function SceneCard({
       onFocusCapture={onSelect}
       onClick={onSelect}
       className={cx(
-        'relative flex gap-3 overflow-hidden rounded-card border bg-surface p-3 pl-4 transition-colors',
+        'relative flex gap-3 overflow-hidden rounded-card border bg-surface p-3 pl-4 transition duration-200',
         missing ? 'border-danger' : selected ? 'border-accent-bright ring-2 ring-accent-bright/20' : 'border-line',
       )}
     >
@@ -55,7 +55,7 @@ export function SceneCard({
           onPickImage()
         }}
         className={cx(
-          'relative flex aspect-[9/16] w-16 shrink-0 items-center justify-center overflow-hidden rounded-control border bg-bg sm:w-20',
+          'relative flex aspect-[9/16] w-16 shrink-0 items-center justify-center overflow-hidden rounded-small border bg-bg sm:w-20',
           'focus-visible:outline-2 focus-visible:outline-accent-bright',
           missing ? 'border-dashed border-danger text-danger-ink' : 'border-line',
         )}
@@ -79,7 +79,7 @@ export function SceneCard({
           <span className="text-sm font-bold tabular-nums">#{scene.order}</span>
           <RoleBadge role={scene.role} />
           {voiceRedo && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-accent-bright-bright/40 bg-accent-soft px-2 py-0.5 text-[11px] font-medium text-ink">
+            <span className="inline-flex items-center gap-1 rounded-full border border-accent-bright/40 bg-accent-soft px-2 py-0.5 text-[11px] font-medium text-ink">
               <Mic aria-hidden="true" className="size-3" />
               음성 다시 만듦
             </span>
@@ -94,11 +94,11 @@ export function SceneCard({
         </label>
         <textarea
           id={ids.text}
-          rows={3}
+          rows={4}
           value={scene.text}
           onChange={(e) => onText(e.target.value)}
           aria-describedby={ids.hint}
-          className={cx(inputBase, 'resize-y py-2 text-sm leading-relaxed')}
+          className={cx(inputBase, 'resize-y py-2 leading-relaxed')}
         />
 
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -112,7 +112,7 @@ export function SceneCard({
               id={ids.motion}
               value={scene.motion}
               onChange={(e) => onMotion(e.target.value as Motion)}
-              className="min-h-11 rounded-control border border-line bg-surface px-2 text-sm text-ink focus:border-accent-bright focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-bright/20"
+              className="min-h-11 rounded-control border border-line bg-surface px-2 text-sm text-ink focus:border-accent-bright focus:outline-none focus:ring-3 focus:ring-accent-bright/15"
             >
               {MOTIONS.map((m) => (
                 <option key={m.value} value={m.value}>

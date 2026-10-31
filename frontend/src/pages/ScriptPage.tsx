@@ -33,7 +33,7 @@ function ScriptView({ project }: { project: Project }) {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
-        <h1 className="m-0 text-2xl font-bold">대본 확인</h1>
+        <h1 className="m-0 text-page font-bold">대본 확인</h1>
         <p className="m-0 text-sm text-muted">
           {source.title ?? '직접 입력한 본문'} · 장면 {scenes.length}개. 문구는 다음 단계(장면 편집)에서 고칠 수 있습니다.
         </p>
@@ -47,12 +47,12 @@ function ScriptView({ project }: { project: Project }) {
         <div className="flex flex-col gap-5">
           {analysis && (
             <section aria-labelledby="summary-title" className="rounded-card border border-line bg-surface p-5">
-              <h2 id="summary-title" className="m-0 flex items-center gap-2 text-base font-semibold">
-                <Sparkles aria-hidden="true" className="size-4 text-accent" />
+              <h2 id="summary-title" className="m-0 flex items-center gap-2 text-section font-semibold">
+                <Sparkles aria-hidden="true" className="size-4 text-accent-bright" />
                 핵심 요약
               </h2>
-              <p className="m-0 mt-2 leading-relaxed">{analysis.summary}</p>
-              <ul className="m-0 mt-3 flex list-disc flex-col gap-1.5 pl-5 text-sm text-ink marker:text-accent">
+              <p className="m-0 mt-2 text-sm leading-relaxed">{analysis.summary}</p>
+              <ul className="m-0 mt-3 flex list-disc flex-col gap-1.5 pl-5 text-sm text-ink marker:text-accent-bright">
                 {analysis.keyPoints.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
@@ -62,7 +62,7 @@ function ScriptView({ project }: { project: Project }) {
 
           <section aria-labelledby="script-title" className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5">
             <div className="flex flex-col gap-3">
-              <h2 id="script-title" className="m-0 text-base font-semibold">
+              <h2 id="script-title" className="m-0 text-section font-semibold">
                 대본
               </h2>
               <DurationMeter seconds={total} actual={allRendered} />
@@ -85,9 +85,9 @@ function ScriptView({ project }: { project: Project }) {
                       aria-pressed={selected === scene.id}
                       onClick={() => setSelected(selected === scene.id ? null : scene.id)}
                       className={cx(
-                        'flex min-h-11 w-full items-start gap-3 rounded-control border p-3 text-left text-base leading-relaxed transition-colors',
+                        'flex min-h-11 w-full items-start gap-3 rounded-small border p-3 text-left text-sm leading-relaxed transition duration-200',
                         'focus-visible:outline-2 focus-visible:outline-accent-bright',
-                        selected === scene.id ? 'border-accent-bright bg-accent-soft' : 'border-transparent hover:border-line',
+                        selected === scene.id ? 'border-accent-bright bg-accent-soft' : 'border-transparent hover:border-line hover:bg-bg',
                       )}
                     >
                       <span className="mt-0.5 shrink-0 text-xs font-semibold text-muted tabular-nums">#{scene.order}</span>
@@ -117,7 +117,7 @@ function Actions({ project }: { project: Project }) {
   return (
     <div className="flex flex-col gap-3">
       {confirming ? (
-        <div role="group" aria-labelledby="regen-confirm" className="flex flex-col gap-3 rounded-card border border-danger-line bg-danger-soft p-4">
+        <div role="group" aria-labelledby="regen-confirm" className="appear flex flex-col gap-3 rounded-control border border-danger-line bg-danger-soft p-4">
           <p id="regen-confirm" className="m-0 text-sm">
             대본과 장면을 새로 만듭니다. 장면 편집에서 고친 문구·이미지·모션{edited ? '과 만들어 둔 영상' : ''}은 사라집니다. 계속할까요?
           </p>
@@ -169,14 +169,14 @@ function SourcePanel({ blocks, project, selectedScene }: { blocks: Block[]; proj
           <li
             key={block.id}
             className={cx(
-              'flex gap-3 rounded-control border p-2.5 text-sm transition-colors',
+              'flex gap-3 rounded-small border p-2.5 text-sm transition duration-200',
               on ? 'border-accent-bright bg-accent-soft' : 'border-transparent',
             )}
           >
             <div className="min-w-0 flex-1">
               {block.type === 'image' ? (
                 <figure className="m-0 flex items-center gap-3">
-                  {asset && <img src={assetUrl(asset)} alt="" className="size-14 shrink-0 rounded-control object-cover" loading="lazy" />}
+                  {asset && <img src={assetUrl(asset)} alt="" className="size-14 shrink-0 rounded-small object-cover" loading="lazy" />}
                   <figcaption className="text-muted">{block.text ?? '이미지'}</figcaption>
                 </figure>
               ) : (
@@ -195,7 +195,7 @@ function SourcePanel({ blocks, project, selectedScene }: { blocks: Block[]; proj
   )
 
   const title = (
-    <span className="flex items-center gap-2 text-base font-semibold">
+    <span className="flex items-center gap-2 text-card font-semibold">
       <BookOpen aria-hidden="true" className="size-4 text-muted" />
       원문
       {selectedScene && (

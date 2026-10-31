@@ -20,10 +20,10 @@ export function AssetPicker({ open, title, onClose, children }: { open: boolean;
         if (e.target === ref.current) onClose() // 바깥(배경) 누르면 닫기
       }}
       aria-label={title}
-      className="m-0 mt-auto max-h-[85dvh] w-full max-w-none rounded-t-[16px] border-0 bg-surface p-0 text-ink backdrop:bg-black/50 md:m-auto md:max-w-lg md:rounded-card"
+      className="m-0 mt-auto max-h-[85dvh] w-full max-w-none rounded-t-card border-0 bg-surface p-0 text-ink backdrop:bg-black/50 md:m-auto md:max-w-lg md:rounded-card"
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-1">
-        <h2 className="m-0 text-base font-semibold">{title}</h2>
+        <h2 className="m-0 text-card font-semibold">{title}</h2>
         <button
           type="button"
           onClick={onClose}

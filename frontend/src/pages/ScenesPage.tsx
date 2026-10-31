@@ -94,14 +94,14 @@ function ScenesEditor({ project }: { project: Project }) {
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="m-0 text-2xl font-bold">장면 편집</h1>
+          <h1 className="m-0 text-page font-bold">장면 편집</h1>
           <p className="m-0 text-sm text-muted">문구·이미지·모션을 고치면 자동으로 저장됩니다.</p>
         </div>
         <SaveStatus state={updates.saveState} onRetry={() => void updates.flush().catch(() => undefined)} />
       </div>
 
       {showUploadNotice(project) && (
-        <div role="note" className="flex items-start gap-3 rounded-card border border-hook/40 bg-hook/8 p-4 text-sm">
+        <div role="note" className="appear flex items-start gap-3 rounded-control border border-hook/40 bg-hook/8 p-4 text-sm">
           <ImagePlus aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-hook" />
           <p className="m-0">이 글에는 이미지가 없습니다. 장면에 쓸 이미지를 올려주세요.</p>
         </div>
@@ -113,7 +113,7 @@ function ScenesEditor({ project }: { project: Project }) {
       {selected && (
         <details className="group rounded-card border border-line bg-surface md:hidden">
           <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 px-3 py-2">
-            <span className="aspect-[9/16] w-7 shrink-0 overflow-hidden rounded bg-bg">
+            <span className="aspect-[9/16] w-7 shrink-0 overflow-hidden rounded-[4px] bg-bg">
               {srcOf(selected.assetId) && <img src={srcOf(selected.assetId) ?? ''} alt="" className="size-full object-cover" />}
             </span>
             <span className="flex-1 text-sm font-medium">미리보기 · 장면 #{selected.order}</span>
@@ -158,7 +158,7 @@ function ScenesEditor({ project }: { project: Project }) {
         </section>
 
         <aside aria-labelledby="media-title" className="sticky top-4 hidden max-h-[calc(100dvh-7rem)] flex-col gap-3 overflow-y-auto rounded-card border border-line bg-surface p-4 xl:flex">
-          <h2 id="media-title" className="m-0 text-base font-semibold">
+          <h2 id="media-title" className="m-0 text-card font-semibold">
             이미지
           </h2>
           {mediaGrid}
@@ -180,7 +180,7 @@ function ScenesEditor({ project }: { project: Project }) {
         </AssetPicker>
       )}
 
-      <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-line bg-bg/95 px-4 py-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+      <div className="sticky bottom-0 z-10 -mx-5 flex flex-col gap-2 border-t border-line bg-bg/95 px-5 py-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
         <p className="m-0 text-sm text-muted" aria-live="polite">
           {missingCount > 0 ? (
@@ -201,7 +201,7 @@ function ScenesEditor({ project }: { project: Project }) {
         <MotionQualityPicker value={motionQuality} onChange={changeQuality} disabled={render.isPending} describedBy={qualityHintId} />
         <button
           type="button"
-          className={cx(btnPrimary, 'flex-1 whitespace-nowrap px-3 sm:flex-none sm:px-4')}
+          className={cx(btnPrimary, 'flex-1 whitespace-nowrap px-3 sm:flex-none sm:px-5')}
           disabled={missingCount > 0 || render.isPending || updates.saveState === 'error'}
           onClick={() => void startRender()}
         >

@@ -27,7 +27,7 @@ export function DurationMeter({ seconds, actual = false }: { seconds: number; ac
           style={{ left: pos(MIN_VIDEO_SEC), width: `calc(${pos(MAX_VIDEO_SEC)} - ${pos(MIN_VIDEO_SEC)})` }}
         />
         <div
-          className={cx('absolute -top-1 h-4 w-1 -translate-x-1/2 rounded-full', warn ? 'bg-danger' : 'bg-accent')}
+          className={cx('absolute -top-1 h-4 w-1 -translate-x-1/2 rounded-full', warn ? 'bg-danger' : 'bg-accent-bright')}
           style={{ left: pos(seconds) }}
         />
       </div>

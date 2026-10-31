@@ -47,7 +47,7 @@ function Rendering({ project }: { project: Project }) {
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-6">
       <div>
-        <h1 className="m-0 text-2xl font-bold">{failed ? '영상을 만들지 못했습니다' : '영상을 만들고 있습니다'}</h1>
+        <h1 className="m-0 text-page font-bold">{failed ? '영상을 만들지 못했습니다' : '영상을 만들고 있습니다'}</h1>
         <p className="m-0 mt-1 text-sm text-muted" aria-live="polite">
           {failed ? `${failedLabel} 단계에서 멈췄습니다. 그 단계부터 다시 시도할 수 있습니다.` : project.progress?.message ?? '잠시만 기다려 주세요.'}
         </p>
@@ -97,7 +97,7 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
   const poster = firstAsset ? assetUrl(firstAsset) : undefined
 
   return (
-    <div className="mx-auto grid max-w-3xl items-start gap-8 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
+    <div className="grid items-start gap-8 md:grid-cols-[minmax(0,280px)_minmax(0,1fr)] lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-[72px]">
       <div className="mx-auto w-full max-w-[300px] md:max-w-none">
         <PhoneFrame label="완성된 영상">
           {videoFailed ? (
@@ -117,12 +117,12 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
         </PhoneFrame>
       </div>
 
-      <section aria-labelledby="done-title" className="flex flex-col gap-5">
+      <section aria-labelledby="done-title" className="flex max-w-[640px] flex-col gap-5">
         <div>
-          <h1 id="done-title" className="m-0 text-2xl font-bold">
+          <h1 id="done-title" className="m-0 text-page font-bold">
             영상이 완성되었습니다
           </h1>
-          <p className="m-0 mt-2 inline-flex flex-wrap gap-x-2 rounded-control border border-line bg-surface px-3 py-1.5 text-sm tabular-nums">
+          <p className="m-0 mt-2 inline-flex flex-wrap gap-x-2 rounded-small border border-line bg-surface px-3 py-1.5 text-sm tabular-nums">
             <span>
               {VIDEO_WIDTH}×{VIDEO_HEIGHT}
             </span>

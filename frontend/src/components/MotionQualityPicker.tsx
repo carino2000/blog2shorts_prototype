@@ -19,7 +19,7 @@ export function MotionQualityPicker({
       role="radiogroup"
       aria-label="움직임 품질"
       aria-describedby={describedBy}
-      className="flex shrink-0 gap-1 rounded-control border border-line bg-surface p-0.5"
+      className="flex shrink-0 gap-0.5 rounded-control bg-segment p-0.5"
     >
       {MOTION_QUALITIES.map((q) => {
         const checked = q.value === value
@@ -27,9 +27,9 @@ export function MotionQualityPicker({
           <label
             key={q.value}
             className={cx(
-              'flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-small px-2.5 text-sm whitespace-nowrap transition-colors',
+              'flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-[10px] px-2.5 text-sm whitespace-nowrap transition duration-200',
               'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-1 has-[:focus-visible]:outline-accent-bright',
-              checked ? 'bg-accent-soft font-semibold text-ink' : 'text-muted hover:text-ink',
+              checked ? 'bg-surface font-semibold text-ink shadow-segment' : 'text-muted hover:text-ink',
               disabled && 'cursor-not-allowed opacity-50',
             )}
           >

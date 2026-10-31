@@ -59,7 +59,7 @@ export function MediaGrid({
                 aria-pressed={current}
                 aria-label={`${asset.origin === 'blog' ? '블로그' : '업로드'} 이미지 ${asset.width}×${asset.height}${others.length ? `, 장면 ${others.join(', ')}에서 사용 중` : ''}`}
                 className={cx(
-                  'relative block aspect-square w-full overflow-hidden rounded-control border-2 bg-bg',
+                  'relative block aspect-square w-full overflow-hidden rounded-small border-2 bg-bg transition duration-200',
                   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-bright',
                   current ? 'border-accent-bright' : 'border-transparent hover:border-line',
                 )}
@@ -86,9 +86,9 @@ export function MediaGrid({
           <label
             htmlFor={ids.input}
             className={cx(
-              'flex aspect-square w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-control border-2 border-dashed text-xs',
+              'flex aspect-square w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-small border-2 border-dashed text-xs transition duration-200',
               'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-accent-bright',
-              error ? 'border-danger text-danger-ink' : 'border-line text-muted hover:border-accent-bright hover:text-accent',
+              error ? 'border-danger text-danger-ink' : 'border-line text-muted hover:border-accent-bright hover:text-ink',
             )}
           >
             {upload.isPending ? (

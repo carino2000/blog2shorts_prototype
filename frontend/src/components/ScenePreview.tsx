@@ -40,11 +40,11 @@ export function ScenePreview({
         />
       </PhoneFrame>
       <div className="flex gap-2">
-        <button type="button" className={btnSecondary} onClick={onPrev} disabled={scene.order <= 1}>
+        <button type="button" className={cx(btnSecondary, 'px-3 text-sm whitespace-nowrap')} onClick={onPrev} disabled={scene.order <= 1}>
           <ChevronLeft aria-hidden="true" className="size-4" />
           이전 장면
         </button>
-        <button type="button" className={btnSecondary} onClick={onNext} disabled={scene.order >= total}>
+        <button type="button" className={cx(btnSecondary, 'px-3 text-sm whitespace-nowrap')} onClick={onNext} disabled={scene.order >= total}>
           다음 장면
           <ChevronRight aria-hidden="true" className="size-4" />
         </button>

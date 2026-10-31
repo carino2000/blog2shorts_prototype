@@ -20,8 +20,8 @@ export function StageList({ items }: { items: StageItem[] }) {
           key={item.key}
           aria-current={item.state === 'active' ? 'step' : undefined}
           className={cx(
-            'flex flex-col gap-2 rounded-card border p-4',
-            item.state === 'active' && 'border-accent-bright-bright/40 bg-accent-soft',
+            'flex flex-col gap-2 rounded-card border p-4 transition duration-200',
+            item.state === 'active' && 'border-accent-bright/40 bg-accent-soft',
             item.state === 'failed' && 'border-danger-line bg-danger-soft',
             (item.state === 'pending' || item.state === 'done') && 'border-line bg-surface',
           )}
@@ -46,7 +46,7 @@ export function StageList({ items }: { items: StageItem[] }) {
               aria-valuemax={100}
               aria-valuenow={Math.round(item.percent)}
             >
-              <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${item.percent}%` }} />
+              <div className="h-full rounded-full bg-accent-bright transition-[width] duration-500" style={{ width: `${item.percent}%` }} />
             </div>
           )}
         </li>
@@ -65,13 +65,13 @@ function StageIcon({ state }: { state: StageState }) {
     )
   if (state === 'failed')
     return (
-      <span className={cx(box, 'text-danger-ink')}>
+      <span className={cx(box, 'text-danger')}>
         <CircleAlert aria-hidden="true" className="size-5" />
       </span>
     )
   if (state === 'active')
     return (
-      <span className={cx(box, 'text-accent')}>
+      <span className={cx(box, 'text-accent-bright')}>
         <Loader2 aria-hidden="true" className="size-5 motion-safe:animate-spin" />
       </span>
     )
