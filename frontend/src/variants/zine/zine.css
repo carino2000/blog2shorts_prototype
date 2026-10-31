@@ -1,0 +1,68 @@
+/* 시안 zine — 굵은 진. 라이트 전용, 굵은 테두리·단단한 그림자·형광 강조 */
+html[data-variant='zine'] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f1f1ec;
+  --ink: #0a0a0a;
+  --muted: #474742;
+  --placeholder: #77776f;
+  --line: #d9d9d2;
+  --edge: #0a0a0a;
+  --segment: #f1f1ec;
+  --accent: #ff2e93;
+  --accent-hover: #ff5aa9;
+  --accent-bright: #ff2e93;
+  --accent-soft: #ffe0ef;
+  --on-accent: #0a0a0a;
+  --hi: #ffe600;
+  --on-hi: #0a0a0a;
+  --hook: #ffe600;
+  --body: #ffffff;
+  --cta: #ff2e93;
+  --danger: #d4001c;
+  --danger-ink: #b3001a;
+  --danger-soft: #ffe3e6;
+  --danger-line: #0a0a0a;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+  --v-display: 'Do Hyeon', 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+html[data-variant='zine'] body {
+  background-image: radial-gradient(circle at 1px 1px, rgba(10, 10, 10, 0.1) 1.2px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+
+html[data-variant='zine'] ::selection {
+  background: #ffe600;
+  color: #0a0a0a;
+}
+
+/* 단단한 그림자 */
+.zine-box {
+  border: 3px solid #0a0a0a;
+  box-shadow: 6px 6px 0 #0a0a0a;
+}
+.zine-hl {
+  background: #ffe600;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.18em;
+}
+
+/* 줄무늬 진행 막대 */
+.zine-stripes {
+  background-image: repeating-linear-gradient(135deg, #0a0a0a 0 10px, #ff2e93 10px 20px);
+  background-size: 28px 28px;
+}
+@keyframes zine-slide {
+  from { background-position: 0 0; }
+  to { background-position: 28px 0; }
+}
+.zine-stripes-anim { animation: zine-slide 0.7s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .zine-stripes-anim { animation: none; }
+}
