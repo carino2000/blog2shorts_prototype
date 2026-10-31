@@ -87,7 +87,7 @@ function Board({ project }: { project: Project }) {
                     <Stamp role={scene.role} />
                     <span className="ml-auto text-[15px] text-ink/70">약 {formatSec(sceneSec(scene))}</span>
                   </span>
-                  <span className="font-display text-[26px] font-bold leading-[1.4]">{scene.text}</span>
+                  <span className="text-[19px] font-medium leading-[1.7]">{scene.text}</span>
                 </button>
                 {on && (
                   <div className="appear flex flex-col gap-2 border-t-2 border-dashed border-ink/40 p-5 pt-4">

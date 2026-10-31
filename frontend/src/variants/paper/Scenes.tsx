@@ -116,7 +116,7 @@ function Desk({ project }: { project: Project }) {
                         rows={5}
                         value={scene.text}
                         onChange={(e) => ed.setText(scene.id, e.target.value)}
-                        className="w-full resize-y border-0 border-b-2 border-dashed border-ink/50 bg-transparent px-0 py-1 font-display text-[23px] font-bold leading-[1.4] text-ink focus:border-solid focus:border-accent focus:outline-none"
+                        className="w-full resize-y border-0 border-b-2 border-dashed border-ink/50 bg-transparent px-0 py-1 text-[18px] font-medium leading-[1.65] text-ink focus:border-solid focus:border-accent focus:outline-none"
                       />
                       <p className="m-0 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-ink/75">
                         <span>{countChars(scene.text)}자</span>

@@ -74,7 +74,7 @@ export function Input() {
                     tabIndex={f.tab === t.key ? 0 : -1}
                     onClick={() => f.setTab(t.key)}
                     className={cx(
-                      'min-h-12 whitespace-nowrap rounded-t-[10px] border-2 border-b-0 px-4 sm:px-5 font-display text-[22px] font-bold leading-none focus-visible:outline-[3px] focus-visible:outline-offset-[-3px] focus-visible:outline-accent',
+                      'min-h-12 whitespace-nowrap rounded-t-[10px] border-2 border-b-0 px-3 font-display text-[19px] font-bold leading-none sm:px-5 sm:text-[22px] focus-visible:outline-[3px] focus-visible:outline-offset-[-3px] focus-visible:outline-accent',
                       f.tab === t.key ? 'border-ink/60 bg-panel-2 text-ink' : 'border-ink/20 text-muted hover:text-ink',
                     )}
                   >
