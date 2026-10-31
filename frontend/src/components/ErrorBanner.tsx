@@ -6,7 +6,7 @@ export function ErrorBanner({ title, message, actions }: { title?: string; messa
   return (
     <div
       role="alert"
-      className="flex flex-col gap-3 rounded-card border border-danger/40 bg-danger/8 p-4 sm:flex-row sm:items-center"
+      className="flex flex-col gap-3 rounded-card border border-danger-line bg-danger-soft p-4 sm:flex-row sm:items-center"
     >
       <div className="flex flex-1 items-start gap-3">
         <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-danger-ink" />

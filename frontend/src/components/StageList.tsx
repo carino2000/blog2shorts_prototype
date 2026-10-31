@@ -21,8 +21,8 @@ export function StageList({ items }: { items: StageItem[] }) {
           aria-current={item.state === 'active' ? 'step' : undefined}
           className={cx(
             'flex flex-col gap-2 rounded-card border p-4',
-            item.state === 'active' && 'border-accent/40 bg-accent/5',
-            item.state === 'failed' && 'border-danger/50 bg-danger/5',
+            item.state === 'active' && 'border-accent-bright-bright/40 bg-accent-soft',
+            item.state === 'failed' && 'border-danger-line bg-danger-soft',
             (item.state === 'pending' || item.state === 'done') && 'border-line bg-surface',
           )}
         >

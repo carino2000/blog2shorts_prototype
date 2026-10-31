@@ -27,7 +27,7 @@ export function AssetPicker({ open, title, onClose, children }: { open: boolean;
         <button
           type="button"
           onClick={onClose}
-          className="flex size-11 items-center justify-center rounded-control text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-accent"
+          className="flex size-11 items-center justify-center rounded-control text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-accent-bright"
           aria-label="닫기"
         >
           <X aria-hidden="true" className="size-5" />

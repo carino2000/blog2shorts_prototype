@@ -86,8 +86,8 @@ function ScriptView({ project }: { project: Project }) {
                       onClick={() => setSelected(selected === scene.id ? null : scene.id)}
                       className={cx(
                         'flex min-h-11 w-full items-start gap-3 rounded-control border p-3 text-left text-base leading-relaxed transition-colors',
-                        'focus-visible:outline-2 focus-visible:outline-accent',
-                        selected === scene.id ? 'border-accent bg-accent/5' : 'border-transparent hover:border-line',
+                        'focus-visible:outline-2 focus-visible:outline-accent-bright',
+                        selected === scene.id ? 'border-accent-bright bg-accent-soft' : 'border-transparent hover:border-line',
                       )}
                     >
                       <span className="mt-0.5 shrink-0 text-xs font-semibold text-muted tabular-nums">#{scene.order}</span>
@@ -117,7 +117,7 @@ function Actions({ project }: { project: Project }) {
   return (
     <div className="flex flex-col gap-3">
       {confirming ? (
-        <div role="group" aria-labelledby="regen-confirm" className="flex flex-col gap-3 rounded-card border border-danger/40 bg-danger/5 p-4">
+        <div role="group" aria-labelledby="regen-confirm" className="flex flex-col gap-3 rounded-card border border-danger-line bg-danger-soft p-4">
           <p id="regen-confirm" className="m-0 text-sm">
             대본과 장면을 새로 만듭니다. 장면 편집에서 고친 문구·이미지·모션{edited ? '과 만들어 둔 영상' : ''}은 사라집니다. 계속할까요?
           </p>
@@ -170,7 +170,7 @@ function SourcePanel({ blocks, project, selectedScene }: { blocks: Block[]; proj
             key={block.id}
             className={cx(
               'flex gap-3 rounded-control border p-2.5 text-sm transition-colors',
-              on ? 'border-accent bg-accent/8' : 'border-transparent',
+              on ? 'border-accent-bright bg-accent-soft' : 'border-transparent',
             )}
           >
             <div className="min-w-0 flex-1">

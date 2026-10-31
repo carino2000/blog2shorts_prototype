@@ -27,9 +27,9 @@ export function MotionQualityPicker({
           <label
             key={q.value}
             className={cx(
-              'flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-[6px] px-2.5 text-sm whitespace-nowrap transition-colors',
-              'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-1 has-[:focus-visible]:outline-accent',
-              checked ? 'bg-accent/15 font-semibold text-ink' : 'text-muted hover:text-ink',
+              'flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-small px-2.5 text-sm whitespace-nowrap transition-colors',
+              'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-1 has-[:focus-visible]:outline-accent-bright',
+              checked ? 'bg-accent-soft font-semibold text-ink' : 'text-muted hover:text-ink',
               disabled && 'cursor-not-allowed opacity-50',
             )}
           >

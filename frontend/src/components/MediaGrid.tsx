@@ -60,8 +60,8 @@ export function MediaGrid({
                 aria-label={`${asset.origin === 'blog' ? '블로그' : '업로드'} 이미지 ${asset.width}×${asset.height}${others.length ? `, 장면 ${others.join(', ')}에서 사용 중` : ''}`}
                 className={cx(
                   'relative block aspect-square w-full overflow-hidden rounded-control border-2 bg-bg',
-                  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
-                  current ? 'border-accent' : 'border-transparent hover:border-line',
+                  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-bright',
+                  current ? 'border-accent-bright' : 'border-transparent hover:border-line',
                 )}
               >
                 <img src={assetUrl(asset)} alt="" className="size-full object-cover" loading="lazy" />
@@ -87,8 +87,8 @@ export function MediaGrid({
             htmlFor={ids.input}
             className={cx(
               'flex aspect-square w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-control border-2 border-dashed text-xs',
-              'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-accent',
-              error ? 'border-danger text-danger-ink' : 'border-line text-muted hover:border-accent hover:text-accent',
+              'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-accent-bright',
+              error ? 'border-danger text-danger-ink' : 'border-line text-muted hover:border-accent-bright hover:text-accent',
             )}
           >
             {upload.isPending ? (

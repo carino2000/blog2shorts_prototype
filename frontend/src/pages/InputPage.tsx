@@ -223,9 +223,9 @@ function TabButton({
       tabIndex={active ? 0 : -1}
       onClick={onClick}
       className={cx(
-        'flex min-h-11 flex-1 items-center justify-center gap-2 rounded-[6px] px-4 text-sm font-medium transition-colors sm:flex-none',
-        'focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent',
-        active ? 'bg-accent/10 font-semibold text-ink' : 'text-muted hover:text-ink',
+        'flex min-h-11 flex-1 items-center justify-center gap-2 rounded-small px-4 text-sm font-medium transition-colors sm:flex-none',
+        'focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent-bright',
+        active ? 'bg-accent-soft font-semibold text-ink' : 'text-muted hover:text-ink',
       )}
     >
       <span aria-hidden="true">{icon}</span>
@@ -246,7 +246,7 @@ function SubmitButton({ disabled, pending }: { disabled: boolean; pending: boole
 function HowStep({ n, icon, title, children }: { n: number; icon: ReactNode; title: string; children: ReactNode }) {
   return (
     <li className="flex gap-3 rounded-card border border-line bg-surface p-4">
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent" aria-hidden="true">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent" aria-hidden="true">
         {icon}
       </span>
       <div>

@@ -1,38 +1,51 @@
 @import 'tailwindcss';
 
-/* 디자인 토큰 (frontend/CLAUDE.md 5장). 값은 여기서만 정한다 */
+/* 디자인 토큰 (frontend/CLAUDE.md 5장, 디자인 2안). 값은 여기서만 정한다 */
 :root {
   color-scheme: light;
-  --bg: #f5f6f8;
+  --bg: #f7f8fa;
   --surface: #ffffff;
-  --ink: #16181d;
-  --muted: #6a7080;
-  --line: #e1e4ea;
-  --accent: #2f5bff;
+  --ink: #191f28;
+  --muted: #626c79;
+  --placeholder: #a8b0bc;
+  --line: #e5e8eb;
+  --segment: #eef0f3;
+  --accent: #1b64da;
+  --accent-hover: #1550b4;
+  --accent-bright: #3182f6;
+  --accent-soft: #eef4ff;
+  --on-accent: #ffffff;
   --hook: #e8890c;
   --body: #5b6475;
-  --cta: #15995a;
-  --danger: #d23a2e;
-  /* 토큰표(5장) 값은 그대로 두고, 글자 대비(4.5:1)를 맞추려고 파생한 값 */
-  --on-accent: #ffffff;
-  --danger-ink: #b92e23;
+  --cta: #16a36a;
+  --danger: #e5484d;
+  --danger-ink: #c5282e;
+  --danger-soft: #fff5f5;
+  --danger-line: #f3d5d5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #111317;
-    --surface: #1a1d23;
-    --ink: #eceef2;
-    --muted: #9198a6;
-    --line: #2c3039;
-    --accent: #6e8cff;
+    --bg: #111418;
+    --surface: #1b1f26;
+    --ink: #e9ecf1;
+    --muted: #9ca5b3;
+    --placeholder: #6f7885;
+    --line: #2d323b;
+    --segment: #262b33;
+    --accent: #7fa8ff;
+    --accent-hover: #6793f2;
+    --accent-bright: #5b96ff;
+    --accent-soft: #1c2a44;
+    --on-accent: #0e1420;
     --hook: #f2a541;
     --body: #9aa3b5;
     --cta: #3cc786;
     --danger: #f07267;
-    --on-accent: #111317;
-    --danger-ink: #f07267;
+    --danger-ink: #ff9b92;
+    --danger-soft: #2b1b1d;
+    --danger-line: #5a2f31;
   }
 }
 
@@ -42,23 +55,49 @@
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
+  --color-placeholder: var(--placeholder);
   --color-line: var(--line);
+  --color-segment: var(--segment);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
   --color-hook: var(--hook);
   --color-body: var(--body);
   --color-cta: var(--cta);
   --color-danger: var(--danger);
-  --color-on-accent: var(--on-accent);
   --color-danger-ink: var(--danger-ink);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-line: var(--danger-line);
 }
 
 @theme {
   --font-sans:
     'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo',
     'Malgun Gothic', sans-serif;
-  /* 카드 12px, 버튼·입력 8px (rounded-card, rounded-control) */
-  --radius-card: 12px;
-  --radius-control: 8px;
+  /* 큰 카드 16px, 입력·버튼 12px, 작은 요소 8px (rounded-card, rounded-control, rounded-small) */
+  --radius-card: 16px;
+  --radius-control: 12px;
+  --radius-small: 8px;
+  /* 메인 제목 32, 작업 화면 제목 24, 섹션 제목 18, 카드 제목·입력 15, 본문 14·13, 보조 12. 줄 간격 1.5~1.65 */
+  --text-title: 32px;
+  --text-title--line-height: 1.3;
+  --text-page: 24px;
+  --text-page--line-height: 1.35;
+  --text-section: 18px;
+  --text-section--line-height: 1.5;
+  --text-card: 15px;
+  --text-card--line-height: 1.55;
+  --text-note: 13px;
+  --text-note--line-height: 1.6;
+  --text-sm: 14px;
+  --text-sm--line-height: 1.6;
+  --text-xs: 12px;
+  --text-xs--line-height: 1.5;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-segment: 0 1px 3px rgba(15, 23, 42, 0.12);
+  --shadow-phone: 0 20px 48px -16px rgba(15, 23, 42, 0.38);
 }
 
 /* 장면 모션 미리보기 (백엔드 ⑦ 모션 표와 같은 값: zoom 1↔1.12, pan은 1.12 배율에서 가로 끝↔끝). 3초 반복 */
@@ -84,7 +123,15 @@
 .motion-pan_left { animation: motion-pan-left 3s linear infinite; }
 .motion-pan_right { animation: motion-pan-right 3s linear infinite; }
 
+/* 오류·안내 패널 등장(5장: 150~250ms, transform·opacity) */
+@keyframes appear {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+.appear { animation: appear 200ms ease-out; }
+
 @media (prefers-reduced-motion: reduce) {
+  .appear,
   .motion-zoom_in,
   .motion-zoom_out,
   .motion-pan_left,
@@ -112,5 +159,14 @@
     -webkit-font-smoothing: antialiased;
     /* 원문·대본의 긴 URL처럼 띄어쓰기 없는 문자열이 화면을 가로로 밀지 않게 */
     overflow-wrap: anywhere;
+    line-height: 1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      transition-duration: 0.01ms !important;
+    }
   }
 }
