@@ -26,7 +26,7 @@ export function LineMap({ steps }: { steps: StepItem[] }) {
                 <>
                   <span
                     aria-hidden="true"
-                    className={cx('relative z-10 grid size-11 place-items-center rounded-full border-[5px] bg-white font-display text-[18px] leading-none', on ? 'border-ink bg-accent text-white' : done ? 'border-accent text-accent' : 'border-line text-muted')}
+                    className={cx('relative z-10 grid size-11 place-items-center rounded-full border-[5px] font-display text-[18px] leading-none', on ? 'border-ink bg-accent text-white' : done ? 'border-accent bg-white text-accent' : 'border-line bg-white text-muted')}
                   >
                     {s.index}
                   </span>

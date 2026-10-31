@@ -28,9 +28,9 @@ export function Dot({ state = 'idle', size = 'md', children }: { state?: 'idle' 
     <span
       aria-hidden="true"
       className={cx(
-        'relative z-10 grid shrink-0 place-items-center rounded-full border-[5px] bg-white font-display leading-none',
+        'relative z-10 grid shrink-0 place-items-center rounded-full border-[5px] font-display leading-none',
         size === 'lg' ? 'size-11 text-[20px]' : 'size-9 text-[17px]',
-        state === 'on' ? 'border-ink bg-accent text-white' : state === 'done' ? 'border-accent text-accent' : state === 'fail' ? 'border-danger text-danger' : 'border-line text-muted',
+        state === 'on' ? 'border-ink bg-accent text-white' : state === 'done' ? 'border-accent bg-white text-accent' : state === 'fail' ? 'border-danger bg-white text-danger' : 'border-line bg-white text-muted',
       )}
     >
       {children}
