@@ -82,11 +82,13 @@ export function Frame({ steps, project, children }: { steps: StepItem[]; project
             </dl>
           )}
 
-          <button type="button" onClick={() => dialog.current?.showModal()} className={cx(btn.quiet, 'hidden justify-start px-1.5 lg:mt-auto lg:flex')} aria-label="단축키 도움말 열기">
-            <Keyboard aria-hidden="true" className="size-4" />
-            단축키
-            <Kbd className="ml-auto">?</Kbd>
-          </button>
+          <div className="hidden md:block lg:mt-auto">
+            <button type="button" onClick={() => dialog.current?.showModal()} className={cx(btn.quiet, 'justify-start px-1.5')} aria-label="단축키 도움말 열기">
+              <Keyboard aria-hidden="true" className="size-4" />
+              단축키
+              <Kbd className="ml-auto">?</Kbd>
+            </button>
+          </div>
         </div>
       </aside>
 
