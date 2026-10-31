@@ -1,0 +1,80 @@
+/* 시안 cinema — 상영관. 다크 전용, 따뜻한 검정·상아색·옅은 금색, 극장 붉은 막 */
+html[data-variant='cinema'] {
+  color-scheme: dark;
+  --bg: #0b0809;
+  --surface: #14100f;
+  --panel: #14100f;
+  --panel-2: #1d1715;
+  --ink: #f3ebd9;
+  --muted: #b9ae9a;
+  --placeholder: #857b6a;
+  --line: #2e2522;
+  --edge: #4a3d30;
+  --segment: #1d1715;
+  --accent: #e8c872;
+  --accent-hover: #f4dc98;
+  --accent-bright: #e8c872;
+  --accent-soft: #2a2212;
+  --on-accent: #1a1205;
+  --hi: #e8c872;
+  --on-hi: #1a1205;
+  --hook: #e8c872;
+  --body: #b9ae9a;
+  --cta: #e8c872;
+  --danger: #ff8a7a;
+  --danger-ink: #ffb1a5;
+  --danger-soft: #2a1411;
+  --danger-line: #6a2d24;
+  --radius-card: 2px;
+  --radius-control: 2px;
+  --radius-small: 2px;
+  --v-display: 'Gowun Batang', 'Noto Serif KR', serif;
+  --font-serif: 'Gowun Batang', 'Noto Serif KR', serif;
+}
+
+html[data-variant='cinema'] body {
+  background-image: radial-gradient(1200px 500px at 50% -10%, rgba(120, 18, 30, 0.35), transparent 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* 필름 구멍 */
+.cin-sprockets {
+  background-image: repeating-linear-gradient(90deg, #0b0809 0 9px, transparent 9px 18px);
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+}
+.cin-film {
+  position: relative;
+  background: #1b1412;
+}
+.cin-film::before,
+.cin-film::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  height: 14px;
+  background-image: repeating-linear-gradient(90deg, transparent 0 8px, #0b0809 8px 20px, transparent 20px 28px);
+  background-size: 28px 8px;
+  background-repeat: repeat-x;
+  background-position: 6px 3px;
+}
+.cin-film::before { top: 0; }
+.cin-film::after { bottom: 0; }
+
+/* 극장 전구 띠 */
+.cin-bulbs {
+  background-image: radial-gradient(circle at 6px 6px, #e8c872 0 3px, transparent 3.5px);
+  background-size: 22px 12px;
+  background-repeat: repeat-x;
+}
+
+/* 입장권: 양옆이 파인 모양 */
+.cin-ticket {
+  -webkit-mask:
+    radial-gradient(circle 12px at 0 50%, transparent 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 12px at 100% 50%, transparent 97%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle 12px at 0 50%, transparent 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 12px at 100% 50%, transparent 97%, #000) right / 51% 100% no-repeat;
+}
