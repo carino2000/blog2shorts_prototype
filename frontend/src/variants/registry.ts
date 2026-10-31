@@ -29,6 +29,7 @@ export const VARIANTS: VariantEntry[] = [
   { id: 'ledger', name: '단정한 안내', mood: '정갈 · 친절', swatch: ['#FBFAF7', '#1F2933', '#0F766E'], load: () => import('./ledger') },
   { id: 'command', name: '작업 콘솔', mood: '세련 · 고밀도', swatch: ['#F3F4F6', '#16191F', '#BE185D'], load: () => import('./command') },
   { id: 'reel', name: '빅 릴', mood: '화려 · 대담', swatch: ['#FF4A1C', '#0A0A0A', '#D4FF3A'], load: () => import('./reel') },
+  { id: 'paper', name: '종이 공방', mood: '따뜻 · 차분', swatch: ['#F1E9DB', '#3A2F26', '#B4532A'], load: () => import('./paper') },
 ]
 
 export function findVariant(id: string): VariantEntry | undefined {
