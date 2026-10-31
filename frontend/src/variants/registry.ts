@@ -24,6 +24,7 @@ export interface VariantEntry {
 
 export const VARIANTS: VariantEntry[] = [
   { id: BASE_VARIANT, name: '현재 화면', mood: '디자인 2안 · 기준', swatch: ['#F7F8FA', '#191F28', '#1B64DA'], load: null },
+  { id: 'night', name: '야간 편집실', mood: '차분 · 전문가', swatch: ['#0B0D11', '#E9ECF2', '#F5B83D'], load: () => import('./night') },
 ]
 
 export function findVariant(id: string): VariantEntry | undefined {

@@ -33,6 +33,11 @@ export type Gate =
   | { kind: 'redirect'; to: string }
   | { kind: 'ready'; project: Project }
 
+/** 입력 화면용 단계 표시(프로젝트가 아직 없다) */
+export function inputSteps(): StepItem[] {
+  return STEPS.map((s, i) => ({ ...s, index: i + 1, state: i === 0 ? 'current' : 'upcoming', href: null }))
+}
+
 export function useProjectGate(id: string, view: View) {
   const query = useProject(id)
   const vto = useVariantTo()
