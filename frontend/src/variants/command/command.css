@@ -1,0 +1,49 @@
+/* 시안 command — 작업 콘솔. 라이트 전용, 고밀도(본문 13~14px), 장미색 강조 하나 */
+html[data-variant='command'] {
+  color-scheme: light;
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f8f9fa;
+  --ink: #16191f;
+  --muted: #5b6472;
+  --placeholder: #8b94a1;
+  --line: #e3e6ea;
+  --edge: #d3d8de;
+  --segment: #eceef1;
+  --accent: #be185d;
+  --accent-hover: #9d174d;
+  --accent-bright: #be185d;
+  --accent-soft: #fdf0f6;
+  --on-accent: #ffffff;
+  --hi: #be185d;
+  --on-hi: #ffffff;
+  --hook: #b45309;
+  --body: #475569;
+  --cta: #047857;
+  --danger: #c2261c;
+  --danger-ink: #b42318;
+  --danger-soft: #fef3f2;
+  --danger-line: #fecdca;
+  --radius-card: 8px;
+  --radius-control: 6px;
+  --radius-small: 4px;
+  --v-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+}
+
+html[data-variant='command'] body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+html[data-variant='command'] ::selection {
+  background: #fbcfe3;
+}
+
+/* 줄무늬 없는 표의 머리글 */
+.cmd-th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
