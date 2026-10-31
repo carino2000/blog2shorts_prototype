@@ -58,7 +58,7 @@
   - 할 일: 장면별 TTS + hash 캐시, ffprobe 길이, 자막 분할·ASS 생성
   - 완료: 자막 분할 단위 테스트(시간 합 = 음성 길이), 같은 문구 2회 실행 시 두 번째는 TTS 호출 0회(로그로 확인). 실제 TTS 실측 속도로 "1초 ≈ 7자" 기준값 갱신 제안
 
-- [ ] **B9. 렌더·영상 API** (`render.py`, `/render`, `/render?from=`, `/video`)
+- [x] **B9. 렌더·영상 API** (`render.py`, `/render`, `/render?from=`, `/video`)
   - 필요: B3, B8
   - 할 일: PoC를 파이프라인으로 옮김, 진행률, 동시 1건, 실패 단계 재시도, `?download=1`, 단계별(①~⑦) 소요 시간을 로그로 남김(통합기획서 13-2 처리 시간 3분 목표 확인용)
   - 완료: 실제 URL 1건으로 생성 → 렌더 → MP4 1080×1920·30~60초(`ffprobe`), `from=subtitle` 재시도 시 TTS 재호출 없음
@@ -82,3 +82,4 @@
 | 2026-10-31 | B7 | pytest 76 passed·1 skipped: 문구 변경 장면만 길이·자막 초기화, 이미지·모션 변경은 유지, 없는 이미지 MISSING_IMAGE(부분 적용 없음), 렌더 중 409, jpg·png·webp 업로드, 비이미지·gif·용량 초과 UPLOAD_INVALID, 대본 없는 LLM_FAILED 뒤 /regenerate → ready, 재생성 실패 시 이전 대본 유지 | 재생성 실패는 status error이지만 이전 scenes를 유지함 |
 | 2026-10-31 | B8 | pytest 11건(자막 시간 합=음성 길이, 같은 문구 2회 호출 1번·로그 "캐시 사용", 실패 시 캐시 안 남음). 실제 TTS 3회(gpt-4o-mini-tts, 43자): coral 6.51·nova 6.43·alloy 6.94자/초 → 7자/초 기준값은 유지 제안, 음성은 기준에 가장 가까운 alloy를 임시 선택 | 사람이 들어 본 비교가 아님. 샘플은 samples/tts/voice_*.mp3(커밋 안 됨). 400자면 58~62초라 60초를 넘을 수 있음 |
 | 2026-10-31 | B8 보완 | 공식 문서 확인: gpt-4o-mini-tts는 deprecated(2027-01-06 종료). 그러나 /v1/audio/speech용 대체 모델이 없고 권장 경로 gpt-realtime-2.1-mini는 Realtime API 전용이라, 11/19 발표까지 동작하는 현 모델 유지. 문서 권장 음성 비교(호출 2회): marin 6.19·cedar 6.43자/초 → cedar 임시 선택 | 사람이 들어 본 비교가 아님. 2027-01-06 전에 Realtime 전환 필요. 단가 $0.60/$12 per 1M 토큰 |
+| 2026-10-31 | B9 | pytest 95 passed·1 skipped(가짜 TTS+실제 FFmpeg). 실서버 실제 글: ready 12.1초+렌더 21.1초=33초, MP4 1080×1920·30fps·yuv420p/tv, 48.27초, 자막 프레임 확인. from=subtitle 재시도 8.1초·TTS 호출 0. 한 장면 수정 재렌더 TTS 1회. 본문+업로드 경로: 이미지 없으면 400, 업로드 후 done 48.47초, 재렌더 시 로그 "TTS 캐시 사용" 5건·호출 0. 단계별 소요 로그 있음(tts 11.8·자막 0.3·합성 7.6초) | blog2shorts INFO 로그가 안 나오던 문제 발견·수정(이전 호출 2건 토큰은 기록 없음). 30~60초 밖이면 렌더는 계속하고 progress.message·로그로 경고(계약 변경 없음). 코드 수정으로 서버가 재시작돼 렌더 1건 소실, LLM 1회·TTS 5회 낭비. zoompan 흔들림·실제 플레이어 재생은 사람 확인 필요: data/sample_b9_url.mp4 |

@@ -7,6 +7,7 @@ from pydantic.alias_generators import to_camel
 
 ProjectStatus = Literal["extracting", "scripting", "ready", "rendering", "done", "error"]
 Stage = Literal["extract", "script", "tts", "subtitle", "render"]
+RenderStage = Literal["tts", "subtitle", "render"]
 Motion = Literal["zoom_in", "zoom_out", "pan_left", "pan_right", "none"]
 ErrorCode = Literal[
     "NOT_NAVER_URL", "POST_NOT_FOUND", "EXTRACT_FAILED",
