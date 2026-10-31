@@ -1,0 +1,58 @@
+/* 시안 broadcast — 방송 부조실. 다크 전용, 신호등 색(적·녹·호박)과 모니터 테두리 */
+html[data-variant='broadcast'] {
+  color-scheme: dark;
+  --bg: #0e1115;
+  --surface: #161b21;
+  --panel: #161b21;
+  --panel-2: #1d242c;
+  --ink: #e8edf2;
+  --muted: #9aa7b4;
+  --placeholder: #6f7d8b;
+  --line: #29323c;
+  --edge: #3a4654;
+  --segment: #1d242c;
+  --accent: #d92d20;
+  --accent-hover: #ee4a3d;
+  --accent-bright: #ff5a4d;
+  --accent-soft: #2b1512;
+  --on-accent: #ffffff;
+  --hi: #2ee06b;
+  --on-hi: #06210f;
+  --hook: #ffb020;
+  --body: #9aa7b4;
+  --cta: #2ee06b;
+  --danger: #ff6a5e;
+  --danger-ink: #ff9a90;
+  --danger-soft: #2b1512;
+  --danger-line: #6a2d26;
+  --radius-card: 4px;
+  --radius-control: 3px;
+  --radius-small: 2px;
+  --v-display: 'Barlow Condensed', 'Pretendard Variable', Pretendard, sans-serif;
+  --v-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+}
+
+/* 모니터 테두리와 안전 구역 */
+.bc-monitor {
+  background: #05070a;
+  border: 3px solid #2a323b;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px #000, 0 12px 30px -12px rgba(0, 0, 0, 0.8);
+}
+
+/* 색 막대 (신호 없음) */
+.bc-bars {
+  background: linear-gradient(90deg, #c8c8c8 0 14.28%, #c8c800 0 28.57%, #00c8c8 0 42.85%, #00c800 0 57.14%, #c800c8 0 71.42%, #c80000 0 85.71%, #0000c8 0);
+}
+.bc-bars-low {
+  background: linear-gradient(90deg, #0000c8 0 14.28%, #111 0 28.57%, #c800c8 0 42.85%, #111 0 57.14%, #00c8c8 0 71.42%, #111 0 85.71%, #c8c8c8 0);
+}
+
+@keyframes bc-tally {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.bc-live { animation: bc-tally 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bc-live { animation: none; }
+}
