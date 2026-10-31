@@ -27,10 +27,10 @@ function Index({ project }: { project: Project }) {
 
   return (
     <div className="grid-12 gap-y-10">
-      <div className="col-span-12 flex items-end justify-between gap-6 md:col-span-12">
+      <div className="col-span-12 flex flex-wrap items-end justify-between gap-x-6 gap-y-5 md:col-span-12">
         <div className="flex items-end gap-6 sm:gap-10">
           <Num n={2} className="text-[clamp(4.5rem,11vw,8.5rem)] text-accent" />
-          <Head className="pb-1">대본</Head>
+          <Head className="whitespace-nowrap pb-1">대본</Head>
         </div>
         <VLink to={`/projects/${project.id}/scenes`} className={cx(btn.primary, 'min-h-14 shrink-0 px-6')}>
           장면 편집 <span aria-hidden="true">→</span>
