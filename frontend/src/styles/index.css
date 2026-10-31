@@ -159,6 +159,8 @@
     -webkit-font-smoothing: antialiased;
     /* 원문·대본의 긴 URL처럼 띄어쓰기 없는 문자열이 화면을 가로로 밀지 않게 */
     overflow-wrap: anywhere;
+    /* 한글이 낱말 중간에서 끊기지 않게. 띄어쓰기 없는 긴 문자열은 위 줄이 끊어 준다 */
+    word-break: keep-all;
     line-height: 1.6;
   }
 

@@ -38,9 +38,10 @@ export function ProjectShell({
       projectId={id}
       busy={isBusy(project?.status)}
       reached={project ? STEP_OF[furthestView(project)] : undefined}
+      wide={wide}
     />
   )
-  const container = wide ? 'mx-auto max-w-[1440px] px-4 py-6' : 'mx-auto max-w-[1120px] px-4 py-8'
+  const container = wide ? 'mx-auto max-w-[1440px] px-5 py-6' : 'mx-auto max-w-[1140px] px-5 py-8 sm:py-12'
 
   if (query.isError && (isNotFound(query.error) || !project)) {
     return (

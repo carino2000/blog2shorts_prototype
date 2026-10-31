@@ -45,15 +45,15 @@ export function Stepper({
             <>
               <span
                 className={cx(
-                  'flex size-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold tabular-nums',
+                  'flex size-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold tabular-nums transition-colors duration-200',
                   isCurrent && 'bg-accent text-on-accent',
-                  isDone && 'bg-accent-soft text-accent',
+                  isDone && 'bg-segment text-muted',
                   !isCurrent && !isDone && 'border border-line text-muted',
                 )}
               >
                 {isDone ? <Check aria-hidden="true" className="size-3" /> : i + 1}
               </span>
-              <span className={cx('whitespace-nowrap', isCurrent ? 'font-semibold text-ink' : 'text-muted', i !== currentIdx && 'max-sm:sr-only')}>
+              <span className={cx('whitespace-nowrap', isCurrent ? 'font-semibold text-accent' : 'text-muted', i !== currentIdx && 'max-sm:sr-only')}>
                 {step.label}
               </span>
             </>
@@ -64,7 +64,7 @@ export function Stepper({
               {canGo ? (
                 <Link
                   to={stepPath(step.key, projectId)}
-                  className="flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-control px-1 hover:text-accent focus-visible:outline-2 focus-visible:outline-accent-bright"
+                  className="flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-control px-1 no-underline hover:bg-segment focus-visible:outline-2 focus-visible:outline-accent-bright"
                 >
                   {content}
                 </Link>
