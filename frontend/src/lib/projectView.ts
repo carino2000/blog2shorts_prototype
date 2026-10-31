@@ -47,3 +47,8 @@ export function furthestView(p: ProjectLike): View {
 export function viewPath(id: string, view: View): string {
   return view === 'processing' ? `/projects/${id}` : `/projects/${id}/${view}`
 }
+
+/** needsUpload는 '블로그 이미지 0장'이라 업로드 뒤에도 true로 남는다. 쓸 이미지가 생기면 안내를 내린다 */
+export function showUploadNotice(p: Pick<Project, 'needsUpload' | 'assets'>): boolean {
+  return p.needsUpload && p.assets.length === 0
+}

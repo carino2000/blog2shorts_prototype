@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { ErrorCode, Project, Stage } from '../api/types'
-import { allowedViews, defaultView, furthestView } from './projectView'
+import { allowedViews, defaultView, furthestView, showUploadNotice } from './projectView'
 
 const script = { hook: 'h', body: 'b', cta: 'c', estimatedSec: 40 }
 
@@ -31,5 +31,12 @@ describe('projectView', () => {
   it('Stepper는 허용된 가장 먼 화면까지 간다', () => {
     expect(furthestView(p('ready', { hasScript: true }))).toBe('scenes')
     expect(furthestView(p('done', { hasScript: true }))).toBe('result')
+  })
+
+  it('업로드 안내는 쓸 이미지가 없을 때만', () => {
+    const asset = { id: 'x', origin: 'upload' as const, url: '/u', width: 1, height: 1 }
+    expect(showUploadNotice({ needsUpload: true, assets: [] })).toBe(true)
+    expect(showUploadNotice({ needsUpload: true, assets: [asset] })).toBe(false)
+    expect(showUploadNotice({ needsUpload: false, assets: [] })).toBe(false)
   })
 })

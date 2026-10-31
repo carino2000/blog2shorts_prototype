@@ -159,7 +159,7 @@ export function InputPage() {
               <ErrorBanner
                 message={errorMessage}
                 actions={
-                  isApiError(serverError) && serverError.status !== 400 ? (
+                  isApiError(serverError) && (serverError.status === 0 || serverError.status >= 500) ? (
                     <button type="button" className={btnSecondary} onClick={() => submit()}>
                       다시 시도
                     </button>

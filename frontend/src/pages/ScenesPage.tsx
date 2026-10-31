@@ -14,6 +14,7 @@ import { SaveStatus } from '../components/SaveStatus'
 import { SceneCard } from '../components/SceneCard'
 import { ScenePreview } from '../components/ScenePreview'
 import { totalSec } from '../lib/duration'
+import { showUploadNotice } from '../lib/projectView'
 import { WIDE_QUERY, useMediaQuery } from '../lib/useMediaQuery'
 import { btnPrimary } from '../lib/ui'
 
@@ -91,7 +92,7 @@ function ScenesEditor({ project }: { project: Project }) {
         <SaveStatus state={updates.saveState} onRetry={() => void updates.flush().catch(() => undefined)} />
       </div>
 
-      {project.needsUpload && (
+      {showUploadNotice(project) && (
         <div role="note" className="flex items-start gap-3 rounded-card border border-hook/40 bg-hook/8 p-4 text-sm">
           <ImagePlus aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-hook" />
           <p className="m-0">이 글에는 이미지가 없습니다. 장면에 쓸 이미지를 올려주세요.</p>
