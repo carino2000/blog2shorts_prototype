@@ -1,0 +1,47 @@
+/* 시안 grid — 스위스 격자. 라이트 전용, 12단 격자·큰 번호·강조색 하나(적색) */
+html[data-variant='grid'] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f1f1ee;
+  --ink: #0b0b0b;
+  --muted: #55554f;
+  --placeholder: #8a8a84;
+  --line: #d4d4cf;
+  --edge: #0b0b0b;
+  --segment: #f1f1ee;
+  --accent: #d4001c;
+  --accent-hover: #a80016;
+  --accent-bright: #d4001c;
+  --accent-soft: #fde8ea;
+  --on-accent: #ffffff;
+  --hi: #d4001c;
+  --on-hi: #ffffff;
+  --hook: #d4001c;
+  --body: #0b0b0b;
+  --cta: #0b0b0b;
+  --danger: #d4001c;
+  --danger-ink: #b3001a;
+  --danger-soft: #fde8ea;
+  --danger-line: #d4001c;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+}
+
+html[data-variant='grid'] body {
+  font-feature-settings: 'tnum' 1;
+}
+
+/* 12단 격자 */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1.5rem;
+}
+@media (max-width: 767px) {
+  .grid-12 {
+    column-gap: 1rem;
+  }
+}
