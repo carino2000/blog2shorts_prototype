@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { ApiError, isNotFound, request } from './client'
+import { ApiError, isConnectionError, isNotFound, request } from './client'
 
 function stubFetch(status: number, body: string) {
   vi.stubGlobal('fetch', vi.fn(async () => new Response(body || null, { status })))
@@ -41,5 +41,17 @@ describe('request 오류 변환', () => {
   it('성공 응답은 JSON을 돌려준다', async () => {
     stubFetch(200, JSON.stringify({ ok: true }))
     await expect(request('/api/health')).resolves.toEqual({ ok: true })
+  })
+})
+
+describe('isConnectionError', () => {
+  it('연결 실패와 서버 실패만 다시 시도 대상이다', () => {
+    expect(isConnectionError(new ApiError(0, 'NETWORK', '연결 안 됨'))).toBe(true)
+    expect(isConnectionError(new ApiError(502, 'NETWORK', '서버 오류'))).toBe(true)
+  })
+
+  it('입력 검증 오류와 일반 오류는 아니다', () => {
+    expect(isConnectionError(new ApiError(400, 'NOT_NAVER_URL', '주소 오류'))).toBe(false)
+    expect(isConnectionError(new Error('x'))).toBe(false)
   })
 })

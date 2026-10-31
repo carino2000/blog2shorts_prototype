@@ -1,7 +1,7 @@
-import { ArrowRight, Clapperboard, FileText, Link2, ListTree, Loader2, ScrollText } from 'lucide-react'
+import { ArrowRight, Clapperboard, FileText, Link2, ListTree, Loader2, RotateCcw, ScrollText, ServerOff } from 'lucide-react'
 import { useId, useState, type FormEvent, type ReactNode } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
-import { isApiError } from '../api'
+import { isApiError, isConnectionError } from '../api'
 import { useCreateProject } from '../api/queries/useCreateProject'
 import { AppHeader } from '../components/AppHeader'
 import { BackendDownNotice } from '../components/BackendDownNotice'
@@ -158,10 +158,13 @@ export function InputPage() {
 
             {errorMessage && (
               <ErrorBanner
+                title={isConnectionError(serverError) ? '서버에 연결하지 못했습니다' : '입력을 확인해 주세요'}
+                icon={isConnectionError(serverError) ? ServerOff : undefined}
                 message={errorMessage}
                 actions={
-                  isApiError(serverError) && (serverError.status === 0 || serverError.status >= 500) ? (
+                  isConnectionError(serverError) ? (
                     <button type="button" className={btnSecondary} onClick={() => submit()}>
+                      <RotateCcw aria-hidden="true" className="size-4" />
                       다시 시도
                     </button>
                   ) : undefined

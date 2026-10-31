@@ -45,4 +45,4 @@ export const api: Api = USE_MOCK ? mockApi : realApi
 
 export const { assetUrl, videoUrl } = api
 
-export { ApiError, isApiError, isNotFound } from './client'
+export { ApiError, isApiError, isConnectionError, isNotFound } from './client'

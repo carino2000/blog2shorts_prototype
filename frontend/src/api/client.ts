@@ -20,6 +20,11 @@ export function isApiError(e: unknown): e is ApiError {
 }
 
 /** 404 = 작업이 없음(백엔드 재시작으로 사라졌거나 잘못된 주소) */
+/** 서버에 닿지 못했거나 서버가 실패한 경우. 입력을 고칠 일이 아니라 다시 시도할 일이다 */
+export function isConnectionError(e: unknown): boolean {
+  return isApiError(e) && (e.status === 0 || e.status >= 500)
+}
+
 export function isNotFound(e: unknown): boolean {
   return isApiError(e) && (e.code === 'NOT_FOUND' || e.status === 404)
 }
