@@ -41,6 +41,7 @@ export const VARIANTS: VariantEntry[] = [
   { id: 'story', name: '세로 스토리', mood: '모바일 · 몰입', swatch: ['#000000', '#FFFFFF', '#3DDCFF'], load: () => import('./story') },
   { id: 'storyboard', name: '콘티 용지', mood: '실무 · 아날로그', swatch: ['#F1EEE6', '#1F2328', '#2C4A86'], load: () => import('./storyboard') },
   { id: 'terminal', name: '터미널', mood: '개발자 · 절제', swatch: ['#0C1014', '#D6E2EE', '#7EE787'], load: () => import('./terminal') },
+  { id: 'metro', name: '노선도', mood: '안내 · 명쾌', swatch: ['#FFFFFF', '#101418', '#0052A4'], load: () => import('./metro') },
 ]
 
 export function findVariant(id: string): VariantEntry | undefined {

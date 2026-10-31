@@ -1,0 +1,61 @@
+/* 시안 metro — 노선도. 굵은 노선, 큰 원 역, 안내판. 라이트 전용 */
+html[data-variant='metro'] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --panel: #f3f6fa;
+  --panel-2: #e8eef6;
+  --ink: #101418;
+  --muted: #465163;
+  --placeholder: #76808f;
+  --line: #d5dce7;
+  --edge: #101418;
+  --segment: #e8eef6;
+  --accent: #0052a4;
+  --accent-hover: #003d7c;
+  --accent-bright: #0052a4;
+  --accent-soft: #e1ecf9;
+  --on-accent: #ffffff;
+  --hi: #0052a4;
+  --on-hi: #ffffff;
+  --hook: #9a5b00;
+  --body: #465163;
+  --cta: #007a45;
+  --danger: #d12a2a;
+  --danger-ink: #a61e1e;
+  --danger-soft: #fdeded;
+  --danger-line: #d12a2a;
+  --radius-card: 14px;
+  --radius-control: 10px;
+  --radius-small: 6px;
+  --v-display: 'Do Hyeon', 'Pretendard Variable', Pretendard, sans-serif;
+  --v-mono: 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+/* 노선: 세로 굵은 선. 칸마다 위아래로 이어진다 */
+.mt-rail {
+  position: relative;
+}
+.mt-rail::before {
+  content: '';
+  position: absolute;
+  left: 1.375rem;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  margin-left: -6px;
+  background: var(--rail, var(--accent));
+}
+.mt-rail > li:first-child::before {
+  top: 1.5rem;
+}
+
+/* 열차 표시 깜박임 */
+@keyframes mt-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 82, 164, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 82, 164, 0); }
+}
+.mt-train { animation: mt-pulse 1.6s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .mt-train { animation: none; }
+}
