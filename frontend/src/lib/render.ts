@@ -6,8 +6,15 @@ import type { Scene } from '../api/types'
 export const VIDEO_WIDTH = 1080
 export const VIDEO_HEIGHT = 1920
 
-/** ⑥ 자막: 크기 64, 외곽선 4, 하단에서 360px 위, 가운데 정렬, 최대 2줄 */
+/** ⑥ 자막: 크기 64, 외곽선 4, 하단에서 360px 위, 좌우 여백 60, 가운데 정렬, 최대 2줄 */
 export const SUBTITLE_FONT_PX = 64
+/**
+ * ASS의 크기 64는 글자 크기가 아니라 줄 높이(폰트 ascent + descent)다. Noto Sans KR은 그 값이 글자 크기의 1.448배라
+ * 렌더 글자 크기는 약 44px이다(실제 렌더 프레임에서 44.45px 측정). CSS는 글자 크기를 받으므로 나눠서 쓴다.
+ */
+export const SUBTITLE_LINE_RATIO = 1.448
+export const SUBTITLE_GLYPH_PX = SUBTITLE_FONT_PX / SUBTITLE_LINE_RATIO
+export const SUBTITLE_SIDE_PX = 60
 export const SUBTITLE_OUTLINE_PX = 4
 export const SUBTITLE_BOTTOM_PX = 360
 export const SUBTITLE_MAX_LINES = 2
