@@ -67,7 +67,7 @@ function Projection({ project }: { project: Project }) {
 function Premiere({ project, video }: { project: Project; video: NonNullable<Project['video']> }) {
   const v = useDoneView(project, video)
   return (
-    <main className="mx-auto flex max-w-[1400px] flex-col items-center gap-12 px-5 pt-12 text-center sm:px-10 sm:pt-16">
+    <main className="mx-auto flex max-w-[1400px] flex-col items-center gap-12 overflow-x-clip px-5 pt-12 text-center sm:px-10 sm:pt-16">
       <div className="flex flex-col items-center gap-5">
         <Label>Premiere</Label>
         <Poster id="done-title" className="text-[clamp(2.25rem,6.5vw,5rem)]">
