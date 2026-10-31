@@ -1,0 +1,91 @@
+/* 시안 reel — 빅 릴. 화면마다 강한 색면(data-tone)과 초대형 글자. 다크 바탕이 기본 */
+html[data-variant='reel'] {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --panel: #141414;
+  --panel-2: #1f1f1f;
+  --ink: #f5f5f0;
+  --muted: #b6b6ae;
+  --placeholder: #86867f;
+  --line: #2e2e2e;
+  --edge: #f5f5f0;
+  --segment: #1f1f1f;
+  --accent: #d4ff3a;
+  --accent-hover: #e6ff7a;
+  --accent-bright: #d4ff3a;
+  --accent-soft: #1f2400;
+  --on-accent: #0a0a0a;
+  --hi: #d4ff3a;
+  --on-hi: #0a0a0a;
+  --hook: #ff6a47;
+  --body: #8e9cff;
+  --cta: #d4ff3a;
+  --danger: #ff8274;
+  --danger-ink: #ffa89d;
+  --danger-soft: #2a1411;
+  --danger-line: #6a2a22;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+  --v-display: 'Black Han Sans', 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+/* 색면: 화면(또는 장면 역할)마다 바탕·글자·버튼 색이 통째로 바뀐다 */
+[data-tone='coral'] {
+  --bg: #ff4a1c;
+  --panel: #ff4a1c;
+  --panel-2: #e63e12;
+  --surface: #ff4a1c;
+  --ink: #0a0a0a;
+  --muted: #2a0d05;
+  --placeholder: #4a1a0c;
+  --line: #0a0a0a;
+  --edge: #0a0a0a;
+  --accent: #0a0a0a;
+  --accent-hover: #2a2a2a;
+  --on-accent: #d4ff3a;
+  --danger-soft: #0a0a0a;
+}
+[data-tone='cobalt'] {
+  --bg: #1f3bff;
+  --panel: #1f3bff;
+  --panel-2: #1830d8;
+  --surface: #1f3bff;
+  --ink: #ffffff;
+  --muted: #dbe0ff;
+  --placeholder: #b4bdff;
+  --line: #ffffff;
+  --edge: #ffffff;
+  --accent: #d4ff3a;
+  --accent-hover: #e6ff7a;
+  --on-accent: #0a0a0a;
+}
+[data-tone='lime'] {
+  --bg: #d4ff3a;
+  --panel: #d4ff3a;
+  --panel-2: #c2f01c;
+  --surface: #d4ff3a;
+  --ink: #0a0a0a;
+  --muted: #2b3300;
+  --placeholder: #4d5a00;
+  --line: #0a0a0a;
+  --edge: #0a0a0a;
+  --accent: #0a0a0a;
+  --accent-hover: #2a2a2a;
+  --on-accent: #d4ff3a;
+}
+
+.reel-outline {
+  -webkit-text-stroke: 2px currentColor;
+  color: transparent;
+}
+
+@keyframes reel-tick {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.reel-marquee { animation: reel-tick 22s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .reel-marquee { animation: none; }
+}
