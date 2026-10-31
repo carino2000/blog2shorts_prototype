@@ -32,9 +32,40 @@ def test_split_long_chunk_on_words() -> None:
     assert " ".join(chunks) == "자동차 구조와 주요 장치의 작동 원리를 이해하는 것이 무엇보다 중요합니다."
 
 
-def test_single_long_word_is_kept() -> None:
-    word = "가" * 30
-    assert subtitle.split_chunks(word) == [word]
+def test_word_longer_than_limit_is_cut_without_losing_text() -> None:
+    limit = subtitle.MAX_CHUNK_CHARS
+    word = "가" * (limit * 2 + 2)
+    assert subtitle.split_chunks(word) == ["가" * limit, "가" * limit, "가가"]
+    chunks = subtitle.split_chunks(f"앞말 {word} 뒷말")
+    assert chunks == ["앞말", "가" * limit, "가" * limit, "가가 뒷말"]
+
+
+@pytest.mark.parametrize("length", [subtitle.MAX_CHUNK_CHARS, subtitle.MAX_CHUNK_CHARS + 1])
+def test_word_at_limit_boundary(length: int) -> None:
+    chunks = subtitle.split_chunks("가" * length)
+    assert len(chunks) == (1 if length <= subtitle.MAX_CHUNK_CHARS else 2)
+    assert "".join(chunks) == "가" * length
+
+
+def test_chunk_with_spaces_exactly_at_limit_stays_whole() -> None:
+    text = "가나다라마바 아자차카타파하"
+    assert len(text) == subtitle.MAX_CHUNK_CHARS
+    assert subtitle.split_chunks(text) == [text]
+    assert subtitle.split_chunks(text + "거") == ["가나다라마바", "아자차카타파하거"]
+
+
+def test_cut_word_times_still_sum_to_audio_length() -> None:
+    items = subtitle.build_subtitles("https://blog.naver.com/abc/123456789", 3.0)
+    assert all(len(item.text) <= subtitle.MAX_CHUNK_CHARS for item in items)
+    assert items[0].start_sec == 0 and items[-1].end_sec == 3.0
+    assert all(item.start_sec < item.end_sec for item in items)
+
+
+def test_ass_style_values() -> None:
+    style = next(line for line in subtitle.ASS_HEADER.splitlines() if line.startswith("Style:")).split(",")
+    assert style[2] == "88"  # Fontsize
+    assert style[16] == "5"  # Outline
+    assert style[18:22] == ["2", "60", "60", "360"]  # 가운데 정렬, 좌우·하단 여백
 
 
 @pytest.mark.parametrize("audio_sec", [1.0, 3.337, 7.71, 12.0])

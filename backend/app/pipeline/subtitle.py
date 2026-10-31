@@ -5,9 +5,9 @@ from pathlib import Path
 
 from app.models import Subtitle
 
-MAX_CHUNK_CHARS = 18
+MAX_CHUNK_CHARS = 14
 
-# 🟡 값은 B3 프레임으로 확인했다. 쉽게 바꿀 수 있다
+# 🟡 쉽게 바꿀 수 있다. libass는 크기를 줄 높이로 쓰므로 실제 글자 크기(em)는 88÷1.448 ≈ 61px다
 ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -16,7 +16,7 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Noto Sans KR,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,4,0,2,60,60,360,1
+Style: Default,Noto Sans KR,88,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,5,0,2,60,60,360,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -24,7 +24,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 def split_chunks(text: str) -> list[str]:
-    """문장부호(. ? ! ,) 뒤 공백에서 나눈다(160,000·2.5는 안 나뉜다). 18자를 넘으면 어절로 다시 나눈다."""
+    """문장부호(. ? ! ,) 뒤 공백에서 나눈다(160,000·2.5는 안 나뉜다). 14자를 넘으면 어절로 다시 나눈다.
+    어절 하나가 14자를 넘으면 글자 단위로 자른다(공백이 없으면 줄바꿈도 안 돼 화면 밖으로 나간다)."""
     chunks: list[str] = []
     for part in re.split(r"(?<=[.?!,])\s+", " ".join(text.split())):
         current = ""
@@ -35,6 +36,9 @@ def split_chunks(text: str) -> list[str]:
                 current = word
             else:
                 current = candidate
+            while len(current) > MAX_CHUNK_CHARS:
+                chunks.append(current[:MAX_CHUNK_CHARS])
+                current = current[MAX_CHUNK_CHARS:]
         if current:
             chunks.append(current)
     return chunks
