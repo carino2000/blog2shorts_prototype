@@ -53,7 +53,7 @@
   - 할 일: `CLAUDE.md` 5장 "장면 수정 규칙", 업로드 검사(jpg/png/webp, 10MB, Pillow로 열림)
   - 완료: 규칙별 pytest, 잘못된 파일 → `UPLOAD_INVALID`
 
-- [ ] **B8. TTS·자막** (`tts.py`, `subtitle.py`, `providers/tts_*`)
+- [x] **B8. TTS·자막** (`tts.py`, `subtitle.py`, `providers/tts_*`)
   - 필요: B7, H6
   - 할 일: 장면별 TTS + hash 캐시, ffprobe 길이, 자막 분할·ASS 생성
   - 완료: 자막 분할 단위 테스트(시간 합 = 음성 길이), 같은 문구 2회 실행 시 두 번째는 TTS 호출 0회(로그로 확인). 실제 TTS 실측 속도로 "1초 ≈ 7자" 기준값 갱신 제안
@@ -80,3 +80,4 @@
 | 2026-10-31 | B5 | OpenAI 전환(사람 직접 승인). pytest 검증기 14 passed. 실제 호출 5회(재요청 0, gpt-6.1-sol, 입력 10,089·출력 4,666 토큰): 5건 모두 장면 5개, 238~307자, 원문에 없는 숫자 0개(요약 포함). samples/script 저장 | gpt-6.1-sol 단가는 공식 문서에서 못 찾음 → 비용 실측 불가, 대시보드 확인 필요. 공식 모델 페이지에 gpt-4o-mini-tts가 deprecated로 표시됨. 대본에 '원문에 소개된' 같은 어색한 표현이 보임 |
 | 2026-10-31 | B6 | pytest 61 passed·1 skipped(매칭 0·1·적음·유효 유지·업로드, 추출 실패, LLM 실패 후 재생성, 입력 400). 실서버 실제 URL 1건(LLM 호출 1회, 누적 6회): extracting 5.7초→scripting 10초→ready 15.7초, 블록 35·이미지 7·장면 5 | 잘못된 URL·짧은 본문은 POST에서 바로 400(프론트 mock과 동일). 업로드만 있는 글도 needsUpload는 true 유지(계약 6-1 "블로그 이미지 0장") |
 | 2026-10-31 | B7 | pytest 76 passed·1 skipped: 문구 변경 장면만 길이·자막 초기화, 이미지·모션 변경은 유지, 없는 이미지 MISSING_IMAGE(부분 적용 없음), 렌더 중 409, jpg·png·webp 업로드, 비이미지·gif·용량 초과 UPLOAD_INVALID, 대본 없는 LLM_FAILED 뒤 /regenerate → ready, 재생성 실패 시 이전 대본 유지 | 재생성 실패는 status error이지만 이전 scenes를 유지함 |
+| 2026-10-31 | B8 | pytest 11건(자막 시간 합=음성 길이, 같은 문구 2회 호출 1번·로그 "캐시 사용", 실패 시 캐시 안 남음). 실제 TTS 3회(gpt-4o-mini-tts, 43자): coral 6.51·nova 6.43·alloy 6.94자/초 → 7자/초 기준값은 유지 제안, 음성은 기준에 가장 가까운 alloy를 임시 선택 | 사람이 들어 본 비교가 아님. 샘플은 samples/tts/voice_*.mp3(커밋 안 됨). 400자면 58~62초라 60초를 넘을 수 있음 |

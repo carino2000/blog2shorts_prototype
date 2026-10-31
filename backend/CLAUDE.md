@@ -88,6 +88,7 @@ app/
     tts.py              # ⑤ TTS + 캐시
     subtitle.py         # ⑥ 자막 분할·ASS 생성
     render.py           # ⑦ FFmpeg
+    media.py            # ffmpeg·ffprobe 실행 공통
   providers/
     llm_base.py, llm_openai.py
     tts_base.py, tts_openai.py
