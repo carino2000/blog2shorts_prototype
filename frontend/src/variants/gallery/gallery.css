@@ -1,0 +1,55 @@
+/* 시안 gallery — 전시관. 라이트 전용, 순수 흑백, 극단적 여백. 카드·테두리를 거의 쓰지 않는다 */
+html[data-variant='gallery'] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f4f4f4;
+  --ink: #000000;
+  --muted: #666666;
+  --placeholder: #9a9a9a;
+  --line: #e4e4e4;
+  --edge: #000000;
+  --segment: #f4f4f4;
+  --accent: #000000;
+  --accent-hover: #333333;
+  --accent-bright: #000000;
+  --accent-soft: #f0f0f0;
+  --on-accent: #ffffff;
+  --hi: #000000;
+  --on-hi: #ffffff;
+  --hook: #000000;
+  --body: #666666;
+  --cta: #000000;
+  --danger: #000000;
+  --danger-ink: #000000;
+  --danger-soft: #f0f0f0;
+  --danger-line: #000000;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+}
+
+html[data-variant='gallery'] body {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+html[data-variant='gallery'] ::selection {
+  background: #000;
+  color: #fff;
+}
+
+/* 전시장 방: 스크롤하면 방 하나씩 멈춘다 */
+.gallery-rooms {
+  scroll-snap-type: y proximity;
+}
+.gallery-room {
+  scroll-snap-align: start;
+  scroll-margin-top: 3.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-rooms {
+    scroll-snap-type: none;
+  }
+}

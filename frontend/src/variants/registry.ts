@@ -32,6 +32,7 @@ export const VARIANTS: VariantEntry[] = [
   { id: 'paper', name: '종이 공방', mood: '따뜻 · 차분', swatch: ['#F1E9DB', '#3A2F26', '#B4532A'], load: () => import('./paper') },
   { id: 'grid', name: '스위스 격자', mood: '이성적', swatch: ['#FFFFFF', '#0B0B0B', '#D4001C'], load: () => import('./grid') },
   { id: 'zine', name: '굵은 진', mood: '개성 · 강렬', swatch: ['#FFFFFF', '#0A0A0A', '#FF2E93'], load: () => import('./zine') },
+  { id: 'gallery', name: '전시관', mood: '초미니멀', swatch: ['#FFFFFF', '#000000', '#9A9A9A'], load: () => import('./gallery') },
 ]
 
 export function findVariant(id: string): VariantEntry | undefined {
