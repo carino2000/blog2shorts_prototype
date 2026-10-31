@@ -1,6 +1,9 @@
 """메모리 프로젝트 저장소 + 프로젝트 파일 경로. 서버가 재시작되면 사라진다(MVP 감수)."""
 
 import asyncio
+import re
+import shutil
+import time
 import uuid
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -10,6 +13,9 @@ from pathlib import Path
 from app.config import get_settings
 from app.errors import AppError
 from app.models import Asset, Project, Source
+
+EXPIRE_SEC = 24 * 60 * 60
+_PROJECT_FOLDER = re.compile(r"[0-9a-f]{12}")
 
 
 @dataclass(frozen=True)
@@ -105,6 +111,31 @@ class ProjectStore:
         if path is None or not path.is_file():
             raise AppError("NOT_FOUND", "이미지를 찾을 수 없습니다.")
         return path
+
+    async def purge_expired(self, max_age_sec: float = EXPIRE_SEC, now: float | None = None) -> list[str]:
+        """오래된 프로젝트 폴더와 메모리 항목을 지운다. 이름이 프로젝트 ID 형태인 폴더만 대상이다."""
+        current = time.time() if now is None else now
+        expired = [
+            folder for folder in await asyncio.to_thread(self._project_folders)
+            if current - folder.stat().st_mtime > max_age_sec
+        ]
+        removed: list[str] = []
+        for folder in expired:
+            async with self._lock:
+                project = self._projects.get(folder.name)
+                if project is not None and project.status in ("extracting", "scripting", "rendering"):
+                    continue
+                self._projects.pop(folder.name, None)
+                for asset_id in [key for key, file in self._asset_files.items() if file.is_relative_to(folder)]:
+                    del self._asset_files[asset_id]
+            await asyncio.to_thread(shutil.rmtree, folder, True)
+            removed.append(folder.name)
+        return removed
+
+    def _project_folders(self) -> list[Path]:
+        if not self.data_dir.is_dir():
+            return []
+        return [path for path in self.data_dir.iterdir() if path.is_dir() and _PROJECT_FOLDER.fullmatch(path.name)]
 
 
 _store: ProjectStore | None = None
