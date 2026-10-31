@@ -43,8 +43,8 @@ cp .env.example .env
 
 | 이름 | 필요한 때 |
 |---|---|
-| `LLM_API_KEY`, `LLM_MODEL` | 대본 생성 |
-| `TTS_CREDENTIALS_JSON`, `TTS_VOICE` | 음성 합성 |
+| `LLM_API_KEY`, `LLM_MODEL` | OpenAI 키(TTS와 공용)·대본 모델 |
+| `TTS_MODEL`, `TTS_VOICE` | 음성 합성 |
 | `CORS_ORIGINS` | 기본 `http://localhost:5173`. 쉼표로 여러 개 |
 | `DATA_DIR` | 기본 `backend/data` |
 

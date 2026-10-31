@@ -54,8 +54,7 @@
 | `requirements.txt` | `fastapi`, `uvicorn[standard]`, `pydantic`, `pydantic-settings` | 웹·모델·설정 |
 | | `python-multipart` | `POST /assets` 파일 업로드(없으면 FastAPI `UploadFile`이 동작하지 않음) |
 | | `httpx`, `beautifulsoup4`, `lxml`, `Pillow` | 크롤링·파싱·이미지 크기 |
-| | `google-genai` | Gemini (B5에서 설치) |
-| | `google-cloud-texttospeech` | Google TTS (B8에서 설치) |
+| | `openai` | 대본(GPT)·TTS. ✅ 결정(10/31) Gemini·Google TTS 추천안 폐기 |
 | `requirements-dev.txt` | `-r requirements.txt`, `pytest`, `pytest-asyncio`, `respx` | 테스트. `respx`는 httpx 가짜 응답 |
 
 ## 3. 폴더 구조
@@ -90,12 +89,13 @@ app/
     subtitle.py         # ⑥ 자막 분할·ASS 생성
     render.py           # ⑦ FFmpeg
   providers/
-    llm_base.py, llm_gemini.py
-    tts_base.py, tts_google.py
+    llm_base.py, llm_openai.py
+    tts_base.py, tts_openai.py
   errors.py             # ErrorCode, AppError
 scripts/
   poc_render.py         # 작업3 PoC: 이미지·음성·자막 → MP4
   try_extract.py        # 작업4: URL 하나 넣고 blocks JSON 출력
+  try_script.py         # 작업4: samples/extract로 실제 LLM 호출(비용 발생), samples/script에 저장
 samples/                # 커밋 대상. 팀 공유용 산출물
   extract/              # try_extract.py 결과 JSON (네이버 글 5건)
   script/               # 프롬프트 v1 입력·출력 샘플
@@ -131,12 +131,13 @@ data/                   # DATA_DIR. 실행 중 생성. 커밋 금지(.gitkeep만
 |---|---|---|
 | `CORS_ORIGINS` | `http://localhost:5173` | 로컬에서는 Vite 프록시를 쓰므로 사실상 불필요. 배포 시 프론트 주소 추가 |
 | `DATA_DIR` | `./data` | 프로젝트 파일 저장 위치(`.gitignore`에 추가) |
-| `LLM_PROVIDER` | `gemini` | |
-| `LLM_API_KEY` | (비밀) | |
-| `LLM_MODEL` | (운영진 안내 또는 무료 구간 모델) | 코드에 모델명 하드코딩 금지 |
-| `TTS_PROVIDER` | `google` | |
-| `TTS_CREDENTIALS_JSON` | (비밀, 서비스 계정 JSON 문자열) | 파일로 커밋 금지 |
-| `TTS_VOICE` | 한국어 음성 이름 | 🟡 음성 종류 선택은 도전 과제 |
+| `LLM_PROVIDER` | `openai` | |
+| `LLM_API_KEY` | (비밀) | OpenAI 키. 대본과 TTS가 같이 쓴다 |
+| `LLM_MODEL` | `gpt-6.1-sol` 🟡 | 코드에 모델명 하드코딩 금지 |
+| `LLM_REASONING_EFFORT` | `low` | 기본 `low`. 출력 토큰 절약. 비우면 파라미터를 보내지 않는다 |
+| `TTS_PROVIDER` | `openai` | |
+| `TTS_MODEL` | `gpt-4o-mini-tts` 🟡 | 코드에 모델명 하드코딩 금지 |
+| `TTS_VOICE` | OpenAI 음성 이름 | 🟡 음성 종류 선택은 도전 과제 |
 | `MAX_RENDER_CONCURRENCY` | `1` | |
 
 `.env.example`만 커밋하고 실제 `.env`는 `.gitignore`.
@@ -204,7 +205,7 @@ data/                   # DATA_DIR. 실행 중 생성. 커밋 금지(.gitkeep만
 - 끝나면 status `ready`.
 
 ### ⑤ TTS `pipeline/tts.py` — status `rendering`, stage `tts`
-- 장면마다 따로 합성 → `tts/{hash}.mp3`. `hash = sha256(provider + voice + text)`.
+- 장면마다 따로 합성 → `tts/{hash}.mp3`. `hash = sha256(provider + model + voice + text)`.
 - **같은 hash 파일이 있으면 재사용**(문구 안 바뀐 장면은 비용 0). 예산 $50 관리의 핵심.
 - 길이는 `ffprobe`로 측정. `durationSec = 음성 길이 + 0.3`(장면 끝 여유).
 
@@ -304,7 +305,7 @@ CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
 - 실제 외부 API를 부르는 테스트는 `-m external` 표시로 분리해 기본 실행에서 제외(비용 보호).
 
 ## 10. 하지 말 것
-- API 키·서비스 계정 파일을 코드, 로그, 응답, 저장소에 넣지 않는다.
+- API 키를 코드, 로그, 응답, 저장소에 넣지 않는다.
 - 통합기획서 6장에 없는 필드·엔드포인트를 만들지 않는다. 필요하면 사람에게 먼저 묻는다.
 - ⛔ 스톡 이미지·영상 API, AI 이미지 생성, 효과음, 로그인, DB를 추가하지 않는다.
 - LLM에게 영상 편집 파라미터(FFmpeg 명령)를 만들게 하지 않는다. LLM은 ③의 JSON 스키마 값만 고른다.

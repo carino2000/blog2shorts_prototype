@@ -12,8 +12,8 @@
 | H2 | FFmpeg 설치 | `winget install --id Gyan.FFmpeg` → 앱·터미널 재시작 → `ffmpeg -version` | B3 |
 | H3 | 자막 폰트 | Google Fonts에서 Noto Sans KR 내려받아 `static/NotoSansKR-Bold.ttf`를 `backend/fonts/`에 복사 | B3 |
 | H4 | 네이버 글 5건 | 성격이 다른 실제 글 URL 5개(사진 많은 글, 사진 없는 글, 구 에디터 글 포함 권장)를 `samples/extract/urls.txt`에 한 줄씩 | B4 |
-| H5 | LLM 키 | `.env.example`을 `.env`로 복사, `LLM_API_KEY`·`LLM_MODEL` 입력 | B5 |
-| H6 | TTS 키 | Google Cloud 서비스 계정 JSON을 한 줄 문자열로 `TTS_CREDENTIALS_JSON`에, `TTS_VOICE` 입력 | B8 |
+| H5 | OpenAI 키 | `.env.example`을 `.env`로 복사, `LLM_API_KEY`·`LLM_MODEL` 입력 ✅ 입력됨(10/31) | B5 |
+| H6 | TTS 설정 | 키는 H5와 공용. `TTS_MODEL`·`TTS_VOICE` 입력 | B8 |
 
 ## 단계
 
@@ -38,7 +38,7 @@
   - 할 일: URL 파싱(허용 4종·거부 3종), 글 HTML 요청, 블록 추출, 이미지 다운로드 규칙. 5건 결과 JSON을 `samples/extract/`에 저장, HTML은 `tests/fixtures/naver_html/`에 저장해 오프라인 테스트
   - 완료: 단위 테스트 통과, 5건 중 몇 건이 맞게 추출됐는지·틀린 건 무엇인지 표로 보고. 🟡 항목(모바일 주소 vs PostView, 셀렉터, Referer)의 결론을 `CLAUDE.md`에 반영
 
-- [ ] **B5. 관계·대본** (`relate.py`, `script.py`, `providers/llm_*`)
+- [x] **B5. 관계·대본** (`relate.py`, `script.py`, `providers/llm_*`)
   - 필요: B4, H5
   - 할 일: ② 연결, ③ 프롬프트·JSON 출력(`analysis` 포함)·검증기·1회 재요청, 토큰 사용량 로그
   - 완료: 검증기 단위 테스트(정상 1·위반 5) 통과, 실제 LLM 호출은 `samples/extract`의 5건에 대해서만(`-m external`), 결과를 `samples/script/`에 저장하고 원문에 없는 숫자 여부(요약 포함)를 보고
@@ -77,3 +77,4 @@
 | 2026-10-29 | B2 | pytest 16 passed(전이·404·422·없는 경로 오류 형식, openapi 필드 11개 스키마가 6-1과 일치, 샘플 대본 규칙). 실서버 폴링으로 extracting→scripting→ready, 이미지 200 확인 | ErrorCode에 NOT_FOUND·INVALID_REQUEST·INVALID_STATE 추가(사람 승인 10/29) → 통합기획서 6-1·프론트 types.ts 반영 필요(백엔드 세션 밖). asset ID는 `/api/assets/{assetId}`에 프로젝트 ID가 없어 전역 유일값(`a`+hex10) 사용 |
 | 2026-10-29 | B4 | pytest 35 passed·1 skipped(external, `-m external`로 따로 1 passed). 실제 글 19건(copper567, 사람이 준 20건 중 중복 1건 제외) 모두 추출 성공: 제목·문단·소제목·이미지 원문 순서 일치, 이미지 6~9장/글(966px), 외부 추적 이미지·200px 미만 제외. 🟡 결론을 CLAUDE.md ①에 반영 | 19건 모두 같은 블로그·스마트에디터 ONE·이미지 있는 글 → 구 에디터·사진 없는 글·다른 작성자 글은 확인 못 함. 테스트용 HTML은 2건만 저장 |
 | 2026-10-29 | B3 | FFmpeg 9.0.2(winget)·NotoSansKR-Bold.ttf(Google Fonts 정적 Bold, 6.2MB) 설치. PoC: 모션 5종 장면 5개 → 1080×1920·30fps·yuv420p, 17.02초, 프레임 수 정확, 한글 자막 프레임 5장 눈으로 확인, 장면 렌더 0.58~1.06초. RESULT.md·CLAUDE.md ⑦ 기록 | 문서 명령대로면 yuvj420p가 됨 → 색 범위 변환 줄 추가(B9에 반영 필요). zoompan 흔들림·실제 플레이어 재생은 눈으로 확인 못 함. 이 세션은 앱 재시작 전이라 PATH에 FFmpeg 없음(사용자 PATH에는 등록됨) |
+| 2026-10-31 | B5 | OpenAI 전환(사람 직접 승인). pytest 검증기 14 passed. 실제 호출 5회(재요청 0, gpt-6.1-sol, 입력 10,089·출력 4,666 토큰): 5건 모두 장면 5개, 238~307자, 원문에 없는 숫자 0개(요약 포함). samples/script 저장 | gpt-6.1-sol 단가는 공식 문서에서 못 찾음 → 비용 실측 불가, 대시보드 확인 필요. 공식 모델 페이지에 gpt-4o-mini-tts가 deprecated로 표시됨. 대본에 '원문에 소개된' 같은 어색한 표현이 보임 |

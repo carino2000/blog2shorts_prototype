@@ -1,0 +1,92 @@
+{
+  "title": "전기기능사합격률 3개년 합격률, 단기에 합격하는 체계적인 공부방법 공유",
+  "totalChars": 238,
+  "inventedNumbers": [],
+  "analysis": {
+    "summary": "최근 3개년 전기기능사 합격률은 필기가 완만하게 오르고 실기는 소폭 내려가는 흐름이며, 실기 합격률은 필기보다 2배 이상 높다. 원문은 필기 기출문제 반복과 계산 공식 암기, 실기 도면 연습과 결선 검증을 공부 방법으로 제시한다.",
+    "keyPoints": [
+      "전기기능사는 나이, 학력, 경력에 관계없이 응시할 수 있다.",
+      "필기는 CBT 방식 60문항이며 실기는 작업형으로만 진행된다.",
+      "최근 3개년 실기 합격률은 필기보다 2배 이상 높다.",
+      "필기는 기출문제를 반복하고 계산문제의 공식 자체를 외우는 것이 중요하다.",
+      "실기는 직접 도면을 그리며 연습하고 결선 후 최소 3회 이상 검증하도록 권한다."
+    ]
+  },
+  "script": {
+    "hook": "전기기능사, 실기 합격률이 필기보다 2배 이상 높다는 사실 알고 계셨나요?",
+    "body": "최근 3개년을 보면 필기 합격률은 완만하게 오르고, 실기는 소폭 내려가는 흐름이에요.\n필기는 문제은행 방식이라 기출문제 반복이 중요해요. 계산문제는 답보다 공식 자체를 외워야 해요.\n실기는 직접 도면을 그리며 연습하세요. 결선을 마친 뒤에는 최소 3회 이상 검증하세요.",
+    "cta": "시험 방식부터 일정, 공부팁까지 더 살펴보고 싶다면 원문에서 자세한 내용을 확인해보세요.",
+    "estimatedSec": 34.0
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "order": 1,
+      "role": "hook",
+      "text": "전기기능사, 실기 합격률이 필기보다 2배 이상 높다는 사실 알고 계셨나요?",
+      "assetId": "a3",
+      "motion": "zoom_in",
+      "sourceBlockIds": [
+        "b24"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "role": "body",
+      "text": "최근 3개년을 보면 필기 합격률은 완만하게 오르고, 실기는 소폭 내려가는 흐름이에요.",
+      "assetId": "a3",
+      "motion": "pan_left",
+      "sourceBlockIds": [
+        "b23"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "role": "body",
+      "text": "필기는 문제은행 방식이라 기출문제 반복이 중요해요. 계산문제는 답보다 공식 자체를 외워야 해요.",
+      "assetId": null,
+      "motion": "none",
+      "sourceBlockIds": [
+        "b28",
+        "b29"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s4",
+      "order": 4,
+      "role": "body",
+      "text": "실기는 직접 도면을 그리며 연습하세요. 결선을 마친 뒤에는 최소 3회 이상 검증하세요.",
+      "assetId": null,
+      "motion": "zoom_in",
+      "sourceBlockIds": [
+        "b30",
+        "b32"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s5",
+      "order": 5,
+      "role": "cta",
+      "text": "시험 방식부터 일정, 공부팁까지 더 살펴보고 싶다면 원문에서 자세한 내용을 확인해보세요.",
+      "assetId": "a2",
+      "motion": "zoom_out",
+      "sourceBlockIds": [
+        "b13",
+        "b17",
+        "b53"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    }
+  ]
+}

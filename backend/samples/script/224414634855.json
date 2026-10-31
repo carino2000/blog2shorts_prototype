@@ -1,0 +1,92 @@
+{
+  "title": "지역농협합격률 이렇게 높일 수 있어요! 합격자 후기로 본 공부 방법",
+  "totalChars": 278,
+  "inventedNumbers": [],
+  "analysis": {
+    "summary": "원문은 지역농협 채용의 전형별 합격률과 NCS 공부 방법을 소개합니다. 준비기간은 보통 6~7개월이지만 2주 만에 합격한 사례도 있으며, 시간 안배와 인강·기본서 복습, PSAT 기출 및 어휘 학습을 권합니다.",
+    "keyPoints": [
+      "원문에 소개된 서류 합격률은 약 20%, 필기 합격률은 약 30~36%입니다.",
+      "평균적인 준비기간은 6~7개월이며, 2주 만에 합격한 사례도 소개됩니다.",
+      "자료해석은 시간이 부족했다는 후기가 많아 시간을 재며 푸는 연습을 권합니다.",
+      "인강으로 경향을 파악하고 기본서로 복습하며, PSAT 기출과 어휘 학습도 병행하는 방법을 제시합니다."
+    ]
+  },
+  "script": {
+    "hook": "지역농협 NCS, 2주 만에 합격한 사례도 있다는 것 아셨나요?",
+    "body": "먼저 합격률부터 볼게요. 원문에 소개된 서류 합격률은 약 20%, 필기 합격률은 약 30~36%예요.\n자료해석은 시간이 부족했다는 후기가 많아요. 평소에도 시간을 재면서 문제를 푸는 연습이 필요해요.\n인강으로 경향을 잡고 기본서로 복습하는 방식이 효과적이라는 후기도 있어요. PSAT 기출로 고난도에 익숙해지고, 유의어와 반의어도 공부하는 거죠.",
+    "cta": "전형별 정보와 공부 방법은 원문에서 더 확인해보세요. 채용 일정은 최신 공고를 꼭 확인하세요.",
+    "estimatedSec": 39.7
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "order": 1,
+      "role": "hook",
+      "text": "지역농협 NCS, 2주 만에 합격한 사례도 있다는 것 아셨나요?",
+      "assetId": "a1",
+      "motion": "zoom_in",
+      "sourceBlockIds": [
+        "b26"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "role": "body",
+      "text": "먼저 합격률부터 볼게요. 원문에 소개된 서류 합격률은 약 20%, 필기 합격률은 약 30~36%예요.",
+      "assetId": null,
+      "motion": "none",
+      "sourceBlockIds": [
+        "b19",
+        "b21"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "role": "body",
+      "text": "자료해석은 시간이 부족했다는 후기가 많아요. 평소에도 시간을 재면서 문제를 푸는 연습이 필요해요.",
+      "assetId": null,
+      "motion": "pan_left",
+      "sourceBlockIds": [
+        "b29",
+        "b30"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s4",
+      "order": 4,
+      "role": "body",
+      "text": "인강으로 경향을 잡고 기본서로 복습하는 방식이 효과적이라는 후기도 있어요. PSAT 기출로 고난도에 익숙해지고, 유의어와 반의어도 공부하는 거죠.",
+      "assetId": null,
+      "motion": "zoom_out",
+      "sourceBlockIds": [
+        "b32",
+        "b34",
+        "b35"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    },
+    {
+      "id": "s5",
+      "order": 5,
+      "role": "cta",
+      "text": "전형별 정보와 공부 방법은 원문에서 더 확인해보세요. 채용 일정은 최신 공고를 꼭 확인하세요.",
+      "assetId": "a1",
+      "motion": "zoom_in",
+      "sourceBlockIds": [
+        "b57",
+        "b14"
+      ],
+      "durationSec": null,
+      "subtitles": []
+    }
+  ]
+}

@@ -22,12 +22,13 @@ class Settings(BaseSettings):
     data_dir: Path = Path("./data")
     fonts_dir: Path = Path("./fonts")
 
-    llm_provider: str = "gemini"
+    llm_provider: str = "openai"
     llm_api_key: str = ""
     llm_model: str = ""
+    llm_reasoning_effort: str = "low"
 
-    tts_provider: str = "google"
-    tts_credentials_json: str = ""
+    tts_provider: str = "openai"
+    tts_model: str = ""
     tts_voice: str = ""
 
     max_render_concurrency: int = 1
