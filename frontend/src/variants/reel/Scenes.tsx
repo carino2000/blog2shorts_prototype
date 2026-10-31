@@ -91,13 +91,13 @@ function Reel({ project }: { project: Project }) {
           })}
         </ol>
         <div className="flex items-center justify-center gap-4 px-5">
-          <button type="button" data-act="prev" aria-label="이전 장면" className={cx(btn.ghost, 'size-16 px-0')} onClick={ed.prev} disabled={!sel || sel.order <= 1}>
+          <button type="button" data-act="prev" aria-label="이전 장면" className={'grid size-16 place-items-center border-[3px] border-ink text-ink transition-colors hover:bg-ink hover:text-bg disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-[3px] focus-visible:outline-offset-3 focus-visible:outline-ink'} onClick={ed.prev} disabled={!sel || sel.order <= 1}>
             <ArrowLeft aria-hidden="true" className="size-7" />
           </button>
           <p className="m-0 min-w-24 text-center font-display text-[28px] leading-none tabular-nums" aria-live="polite">
             {sel ? String(sel.order).padStart(2, '0') : '--'} / {String(ed.scenes.length).padStart(2, '0')}
           </p>
-          <button type="button" data-act="next" aria-label="다음 장면" className={cx(btn.ghost, 'size-16 px-0')} onClick={ed.next} disabled={!sel || sel.order >= ed.scenes.length}>
+          <button type="button" data-act="next" aria-label="다음 장면" className={'grid size-16 place-items-center border-[3px] border-ink text-ink transition-colors hover:bg-ink hover:text-bg disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-[3px] focus-visible:outline-offset-3 focus-visible:outline-ink'} onClick={ed.next} disabled={!sel || sel.order >= ed.scenes.length}>
             <ArrowRight aria-hidden="true" className="size-7" />
           </button>
         </div>

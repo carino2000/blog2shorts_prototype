@@ -107,7 +107,7 @@ function Premiere({ project, video }: { project: Project; video: NonNullable<Pro
         <p className="m-0 max-w-xl text-[16px] leading-[1.6]">휴대폰으로 옮길 때는 메신저의 ‘동영상’이 아니라 ‘파일’로 보내야 화질이 유지됩니다.</p>
       </section>
 
-      <div className="mx-auto w-full max-w-[320px] rotate-2 border-[6px] border-ink bg-ink shadow-[12px_12px_0_#0a0a0a] motion-reduce:rotate-0 lg:mx-0">
+      <div className="mx-auto w-full max-w-[320px] border-[6px] border-ink bg-ink shadow-[14px_14px_0_#0a0a0a] lg:mx-0">
         <Stage>
           {v.videoFailed ? (
             <SceneFrame src={v.poster ?? null} subtitle={v.firstSubtitle} />
