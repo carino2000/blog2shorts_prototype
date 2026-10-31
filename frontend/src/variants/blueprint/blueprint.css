@@ -1,0 +1,66 @@
+/* 시안 blueprint — 설계 도면. 청사진 남색 바탕, 얇은 선, 치수선, 표제란. 다크 전용 */
+html[data-variant='blueprint'] {
+  color-scheme: dark;
+  --bg: #0c2340;
+  --surface: #10305a;
+  --panel: #0f2d52;
+  --panel-2: #14386a;
+  --ink: #eaf3ff;
+  --muted: #a9c4e8;
+  --placeholder: #7fa0cc;
+  --line: #2b5489;
+  --edge: #5b8ccc;
+  --segment: #14386a;
+  --accent: #ffd23f;
+  --accent-hover: #ffe071;
+  --accent-bright: #ffd23f;
+  --accent-soft: #1a4175;
+  --on-accent: #0c2340;
+  --hi: #7fd6ff;
+  --on-hi: #0c2340;
+  --hook: #ffd23f;
+  --body: #a9c4e8;
+  --cta: #8ff0b6;
+  --danger: #ff8d82;
+  --danger-ink: #ffb0a8;
+  --danger-soft: #3d1f2c;
+  --danger-line: #a8514c;
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-small: 0px;
+  --v-display: 'Barlow Semi Condensed', 'Pretendard Variable', Pretendard, sans-serif;
+  --v-mono: 'Roboto Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+}
+
+/* 모눈종이: 작은 칸 + 굵은 칸 */
+html[data-variant='blueprint'] body {
+  background-image:
+    linear-gradient(to right, rgba(127, 214, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 214, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(to right, rgba(127, 214, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 214, 255, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+
+/* 도면 테두리: 이중선 */
+.bp-sheet {
+  border: 2px solid var(--edge);
+  outline: 1px solid var(--edge);
+  outline-offset: 5px;
+  background: rgba(12, 35, 64, 0.82);
+}
+
+/* 점선 치수/지시선 */
+.bp-dash {
+  border-style: dashed;
+  border-color: var(--edge);
+}
+
+@keyframes bp-draw {
+  from { stroke-dashoffset: 400; }
+  to { stroke-dashoffset: 0; }
+}
+.bp-draw { stroke-dasharray: 400; animation: bp-draw 1.2s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .bp-draw { animation: none; stroke-dasharray: none; }
+}
