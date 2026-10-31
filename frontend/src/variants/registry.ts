@@ -35,6 +35,7 @@ export const VARIANTS: VariantEntry[] = [
   { id: 'gallery', name: '전시관', mood: '초미니멀', swatch: ['#FFFFFF', '#000000', '#9A9A9A'], load: () => import('./gallery') },
   { id: 'cinema', name: '상영관', mood: '영화적', swatch: ['#0B0809', '#F3EBD9', '#E8C872'], load: () => import('./cinema') },
   { id: 'blueprint', name: '설계 도면', mood: '정밀 · 기술적', swatch: ['#0C2340', '#EAF3FF', '#FFD23F'], load: () => import('./blueprint') },
+  { id: 'soft', name: '부드러운 유리', mood: '친근 · 가벼움', swatch: ['#EEF6F3', '#1D2B28', '#0E7566'], load: () => import('./soft') },
   { id: 'broadcast', name: '방송 부조실', mood: '긴박 · 실무', swatch: ['#0E1115', '#E8EDF2', '#D92D20'], load: () => import('./broadcast') },
 ]
 

@@ -1,0 +1,58 @@
+/* 시안 soft — 부드러운 유리. 민트·복숭아 파스텔 바탕 위에 반투명 패널이 떠 있다. 라이트 전용 */
+html[data-variant='soft'] {
+  color-scheme: light;
+  --bg: #eef6f3;
+  --surface: #ffffff;
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-2: rgba(255, 255, 255, 0.9);
+  --ink: #1d2b28;
+  --muted: #4d5f5a;
+  --placeholder: #7d8d88;
+  --line: rgba(29, 43, 40, 0.12);
+  --edge: rgba(29, 43, 40, 0.22);
+  --segment: rgba(29, 43, 40, 0.07);
+  --accent: #0e7566;
+  --accent-hover: #0a5f53;
+  --accent-bright: #0e7566;
+  --accent-soft: #dcf2ea;
+  --on-accent: #ffffff;
+  --hi: #0e7566;
+  --on-hi: #ffffff;
+  --hook: #9c4204;
+  --body: #4d5f5a;
+  --cta: #0e7566;
+  --danger: #d1453b;
+  --danger-ink: #a8281f;
+  --danger-soft: #fff1ee;
+  --danger-line: #f0bdb6;
+  --radius-card: 28px;
+  --radius-control: 999px;
+  --radius-small: 14px;
+  --v-display: 'Gowun Dodum', 'Pretendard Variable', Pretendard, sans-serif;
+  --v-mono: 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+html[data-variant='soft'] body {
+  background:
+    radial-gradient(40rem 32rem at 8% 6%, #ffe0d1 0%, transparent 62%),
+    radial-gradient(38rem 30rem at 96% 14%, #d3e9ff 0%, transparent 60%),
+    radial-gradient(44rem 34rem at 60% 100%, #cdeedd 0%, transparent 62%), #eef6f3;
+  background-attachment: fixed;
+}
+
+.sf-glass {
+  background: var(--panel);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 40px -22px rgba(29, 43, 40, 0.28), 0 2px 6px rgba(29, 43, 40, 0.05);
+}
+
+@keyframes sf-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.sf-float { animation: sf-float 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .sf-float { animation: none; }
+}
