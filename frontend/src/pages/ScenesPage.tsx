@@ -145,7 +145,7 @@ function ScenesEditor({ project }: { project: Project }) {
 
         <section aria-label="미리보기" className="sticky top-4 hidden md:block">
           {/* 높이 기준 맞춤: 화면 높이 안에 휴대폰 프레임이 다 들어오게 */}
-          <div className="mx-auto w-full max-w-[min(100%,calc((100dvh-320px)*9/16))]">{preview()}</div>
+          <div className="mx-auto w-full max-w-[min(100%,max(180px,calc((100dvh-320px)*9/16)))]">{preview()}</div>
         </section>
 
         <aside aria-labelledby="media-title" className="sticky top-4 hidden flex-col gap-3 rounded-card border border-line bg-surface p-4 xl:flex">
@@ -174,7 +174,7 @@ function ScenesEditor({ project }: { project: Project }) {
       <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-line bg-bg/95 px-4 py-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
         <p className="m-0 text-sm text-muted" aria-live="polite">
           {missingCount > 0 ? (
-            <span className="text-danger">이미지가 없는 장면 {missingCount}개 · 모든 장면에 이미지를 넣어야 영상을 만들 수 있습니다.</span>
+            <span className="text-danger-ink">이미지가 없는 장면 {missingCount}개 · 모든 장면에 이미지를 넣어야 영상을 만들 수 있습니다.</span>
           ) : voiceRedo.size > 0 ? (
             <>문구를 고친 장면 {voiceRedo.size}개만 음성을 다시 만듭니다.</>
           ) : everRendered ? (

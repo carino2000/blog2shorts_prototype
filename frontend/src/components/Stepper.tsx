@@ -46,7 +46,7 @@ export function Stepper({
               <span
                 className={cx(
                   'flex size-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold tabular-nums',
-                  isCurrent && 'bg-accent text-white',
+                  isCurrent && 'bg-accent text-on-accent',
                   isDone && 'bg-accent/15 text-accent',
                   !isCurrent && !isDone && 'border border-line text-muted',
                 )}
@@ -64,12 +64,12 @@ export function Stepper({
               {canGo ? (
                 <Link
                   to={stepPath(step.key, projectId)}
-                  className="flex min-h-11 items-center gap-1.5 rounded-control px-1 hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"
+                  className="flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-control px-1 hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"
                 >
                   {content}
                 </Link>
               ) : (
-                <span className="flex min-h-11 items-center gap-1.5 px-1" aria-current={isCurrent ? 'step' : undefined}>
+                <span className="flex min-h-11 min-w-7 items-center justify-center gap-1.5 px-1" aria-current={isCurrent ? 'step' : undefined}>
                   {content}
                 </span>
               )}

@@ -19,8 +19,8 @@ export function SaveStatus({ state, onRetry }: { state: SaveState; onRetry: () =
       )}
       {state === 'error' && (
         <>
-          <CircleAlert aria-hidden="true" className="size-4 text-danger" />
-          <span className="text-danger">저장 실패</span>
+          <CircleAlert aria-hidden="true" className="size-4 text-danger-ink" />
+          <span className="text-danger-ink">저장 실패</span>
           <button type="button" onClick={onRetry} className="min-h-11 px-1 text-sm font-medium text-accent underline">
             다시 저장
           </button>

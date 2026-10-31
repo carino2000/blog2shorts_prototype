@@ -31,9 +31,9 @@ export function StageList({ items }: { items: StageItem[] }) {
             <span className={cx('flex-1 text-sm', item.state === 'pending' ? 'text-muted' : 'font-medium text-ink')}>
               {item.label}
             </span>
-            <span className="text-xs text-muted tabular-nums">
+            <span className={cx('text-xs tabular-nums', item.state === 'active' ? 'text-ink' : 'text-muted')}>
               {item.state === 'done' && '완료'}
-              {item.state === 'failed' && <span className="font-medium text-danger">실패</span>}
+              {item.state === 'failed' && <span className="font-medium text-danger-ink">실패</span>}
               {item.state === 'active' && item.percent !== undefined && `${Math.round(item.percent)}%`}
             </span>
           </div>
@@ -65,7 +65,7 @@ function StageIcon({ state }: { state: StageState }) {
     )
   if (state === 'failed')
     return (
-      <span className={cx(box, 'text-danger')}>
+      <span className={cx(box, 'text-danger-ink')}>
         <CircleAlert aria-hidden="true" className="size-5" />
       </span>
     )

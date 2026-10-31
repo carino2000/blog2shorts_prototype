@@ -57,7 +57,7 @@ export function SceneCard({
         className={cx(
           'relative flex aspect-[9/16] w-16 shrink-0 items-center justify-center overflow-hidden rounded-control border bg-bg sm:w-20',
           'focus-visible:outline-2 focus-visible:outline-accent',
-          missing ? 'border-dashed border-danger text-danger' : 'border-line',
+          missing ? 'border-dashed border-danger text-danger-ink' : 'border-line',
         )}
         aria-label={missing ? `장면 ${scene.order} 이미지 넣기` : `장면 ${scene.order} 이미지 바꾸기`}
       >
@@ -79,7 +79,7 @@ export function SceneCard({
           <span className="text-sm font-bold tabular-nums">#{scene.order}</span>
           <RoleBadge role={scene.role} />
           {voiceRedo && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent">
+            <span className="inline-flex items-center gap-1 rounded-full border border-accent/50 bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-ink">
               <Mic aria-hidden="true" className="size-3" />
               음성 다시 만듦
             </span>
@@ -103,7 +103,7 @@ export function SceneCard({
 
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p id={ids.hint} className="m-0 text-xs text-muted tabular-nums">
-            {chars}자{missing && <span className="font-medium text-danger"> · 이미지를 넣어 주세요</span>}
+            {chars}자{missing && <span className="font-medium text-danger-ink"> · 이미지를 넣어 주세요</span>}
             {asset?.origin === 'upload' && <span> · 업로드 이미지</span>}
           </p>
           <label htmlFor={ids.motion} className="flex items-center gap-2 text-xs text-muted">
@@ -112,7 +112,7 @@ export function SceneCard({
               id={ids.motion}
               value={scene.motion}
               onChange={(e) => onMotion(e.target.value as Motion)}
-              className="min-h-11 rounded-control border border-line bg-surface px-2 text-sm text-ink focus:border-accent focus:outline-none"
+              className="min-h-11 rounded-control border border-line bg-surface px-2 text-sm text-ink focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
             >
               {MOTIONS.map((m) => (
                 <option key={m.value} value={m.value}>

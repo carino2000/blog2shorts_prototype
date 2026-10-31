@@ -24,7 +24,7 @@ export function InputPage() {
   const [text, setText] = useState('')
   const create = useCreateProject()
   const navigate = useNavigate()
-  const ids = { url: useId(), text: useId(), urlHint: useId(), textHint: useId() }
+  const ids = { url: useId(), text: useId(), urlHint: useId(), textHint: useId(), tabUrl: useId(), tabText: useId(), panel: useId() }
 
   const urlError = explainInvalidUrl(url)
   const chars = countChars(text)
@@ -54,7 +54,7 @@ export function InputPage() {
       <main className="mx-auto flex max-w-[1120px] flex-col gap-10 px-4 py-8 sm:py-12">
         <BackendDownNotice />
 
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_240px] lg:grid-cols-[minmax(0,1fr)_300px]">
           <section className="flex flex-col gap-6" aria-labelledby="input-title">
             <div className="flex flex-col gap-2">
               <h1 id="input-title" className="m-0 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -65,16 +65,35 @@ export function InputPage() {
               </p>
             </div>
 
-            <div role="tablist" aria-label="입력 방식" className="flex gap-1 rounded-control border border-line bg-surface p-1 sm:w-fit">
-              <TabButton active={tab === 'url'} onClick={() => selectTab('url')} icon={<Link2 className="size-4" />}>
+            <div
+              role="tablist"
+              aria-label="입력 방식"
+              className="flex gap-1 rounded-control border border-line bg-surface p-1 sm:w-fit"
+              onKeyDown={(e) => {
+                // 탭 패턴: 좌우 화살표로 옮기고 포커스도 따라간다
+                if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return
+                e.preventDefault()
+                const next: Tab = tab === 'url' ? 'text' : 'url'
+                selectTab(next)
+                document.getElementById(ids[next === 'url' ? 'tabUrl' : 'tabText'])?.focus()
+              }}
+            >
+              <TabButton id={ids.tabUrl} panelId={ids.panel} active={tab === 'url'} onClick={() => selectTab('url')} icon={<Link2 className="size-4" />}>
                 블로그 URL
               </TabButton>
-              <TabButton active={tab === 'text'} onClick={() => selectTab('text')} icon={<FileText className="size-4" />}>
+              <TabButton id={ids.tabText} panelId={ids.panel} active={tab === 'text'} onClick={() => selectTab('text')} icon={<FileText className="size-4" />}>
                 본문 직접 입력
               </TabButton>
             </div>
 
-            <form onSubmit={submit} className="flex flex-col gap-3" noValidate>
+            <form
+              id={ids.panel}
+              role="tabpanel"
+              aria-labelledby={tab === 'url' ? ids.tabUrl : ids.tabText}
+              onSubmit={submit}
+              className="flex flex-col gap-3"
+              noValidate
+            >
               {tab === 'url' ? (
                 <>
                   <label htmlFor={ids.url} className="text-sm font-medium">
@@ -99,7 +118,7 @@ export function InputPage() {
                     />
                     <SubmitButton disabled={!canSubmit} pending={create.isPending} />
                   </div>
-                  <p id={ids.urlHint} className={cx('m-0 min-h-5 text-sm', urlError ? 'text-danger' : 'text-muted')}>
+                  <p id={ids.urlHint} className={cx('m-0 min-h-5 text-sm', urlError ? 'text-danger-ink' : 'text-muted')}>
                     {urlError ?? '모바일 주소(m.blog.naver.com)도 됩니다. 다른 블로그는 본문 직접 입력을 써 주세요.'}
                   </p>
                 </>
@@ -125,7 +144,7 @@ export function InputPage() {
                     className={cx(inputBase, 'resize-y py-2 leading-relaxed', textTooShort && 'border-danger')}
                   />
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <p id={ids.textHint} className={cx('m-0 text-sm tabular-nums', textTooShort ? 'text-danger' : 'text-muted')}>
+                    <p id={ids.textHint} className={cx('m-0 text-sm tabular-nums', textTooShort ? 'text-danger-ink' : 'text-muted')}>
                       {chars.toLocaleString()}자
                       {textTooShort ? ` · 본문이 너무 짧습니다 (최소 ${MIN_TEXT_CHARS}자)` : ` · 최소 ${MIN_TEXT_CHARS}자`}
                       <span className="max-sm:hidden"> · Ctrl+Enter로 제출</span>
@@ -150,7 +169,7 @@ export function InputPage() {
             )}
           </section>
 
-          <aside className="mx-auto w-full max-w-[260px] lg:max-w-none" aria-label="결과 예시">
+          <aside className="mx-auto w-full max-w-[260px] md:max-w-none" aria-label="결과 예시">
             <PhoneFrame label="만들어지는 영상 예시: 9:16 세로 화면에 블로그 사진과 자막">
               <SceneFrame src={EXAMPLE_IMAGE} subtitle="제주 해안 길, 3시간 걸어 봤어요" />
             </PhoneFrame>
@@ -180,11 +199,15 @@ export function InputPage() {
 }
 
 function TabButton({
+  id,
+  panelId,
   active,
   onClick,
   icon,
   children,
 }: {
+  id: string
+  panelId: string
   active: boolean
   onClick: () => void
   icon: ReactNode
@@ -193,13 +216,16 @@ function TabButton({
   return (
     <button
       type="button"
+      id={id}
       role="tab"
       aria-selected={active}
+      aria-controls={panelId}
+      tabIndex={active ? 0 : -1}
       onClick={onClick}
       className={cx(
         'flex min-h-11 flex-1 items-center justify-center gap-2 rounded-[6px] px-4 text-sm font-medium transition-colors sm:flex-none',
         'focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent',
-        active ? 'bg-accent/10 text-accent' : 'text-muted hover:text-ink',
+        active ? 'bg-accent/10 font-semibold text-ink' : 'text-muted hover:text-ink',
       )}
     >
       <span aria-hidden="true">{icon}</span>

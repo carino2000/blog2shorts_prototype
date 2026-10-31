@@ -69,7 +69,7 @@ export function MediaGrid({
                   {asset.origin === 'blog' ? '블로그' : '업로드'}
                 </span>
                 {current && (
-                  <span className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full bg-accent text-white">
+                  <span className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full bg-accent text-on-accent">
                     <Check aria-hidden="true" className="size-3" />
                   </span>
                 )}
@@ -88,7 +88,7 @@ export function MediaGrid({
             className={cx(
               'flex aspect-square w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-control border-2 border-dashed text-xs',
               'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-accent',
-              error ? 'border-danger text-danger' : 'border-line text-muted hover:border-accent hover:text-accent',
+              error ? 'border-danger text-danger-ink' : 'border-line text-muted hover:border-accent hover:text-accent',
             )}
           >
             {upload.isPending ? (
@@ -113,7 +113,7 @@ export function MediaGrid({
           </label>
         </li>
       </ul>
-      <p id={ids.err} className={cx('m-0 text-xs', error ? 'text-danger' : 'text-muted')} role={error ? 'alert' : undefined}>
+      <p id={ids.err} className={cx('m-0 text-xs', error ? 'text-danger-ink' : 'text-muted')} role={error ? 'alert' : undefined}>
         {error ?? 'jpg·png·webp, 10MB 이하. 올린 이미지는 선택한 장면에 바로 들어갑니다.'}
       </p>
     </div>

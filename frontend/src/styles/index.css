@@ -13,6 +13,9 @@
   --body: #5b6475;
   --cta: #15995a;
   --danger: #d23a2e;
+  /* 토큰표(5장) 값은 그대로 두고, 글자 대비(4.5:1)를 맞추려고 파생한 값 */
+  --on-accent: #ffffff;
+  --danger-ink: #b92e23;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +31,8 @@
     --body: #9aa3b5;
     --cta: #3cc786;
     --danger: #f07267;
+    --on-accent: #111317;
+    --danger-ink: #f07267;
   }
 }
 
@@ -43,6 +48,8 @@
   --color-body: var(--body);
   --color-cta: var(--cta);
   --color-danger: var(--danger);
+  --color-on-accent: var(--on-accent);
+  --color-danger-ink: var(--danger-ink);
 }
 
 @theme {
@@ -91,6 +98,11 @@
   body {
     background-color: var(--bg);
     color: var(--ink);
+  }
+
+  /* 장면 편집의 하단 고정 바 뒤로 포커스가 숨지 않게(모바일에서 바 높이 약 100px) */
+  html {
+    scroll-padding-bottom: 7rem;
   }
 
   body {

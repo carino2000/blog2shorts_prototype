@@ -85,7 +85,7 @@ function Done({ project, video }: { project: Project; video: NonNullable<Project
   const poster = firstAsset ? assetUrl(firstAsset) : undefined
 
   return (
-    <div className="grid items-start gap-8 md:grid-cols-[minmax(0,340px)_minmax(0,1fr)] md:justify-center">
+    <div className="mx-auto grid max-w-3xl items-start gap-8 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
       <div className="mx-auto w-full max-w-[300px] md:max-w-none">
         <PhoneFrame label="완성된 영상">
           {videoFailed ? (
