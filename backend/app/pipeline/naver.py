@@ -283,14 +283,14 @@ async def fetch_post(client: httpx.AsyncClient, post: NaverPost) -> tuple[str, P
     raise AppError("POST_NOT_FOUND" if not_found else "EXTRACT_FAILED")
 
 
-def _decode_image(data: bytes) -> tuple[int, int, str]:
+def decode_image(data: bytes) -> tuple[int, int, str]:
     with Image.open(io.BytesIO(data)) as image:
         image.verify()
     with Image.open(io.BytesIO(data)) as image:
         return image.width, image.height, (image.format or "").lower()
 
 
-def _save_image(data: bytes, image_format: str, dest: Path) -> Path:
+def save_image(data: bytes, image_format: str, dest: Path) -> Path:
     """jpg·png·webp는 그대로, 그 외(gif 등)는 첫 프레임을 png로 저장."""
     extension = {"jpeg": "jpg", "png": "png", "webp": "webp"}.get(image_format)
     if extension:
@@ -343,7 +343,7 @@ async def download_images(
             skipped.append(f"{url} — {result}")
             continue
         try:
-            width, height, image_format = await asyncio.to_thread(_decode_image, result)
+            width, height, image_format = await asyncio.to_thread(decode_image, result)
         except Exception:
             skipped.append(f"{url} — 이미지로 열 수 없음")
             continue
@@ -351,7 +351,7 @@ async def download_images(
             skipped.append(f"{url} — {width}x{height}, {MIN_IMAGE_SIDE}px 미만")
             continue
         asset_id = new_asset_id()
-        path = await asyncio.to_thread(_save_image, result, image_format, dest_dir / asset_id)
+        path = await asyncio.to_thread(save_image, result, image_format, dest_dir / asset_id)
         asset = Asset(id=asset_id, origin="blog", url=f"/api/assets/{asset_id}", width=width, height=height)
         saved[url] = (asset, path)
     return saved, skipped

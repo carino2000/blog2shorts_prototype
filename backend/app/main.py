@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
 from app.errors import register_error_handlers
-from app.routers import assets, health, projects
+from app.routers import assets, health, projects, scenes
 
 logger = logging.getLogger("blog2shorts")
 
@@ -47,6 +47,7 @@ def create_app() -> FastAPI:
     register_error_handlers(app)
     app.include_router(health.router)
     app.include_router(projects.router)
+    app.include_router(scenes.router)
     app.include_router(assets.router)
     return app
 

@@ -124,6 +124,17 @@ class TextInput(CamelModel):
 CreateProjectRequest = Annotated[UrlInput | TextInput, Field(discriminator="type")]
 
 
+class SceneUpdate(CamelModel):
+    id: str
+    text: str | None = None
+    asset_id: str | None = None
+    motion: Motion | None = None
+
+
+class UpdateScenesRequest(CamelModel):
+    scenes: list[SceneUpdate]
+
+
 class ProjectIdResponse(CamelModel):
     id: str
 

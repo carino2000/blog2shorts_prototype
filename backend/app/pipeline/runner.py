@@ -5,7 +5,7 @@ import logging
 from collections.abc import Callable
 
 from app.errors import AppError
-from app.models import ErrorCode, Progress, Project, ProjectError, Stage
+from app.models import Asset, ErrorCode, Progress, Project, ProjectError, SceneUpdate, Stage
 from app.pipeline import match, naver, relate, script
 from app.providers.llm_base import LlmProvider
 from app.store import ProjectStore
@@ -130,3 +130,62 @@ async def run_regenerate(store: ProjectStore, project_id: str, llm: LlmProvider)
         await _write_script(store, project_id, llm)
     except Exception as exc:
         await _record_failure(store, project_id, "script", exc)
+
+
+async def update_scenes(store: ProjectStore, project_id: str, updates: list[SceneUpdate]) -> Project:
+    """통합기획서 6-2 PATCH /scenes. 하나라도 잘못되면 아무것도 바꾸지 않는다."""
+    def change(project: Project) -> None:
+        if project.status not in _EDITABLE:
+            raise AppError("INVALID_STATE", "작업이 진행 중이라 장면을 고칠 수 없습니다.")
+        scenes = {scene.id: scene for scene in project.scenes}
+        asset_ids = {asset.id for asset in project.assets}
+        for update in updates:
+            if update.id not in scenes:
+                raise AppError("INVALID_REQUEST", f"없는 장면입니다: {update.id}")
+            if "text" in update.model_fields_set and not (update.text or "").strip():
+                raise AppError("INVALID_REQUEST", "장면 문구가 비어 있습니다.")
+            if "asset_id" in update.model_fields_set and update.asset_id not in asset_ids:
+                raise AppError("MISSING_IMAGE", "이 작업에 없는 이미지입니다.")
+            if "motion" in update.model_fields_set and update.motion is None:
+                raise AppError("INVALID_REQUEST", "모션 값이 올바르지 않습니다.")
+
+        changed = False
+        for update in updates:
+            scene = scenes[update.id]
+            if "asset_id" in update.model_fields_set and update.asset_id != scene.asset_id:
+                scene.asset_id = update.asset_id
+                changed = True
+            if "motion" in update.model_fields_set and update.motion != scene.motion:
+                scene.motion = update.motion
+                changed = True
+            if "text" in update.model_fields_set and update.text != scene.text:
+                scene.text = update.text
+                scene.duration_sec = None
+                scene.subtitles = []
+                changed = True
+        if changed:
+            project.video = None
+            if project.status == "done":
+                project.status = "ready"
+    return await store.update(project_id, change)
+
+
+async def add_upload(store: ProjectStore, project_id: str, data: bytes) -> Asset:
+    """업로드 검사: jpg·png·webp, 10MB 이하, Pillow로 열림."""
+    await store.get(project_id)
+    if len(data) > naver.MAX_IMAGE_BYTES:
+        raise AppError("UPLOAD_INVALID")
+    try:
+        width, height, image_format = await asyncio.to_thread(naver.decode_image, data)
+    except Exception:
+        raise AppError("UPLOAD_INVALID") from None
+    if image_format not in ("jpeg", "png", "webp"):
+        raise AppError("UPLOAD_INVALID")
+
+    paths = store.paths(project_id)
+    await asyncio.to_thread(paths.make_dirs)
+    asset_id = store.new_asset_id()
+    file = await asyncio.to_thread(naver.save_image, data, image_format, paths.assets / asset_id)
+    asset = Asset(id=asset_id, origin="upload", url=f"/api/assets/{asset_id}", width=width, height=height)
+    await store.add_asset(project_id, asset, file)
+    return asset
