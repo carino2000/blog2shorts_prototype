@@ -149,7 +149,7 @@ function ScenesEditor({ project }: { project: Project }) {
           <div className="mx-auto w-full max-w-[min(100%,max(180px,calc((100dvh-320px)*9/16)))]">{preview()}</div>
         </section>
 
-        <aside aria-labelledby="media-title" className="sticky top-4 hidden flex-col gap-3 rounded-card border border-line bg-surface p-4 xl:flex">
+        <aside aria-labelledby="media-title" className="sticky top-4 hidden max-h-[calc(100dvh-7rem)] flex-col gap-3 overflow-y-auto rounded-card border border-line bg-surface p-4 xl:flex">
           <h2 id="media-title" className="m-0 text-base font-semibold">
             이미지
           </h2>

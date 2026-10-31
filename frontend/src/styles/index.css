@@ -110,5 +110,7 @@
     min-width: 320px;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    /* 원문·대본의 긴 URL처럼 띄어쓰기 없는 문자열이 화면을 가로로 밀지 않게 */
+    overflow-wrap: anywhere;
   }
 }
