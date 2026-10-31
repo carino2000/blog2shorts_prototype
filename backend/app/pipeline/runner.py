@@ -8,7 +8,8 @@ from pathlib import Path
 
 from app.config import get_settings
 from app.errors import AppError
-from app.models import Asset, ErrorCode, Progress, Project, ProjectError, RenderStage, SceneUpdate, Stage, Video
+from app.models import (Asset, ErrorCode, MotionQuality, Progress, Project, ProjectError, RenderStage, SceneUpdate,
+                        Stage, Video)
 from app.pipeline import match, naver, relate, render, script, subtitle, tts
 from app.pipeline.media import probe_duration
 from app.providers.llm_base import LlmProvider
@@ -204,7 +205,8 @@ async def _run_subtitles(store: ProjectStore, project_id: str, tts_provider: Tts
     await store.update(project_id, _set_progress("subtitle", 100, "자막을 만들었어요"))
 
 
-async def _run_compose(store: ProjectStore, project_id: str, tts_provider: TtsProvider) -> None:
+async def _run_compose(store: ProjectStore, project_id: str, tts_provider: TtsProvider, quality: MotionQuality) -> None:
+    """장면 클립은 매번 새로 만든다. 다른 품질로 만든 클립을 재사용하지 않기 위해서다."""
     project = await store.get(project_id)
     paths = store.paths(project_id)
     await asyncio.to_thread(render.prepare_fonts, paths.clips, get_settings().fonts_dir / SUBTITLE_FONT)
@@ -220,6 +222,7 @@ async def _run_compose(store: ProjectStore, project_id: str, tts_provider: TtsPr
             paths.subs / f"{scene.id}.ass",
             scene.motion,
             scene.duration_sec or 0,
+            quality,
         )
         clips.append(clip)
         await store.update(project_id, _set_progress("render", 10 + 80 * index / count, f"영상을 합치고 있어요 ({index}/{count}){note}"))
@@ -235,7 +238,7 @@ async def _run_compose(store: ProjectStore, project_id: str, tts_provider: TtsPr
 
 
 async def run_render(store: ProjectStore, project_id: str, tts_provider: TtsProvider,
-                     from_stage: RenderStage = "tts") -> None:
+                     from_stage: RenderStage = "tts", quality: MotionQuality = "fast") -> None:
     """⑤~⑦. from_stage부터 하되 앞 단계 산출물이 없으면 그 단계도 다시 한다(TTS는 캐시라 비용 없음)."""
     stage: Stage = "tts"
     timings: dict[str, float] = {}
@@ -264,9 +267,9 @@ async def run_render(store: ProjectStore, project_id: str, tts_provider: TtsProv
                 timings["subtitle"] = time.perf_counter() - started
             stage = "render"
             started = time.perf_counter()
-            await _run_compose(store, project_id, tts_provider)
+            await _run_compose(store, project_id, tts_provider, quality)
             timings["render"] = time.perf_counter() - started
-        logger.info("프로젝트 %s 렌더 소요: %s", project_id, {key: round(value, 2) for key, value in timings.items()})
+        logger.info("프로젝트 %s 렌더 소요(%s): %s", project_id, quality, {key: round(value, 2) for key, value in timings.items()})
     except Exception as exc:
         await _record_failure(store, project_id, stage, exc)
 

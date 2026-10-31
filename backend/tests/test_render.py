@@ -147,6 +147,88 @@ def test_length_note_only_outside_range(client, project_id, store) -> None:
     assert "20초" in runner._length_note(project)
 
 
+@pytest.fixture
+def ffmpeg_filters(monkeypatch) -> list[str]:
+    """실행한 장면 렌더 명령에서 움직임 필터 이름만 모은다."""
+    seen: list[str] = []
+    original = runner.render.run_tool
+
+    def spy(command, cwd=None):
+        joined = " ".join(command)
+        if "apad" in joined:
+            seen.append("zoompan" if "zoompan" in joined else "perspective" if "perspective" in joined else "none")
+        return original(command, cwd=cwd)
+
+    monkeypatch.setattr(runner.render, "run_tool", spy)
+    return seen
+
+
+def test_quality_default_is_fast_with_or_without_body(client, tts, project_id, ffmpeg_filters) -> None:
+    client.post(f"/api/projects/{project_id}/render")
+    assert ffmpeg_filters == ["zoompan"] * 4
+    ffmpeg_filters.clear()
+    client.post(f"/api/projects/{project_id}/render", json={})
+    assert ffmpeg_filters == ["zoompan"] * 4
+
+
+def test_changing_quality_rerenders_clips_and_reuses_voice(client, tts, project_id, ffmpeg_filters, caplog) -> None:
+    with caplog.at_level("INFO", logger="blog2shorts"):
+        client.post(f"/api/projects/{project_id}/render", json={"motionQuality": "smooth"})
+        assert tts.calls == 4 and len(ffmpeg_filters) == 4
+        ffmpeg_filters.clear()
+
+        client.post(f"/api/projects/{project_id}/render", json={"motionQuality": "fast"})
+        assert ffmpeg_filters == ["zoompan"] * 4
+        assert get(client, project_id)["status"] == "done"
+        ffmpeg_filters.clear()
+
+        client.post(f"/api/projects/{project_id}/render?from=render", json={"motionQuality": "smooth"})
+        assert len(ffmpeg_filters) == 4 and "zoompan" not in ffmpeg_filters
+        ffmpeg_filters.clear()
+
+        client.post(f"/api/projects/{project_id}/render?from=subtitle", json={"motionQuality": "fast"})
+        assert ffmpeg_filters == ["zoompan"] * 4
+    assert tts.calls == 4
+    assert "렌더 소요(smooth)" in caplog.text and "렌더 소요(fast)" in caplog.text
+    project = get(client, project_id)
+    assert project["status"] == "done"
+    assert "motionQuality" not in project
+
+
+@pytest.mark.parametrize("body", [{"motionQuality": "slow"}, {"motionQuality": None}])
+def test_bad_quality_is_invalid_request_and_keeps_state(client, tts, project_id, body: dict) -> None:
+    response = client.post(f"/api/projects/{project_id}/render", json=body)
+    assert response.status_code == 422
+    assert response.json()["error"]["code"] == "INVALID_REQUEST"
+    assert get(client, project_id)["status"] == "ready"
+    assert tts.calls == 0
+
+
+@pytest.mark.parametrize("quality", ["fast", "smooth"])
+@pytest.mark.parametrize("motion", ["zoom_in", "zoom_out", "pan_left", "pan_right", "none"])
+def test_render_clip_all_motions(tmp_path, motion: str, quality: str) -> None:
+    fixtures = Path(__file__).parent / "fixtures" / "images"
+    clips = tmp_path / "clips"
+    clips.mkdir()
+    runner.render.prepare_fonts(clips, Path(__file__).parent.parent / "fonts" / "NotoSansKR-Bold.ttf")
+    audio = tmp_path / "a.mp3"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", "sine=frequency=440:duration=0.5",
+                    "-c:a", "libmp3lame", str(audio)], check=True)
+    ass = tmp_path / "s.ass"
+    runner.subtitle.write_ass(ass, runner.subtitle.build_subtitles("움직임 확인", 0.5))
+
+    clip = runner.render.render_clip(clips, "s1", fixtures / "landscape.jpg", audio, ass, motion, 1.0, quality)
+
+    stream = json.loads(subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0", "-count_frames",
+         "-show_entries", "stream=width,height,r_frame_rate,pix_fmt,color_range,nb_read_frames",
+         "-of", "json", str(clip)], capture_output=True, encoding="utf-8").stdout)["streams"][0]
+    assert (stream["width"], stream["height"], stream["r_frame_rate"]) == (1080, 1920, "30/1")
+    assert (stream["pix_fmt"], stream["color_range"]) == ("yuv420p", "tv")
+    assert stream["nb_read_frames"] == "30"
+    assert not (clips / "s1_still.png").exists()
+
+
 def test_video_before_render_is_404(client, project_id) -> None:
     response = client.get(f"/api/projects/{project_id}/video")
     assert response.status_code == 404

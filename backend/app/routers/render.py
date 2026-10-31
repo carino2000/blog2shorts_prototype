@@ -3,7 +3,7 @@ from typing import Annotated
 from fastapi import APIRouter, BackgroundTasks, Depends, Query
 from fastapi.responses import FileResponse
 
-from app.models import ErrorResponse, ProjectIdResponse, RenderStage
+from app.models import ErrorResponse, ProjectIdResponse, RenderRequest, RenderStage
 from app.pipeline import runner
 from app.providers.tts_base import TtsProvider, get_tts_provider
 from app.store import ProjectStore, get_store
@@ -21,12 +21,15 @@ async def start_render(
     project_id: str,
     background_tasks: BackgroundTasks,
     from_stage: Annotated[RenderStage, Query(alias="from")] = "tts",
+    body: RenderRequest | None = None,
     store: ProjectStore = Depends(get_store),
     tts_provider: TtsProvider = Depends(get_tts_provider),
 ) -> ProjectIdResponse:
-    """⑤~⑦ 시작. from이 있으면 그 단계부터 다시(완료된 TTS 재사용). 모든 장면에 이미지가 있어야 한다."""
+    """⑤~⑦ 시작. from이 있으면 그 단계부터 다시(완료된 TTS 재사용). 모든 장면에 이미지가 있어야 한다.
+    motionQuality: fast(속도 중시, 기본값) 또는 smooth(품질 중시)."""
+    quality = body.motion_quality if body else "fast"
     await runner.start_render(store, project_id)
-    background_tasks.add_task(runner.run_render, store, project_id, tts_provider, from_stage)
+    background_tasks.add_task(runner.run_render, store, project_id, tts_provider, from_stage, quality)
     return ProjectIdResponse(id=project_id)
 
 
