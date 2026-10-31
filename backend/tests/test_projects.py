@@ -1,12 +1,13 @@
-import re
-from collections.abc import Iterator
+from collections.abc import Callable
 
 import pytest
 from fastapi.testclient import TestClient
 
-from app.main import app
-from app.pipeline import runner
-from app.store import ProjectStore, get_store
+from app.pipeline import naver
+from app.store import ProjectStore
+from tests.conftest import VALID_TEXT
+
+URL = "https://blog.naver.com/abc/123"
 
 # 통합기획서 6-1 필드 목록 (계약 대조용)
 CONTRACT_FIELDS = {
@@ -25,86 +26,124 @@ CONTRACT_FIELDS = {
 }
 
 
-@pytest.fixture
-def store(tmp_path, monkeypatch) -> Iterator[ProjectStore]:
-    monkeypatch.setattr(runner, "FAKE_STEP_SEC", 0)
-    test_store = ProjectStore(tmp_path)
-    app.dependency_overrides[get_store] = lambda: test_store
-    yield test_store
-    app.dependency_overrides.clear()
-
-
-@pytest.fixture
-def client(store) -> Iterator[TestClient]:
-    with TestClient(app) as test_client:
-        yield test_client
-
-
-def test_create_url_project_reaches_ready(client: TestClient) -> None:
-    response = client.post("/api/projects", json={"type": "url", "url": "https://blog.naver.com/abc/123"})
+def create(client: TestClient, body: dict) -> dict:
+    response = client.post("/api/projects", json=body)
     assert response.status_code == 202
-    project_id = response.json()["id"]
-
     # TestClient는 응답 뒤 백그라운드 작업을 끝까지 돌린다
-    project = client.get(f"/api/projects/{project_id}").json()
+    return client.get(f"/api/projects/{response.json()['id']}").json()
+
+
+def test_url_project_reaches_ready(client: TestClient, fake_extract) -> None:
+    project = create(client, {"type": "url", "url": URL})
     assert project["status"] == "ready"
-    assert project["source"]["url"] == "https://blog.naver.com/abc/123"
-    assert project["error"] is None
-    assert project["progress"] is None
-    assert project["analysis"]["summary"]
-    assert 3 <= len(project["analysis"]["keyPoints"]) <= 5
-    assert 4 <= len(project["scenes"]) <= 6
-    assert project["scenes"][0]["role"] == "hook"
-    assert project["scenes"][-1]["role"] == "cta"
+    assert project["source"]["title"] == "글 제목"
+    assert project["needsUpload"] is False
+    assert project["analysis"]["keyPoints"]
+    assert all(scene["assetId"] for scene in project["scenes"])  # LLM이 null을 줘도 ④가 채운다
+    assert len({scene["assetId"] for scene in project["scenes"]}) == 3
+    image = next(block for block in project["source"]["blocks"] if block["type"] == "image")
+    assert image["linkedBlockIds"] == ["b1"]  # ②
 
 
-def test_sample_script_follows_script_rules(client: TestClient) -> None:
-    project_id = client.post("/api/projects", json={"type": "text", "text": "본문"}).json()["id"]
-    project = client.get(f"/api/projects/{project_id}").json()
-
-    assert project["source"]["type"] == "text"
-    total = sum(len(scene["text"]) for scene in project["scenes"])
-    assert 210 <= total <= 400
-    asset_ids = {asset["id"] for asset in project["assets"]}
-    block_ids = {block["id"] for block in project["source"]["blocks"]}
-    source_text = " ".join(block["text"] or "" for block in project["source"]["blocks"])
-    source_numbers = set(re.findall(r"\d+", source_text))
-    for scene in project["scenes"]:
-        assert scene["assetId"] in asset_ids
-        assert set(scene["sourceBlockIds"]) <= block_ids
-        assert set(re.findall(r"\d+", scene["text"])) <= source_numbers
+def test_text_project_needs_upload(client: TestClient) -> None:
+    project = create(client, {"type": "text", "text": VALID_TEXT})
+    assert project["status"] == "ready"
+    assert project["needsUpload"] is True
+    assert project["source"]["title"] is None
+    assert all(scene["assetId"] is None for scene in project["scenes"])
 
 
-def test_status_transitions_in_order(store: ProjectStore, client: TestClient, monkeypatch) -> None:
+def test_status_transitions_in_order(store: ProjectStore, client: TestClient, fake_extract, monkeypatch) -> None:
     statuses: list[str] = []
     original_update = store.update
 
-    async def recording_update(project_id, change):
+    async def recording_update(project_id: str, change: Callable) -> object:
         project = await original_update(project_id, change)
         if not statuses or statuses[-1] != project.status:
             statuses.append(project.status)
         return project
 
     monkeypatch.setattr(store, "update", recording_update)
-    client.post("/api/projects", json={"type": "url", "url": "https://blog.naver.com/abc/123"})
+    client.post("/api/projects", json={"type": "url", "url": URL})
     assert statuses == ["extracting", "scripting", "ready"]
 
 
-def test_assets_are_served(client: TestClient) -> None:
-    project_id = client.post("/api/projects", json={"type": "url", "url": "https://blog.naver.com/a/1"}).json()["id"]
-    assets = client.get(f"/api/projects/{project_id}").json()["assets"]
-    assert len(assets) == 3
-    response = client.get(assets[0]["url"])
+def test_assets_are_served(client: TestClient, fake_extract) -> None:
+    project = create(client, {"type": "url", "url": URL})
+    response = client.get(project["assets"][0]["url"])
     assert response.status_code == 200
     assert response.headers["content-type"] == "image/jpeg"
 
 
-def test_asset_ids_are_unique_across_projects(client: TestClient) -> None:
-    ids: set[str] = set()
-    for _ in range(2):
-        project_id = client.post("/api/projects", json={"type": "url", "url": "https://blog.naver.com/a/1"}).json()["id"]
-        ids |= {asset["id"] for asset in client.get(f"/api/projects/{project_id}").json()["assets"]}
-    assert len(ids) == 6
+def test_bad_url_is_400(client: TestClient) -> None:
+    response = client.post("/api/projects", json={"type": "url", "url": "https://tistory.com/a/1"})
+    assert response.status_code == 400
+    assert response.json()["error"]["code"] == "NOT_NAVER_URL"
+
+
+def test_short_text_is_400(client: TestClient) -> None:
+    response = client.post("/api/projects", json={"type": "text", "text": "짧음"})
+    assert response.status_code == 400
+    assert response.json()["error"]["code"] == "TEXT_TOO_SHORT"
+
+
+@pytest.mark.parametrize("code", ["POST_NOT_FOUND", "EXTRACT_FAILED"])
+def test_extract_failure_is_recorded(client: TestClient, monkeypatch, llm, code: str) -> None:
+    async def extract(*_args):
+        raise naver.AppError(code)
+
+    monkeypatch.setattr(naver, "extract", extract)
+    project = create(client, {"type": "url", "url": URL})
+    assert project["status"] == "error"
+    assert project["error"]["stage"] == "extract"
+    assert project["error"]["code"] == code
+    assert llm.calls == 0
+
+
+def test_unexpected_extract_error_is_recorded(client: TestClient, monkeypatch) -> None:
+    async def extract(*_args):
+        raise RuntimeError("파서 깨짐")
+
+    monkeypatch.setattr(naver, "extract", extract)
+    project = create(client, {"type": "url", "url": URL})
+    assert project["error"]["code"] == "EXTRACT_FAILED"
+
+
+def test_llm_failure_then_regenerate_without_script(client: TestClient, llm) -> None:
+    llm.fail = True
+    project = create(client, {"type": "text", "text": VALID_TEXT})
+    assert project["status"] == "error"
+    assert project["error"] == {"stage": "script", "code": "LLM_FAILED", "message": project["error"]["message"]}
+    assert project["script"] is None
+
+    llm.fail = False
+    response = client.post(f"/api/projects/{project['id']}/regenerate")
+    assert response.status_code == 202
+    project = client.get(f"/api/projects/{project['id']}").json()
+    assert project["status"] == "ready"
+    assert project["error"] is None
+    assert project["script"] is not None
+
+
+def test_regenerate_failure_keeps_previous_script(client: TestClient, llm) -> None:
+    project = create(client, {"type": "text", "text": VALID_TEXT})
+    before = project["scenes"]
+    llm.fail = True
+    client.post(f"/api/projects/{project['id']}/regenerate")
+    project = client.get(f"/api/projects/{project['id']}").json()
+    assert project["status"] == "error"
+    assert project["scenes"] == before
+
+
+def test_regenerate_without_blocks_is_409(client: TestClient, monkeypatch) -> None:
+    async def extract(*_args):
+        raise naver.AppError("EXTRACT_FAILED")
+
+    monkeypatch.setattr(naver, "extract", extract)
+    project = create(client, {"type": "url", "url": URL})
+    response = client.post(f"/api/projects/{project['id']}/regenerate")
+    assert response.status_code == 409
+    assert response.json()["error"]["code"] == "INVALID_STATE"
 
 
 def test_unknown_project_returns_404_error_format(client: TestClient) -> None:
@@ -123,9 +162,7 @@ def test_unknown_asset_returns_404_error_format(client: TestClient) -> None:
 def test_invalid_body_returns_error_format(client: TestClient, body: dict) -> None:
     response = client.post("/api/projects", json=body)
     assert response.status_code == 422
-    error = response.json()["error"]
-    assert error["code"] == "INVALID_REQUEST"
-    assert error["message"]
+    assert response.json()["error"]["code"] == "INVALID_REQUEST"
 
 
 def test_unknown_route_returns_error_format(client: TestClient) -> None:
