@@ -34,9 +34,10 @@ export const VARIANTS: VariantEntry[] = [
   { id: 'zine', name: '굵은 진', mood: '개성 · 강렬', swatch: ['#FFFFFF', '#0A0A0A', '#FF2E93'], load: () => import('./zine') },
   { id: 'gallery', name: '전시관', mood: '초미니멀', swatch: ['#FFFFFF', '#000000', '#9A9A9A'], load: () => import('./gallery') },
   { id: 'cinema', name: '상영관', mood: '영화적', swatch: ['#0B0809', '#F3EBD9', '#E8C872'], load: () => import('./cinema') },
+  { id: 'broadcast', name: '방송 부조실', mood: '긴박 · 실무', swatch: ['#0E1115', '#E8EDF2', '#D92D20'], load: () => import('./broadcast') },
   { id: 'blueprint', name: '설계 도면', mood: '정밀 · 기술적', swatch: ['#0C2340', '#EAF3FF', '#FFD23F'], load: () => import('./blueprint') },
   { id: 'soft', name: '부드러운 유리', mood: '친근 · 가벼움', swatch: ['#EEF6F3', '#1D2B28', '#0E7566'], load: () => import('./soft') },
-  { id: 'broadcast', name: '방송 부조실', mood: '긴박 · 실무', swatch: ['#0E1115', '#E8EDF2', '#D92D20'], load: () => import('./broadcast') },
+  { id: 'desktop', name: '옛 PC 책상', mood: '복고 · 장난기', swatch: ['#7FB5A0', '#1B1B1B', '#2B3A67'], load: () => import('./desktop') },
 ]
 
 export function findVariant(id: string): VariantEntry | undefined {
