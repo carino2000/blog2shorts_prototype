@@ -158,7 +158,7 @@ export function InputPage() {
 
             {errorMessage && (
               <ErrorBanner
-                title={isConnectionError(serverError) ? '서버에 연결하지 못했습니다' : '입력을 확인해 주세요'}
+                title={!isConnectionError(serverError) ? '입력을 확인해 주세요' : isApiError(serverError) && serverError.code === 'NETWORK' ? '서버에 연결하지 못했습니다' : '서버에서 오류가 났습니다'}
                 icon={isConnectionError(serverError) ? ServerOff : undefined}
                 message={errorMessage}
                 actions={

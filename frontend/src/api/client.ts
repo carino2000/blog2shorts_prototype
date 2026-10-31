@@ -42,6 +42,8 @@ function isErrorResponse(body: unknown): body is ErrorResponse {
   return typeof err === 'object' && err !== null && 'code' in err && 'message' in err
 }
 
+const NETWORK_MESSAGE = '백엔드 서버에 연결할 수 없습니다. 서버가 켜져 있는지 확인해 주세요.'
+
 /** 이 파일만 fetch를 부른다. 실패는 전부 ApiError로 바꾼다 */
 export async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   const headers = new Headers(init.headers)
@@ -51,7 +53,7 @@ export async function request<T>(path: string, init: RequestInit = {}): Promise<
   try {
     res = await fetch(apiUrl(path), { ...init, headers })
   } catch {
-    throw new ApiError(0, 'NETWORK', '백엔드 서버에 연결할 수 없습니다. 서버가 켜져 있는지 확인해 주세요.')
+    throw new ApiError(0, 'NETWORK', NETWORK_MESSAGE)
   }
 
   const text = await res.text()
@@ -72,7 +74,8 @@ export async function request<T>(path: string, init: RequestInit = {}): Promise<
     if (res.status === 422 || res.status === 405) throw new ApiError(res.status, 'INVALID_REQUEST', '요청 형식이 올바르지 않습니다.')
     if (res.status >= 500 && res.status !== 501) {
       // Vite 프록시가 백엔드에 연결하지 못하면 5xx(본문 없음)를 돌려준다
-      throw new ApiError(res.status, body === undefined ? 'NETWORK' : 'UNKNOWN', '서버 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
+      if (body === undefined) throw new ApiError(res.status, 'NETWORK', NETWORK_MESSAGE)
+      throw new ApiError(res.status, 'UNKNOWN', '서버 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
     }
     throw new ApiError(res.status, 'UNKNOWN', `요청을 처리하지 못했습니다. (HTTP ${res.status})`)
   }

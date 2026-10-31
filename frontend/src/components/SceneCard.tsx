@@ -112,7 +112,7 @@ export function SceneCard({
               id={ids.motion}
               value={scene.motion}
               onChange={(e) => onMotion(e.target.value as Motion)}
-              className="min-h-11 rounded-control border border-line bg-surface px-2 text-sm text-ink focus:border-accent-bright focus:outline-none focus:ring-3 focus:ring-accent-bright/15"
+              className="min-h-12 rounded-control border border-line bg-surface px-2 text-sm text-ink focus:border-accent-bright focus:outline-none focus:ring-3 focus:ring-accent-bright/15"
             >
               {MOTIONS.map((m) => (
                 <option key={m.value} value={m.value}>
