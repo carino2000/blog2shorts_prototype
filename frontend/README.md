@@ -17,6 +17,7 @@ npm run dev              # http://localhost:5173
 
 - `VITE_USE_MOCK=true`(기본)면 백엔드 없이 가짜 데이터로 모든 화면이 돈다.
 - `VITE_USE_MOCK=false`면 `/api` 요청을 Vite 프록시가 `http://localhost:8000`(백엔드)으로 넘긴다. 백엔드를 먼저 켠다.
+- 회의용 시안 18개는 mock 모드에서 왼쪽 아래 전환 버튼으로 바꿔 본다. `http://localhost:5173/?v=night`처럼 주소로 바로 열 수도 있다. 목록은 `../docs/design_variants.md`.
 
 ## 명령
 
